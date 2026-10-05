@@ -1,0 +1,1910 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraX - Technology Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* = THANH LỌC THƯƠNG HIỆU VÀ KÍCH THƯỚC = */
+      .thanh_dieu_huong_nhanh {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 20px auto;
+        padding: 18px 20px;
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+
+      /* Tiêu đề lọc */
+      .thanh_dieu_huong_nhanh .tieu_de_loc_nhanh {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+        color: #222222;
+        font-size: 16px;
+        font-weight: 700;
+      }
+
+      /* Từng dòng lọc */
+      .thanh_dieu_huong_nhanh .dong_loc {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 12px;
+      }
+
+      .thanh_dieu_huong_nhanh .dong_loc:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Nhãn thương hiệu, kích thước */
+      .thanh_dieu_huong_nhanh .nhan_loc {
+        flex: 0 0 155px;
+        padding-top: 7px;
+        color: #444444;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      /* Nhóm nút */
+      .thanh_dieu_huong_nhanh .nhom_nut_loc {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      /* Nút thương hiệu và kích thước */
+      .thanh_dieu_huong_nhanh .nut_teleport {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        min-height: 34px;
+        padding: 7px 13px;
+        border: 1px solid #dcdfe4;
+        border-radius: 5px;
+        background: #ffffff;
+        color: #444444;
+        font-size: 14px;
+        text-decoration: none;
+        line-height: 1.4;
+        transition: all 0.2s ease;
+      }
+
+      /* Hiệu ứng khi rê chuột */
+      .thanh_dieu_huong_nhanh .nut_teleport:hover {
+        border-color: #0284c7;
+        background: #f0f9ff;
+        color: #0284c7;
+      }
+
+      /* Điện thoại và màn hình nhỏ */
+      @media (max-width: 600px) {
+        .thanh_dieu_huong_nhanh {
+          padding: 14px;
+          margin: 14px auto;
+        }
+
+        .thanh_dieu_huong_nhanh .dong_loc {
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        .thanh_dieu_huong_nhanh .nhan_loc {
+          flex: none;
+          padding-top: 0;
+        }
+
+        .thanh_dieu_huong_nhanh .nhom_nut_loc {
+          width: 100%;
+        }
+
+        .thanh_dieu_huong_nhanh .nut_teleport {
+          padding: 7px 10px;
+          font-size: 13px;
+        }
+      }
+    </style>
+    <link rel="icon" href="images/svg_logo.svg" type="image/png">
+  </head>
+
+<!--      HEADER      -->
+    <div class="dau_trang_co_dinh">
+      <header class="phan_dau_chinh">
+        <div class="khung_chua khung_phan_dau">
+          <a href="index.html" class="logo_chinh">
+            <img src="Images/logo.png" alt="Logo TERRAX" />
+          </a>
+
+          <div class="hop_tim_kiem_lon">
+            <input
+              type="text"
+              id="o_tim_kiem"
+              placeholder="Tìm kiếm sản phẩm (vd: RTX, Laptop, Bàn phím...)"
+            />
+            <button id="nut_tim_kiem">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div id="ket_qua_tim_kiem"></div>
+          </div>
+
+          <div class="hanh_dong_phai">
+            <div
+              class="muc_hanh_dong"
+              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+            >
+              <i class="far fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+
+            <div class="muc_hanh_dong" onclick="moGioHang()">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Giỏ hàng (<span id="dem_gio_hang">0</span>)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--THANH ĐIỀU HƯỚNG-->
+<nav class="thanh_dieu_huong">
+  <div class="khung_chua khung_dieu_huong">
+    
+    <div class="muc_menu co_menu_con">
+      <i class="fas fa-bars"></i> 
+      <span>DANH MỤC SẢN PHẨM</span> 
+      <i class="fas fa-chevron-down icon_mui_ten"></i>
+      
+      <div class="noi_dung_menu_con">
+        <a href="pc.html"><i class="fas fa-desktop"></i> PC Gaming / Workstation</a>
+        <a href="laptop.html"><i class="fas fa-laptop"></i> Laptop Gaming & Văn Phòng</a>
+        <a href="bo-mach-chu.html"><i class="fas fa-microchip"></i> Linh Kiện PC</a>
+        <a href="man-hinh.html"><i class="fas fa-tv"></i> Màn Hình Máy Tính</a>
+        <a href="ban-phim.html"><i class="fas fa-keyboard"></i> Bàn Phím Cơ</a>
+        <a href="chuot.html"><i class="fas fa-mouse"></i> Chuột Gaming</a>
+        <a href="tai-nghe.html"><i class="fas fa-headphones"></i> Tai Nghe & Âm Thanh</a>
+      </div>
+    </div>
+    
+    <a href="index.html"><i class="fas fa-home"></i> TRANG CHỦ</a>
+    <a href="laptop.html" class="lien_ket_menu"><i class="fas fa-laptop-code"></i> LAPTOP</a>
+    <a href="pc.html" class="lien_ket_menu"><i class="fas fa-gamepad"></i> PC GAMING</a>
+    <a href="#flash_sale" class="lien_ket_menu"><i class="fas fa-bolt" ></i> KHUYẾN MÃI</a>
+    <a href="https://tinhte.vn/?utm_source=chatgpt.com" class="lien_ket_menu"><i class="fas fa-newspaper"></i> TIN TỨC</a>
+        <a href="lien_he.html"><i class="fas fa-users"></i> Thành viên</a>
+
+  </div>
+</nav> </div>
+
+    <!-- Banner trang -->
+    <section
+      class="bang_chuyen_anh"
+      style="background-image: url(images/banner-chuot.png)"
+    ></section>
+    <!-- THANH LỌC VÀ ĐIỀU HƯỚNG NHANH -->
+    <section class="khung_chua thanh_dieu_huong_nhanh">
+      <div class="dong_loc">
+        <span class="nhan_loc">Thương hiệu:</span>
+        <div class="nhom_nut_loc">
+          <a href="#hang_razer" class="nut_teleport">Razer</a>
+          <a href="#hang_akko" class="nut_teleport">AKKO</a>
+          <a href="#hang_logitech" class="nut_teleport">Logitech</a>
+          <a href="#hang_hyperwork" class="nut_teleport">HyperWork</a>
+          <a href="#hang_khac" class="nut_teleport">Khác (Predator, MSI...)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SẢN PHẨM NỔI BẬT (ĐẦY ĐỦ 16 SẢN PHẨM) -->
+    <section
+      class="san_pham khung_chua"
+      id="san_pham_noi_bat"
+      style="margin-top: 40px"
+    >
+      <h2 class="tieu_de_phan">SẢN PHẨM NỔI BẬT</h2>
+      <div class="luoi_san_pham">
+        <!-- SẢN PHẨM 1 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_21_Chu_t_Gaming_Predator_Cestus_3.jpg"
+            class="anh_san_pham"
+            alt="Chuột Gaming Predator Cestus 3"
+          />
+          <h3 class="ten_san_pham">Chuột Gaming Predator Cestus 3</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_21_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_21_2_C_ng_USB.svg" alt="" /><span
+                  >Cổng USB</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_21_3_PixArt_PAW3335.svg"
+                  alt=""
+                /><span>PixArt PAW3335</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_21_4_16000_DPI.svg" alt="" /><span
+                  >16000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_21_5_2000.svg" alt="" /><span
+                  >2000</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.500.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham">1.470.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_22_Chu_t_AKKO_AG_ONE_8K_Joy_of_Li.png"
+            class="anh_san_pham"
+            alt="Chuột Gaming AKKO AG ONE 8K Joy of Li"
+          />
+          <h3 class="ten_san_pham">Chuột Gaming AKKO AG ONE 8K Joy of Li</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_22_1___c_bi_t.svg" alt="" /><span
+                  >Đặc biệt</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_22_2_PAW3395.svg" alt="" /><span
+                  >PAW3395</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_22_3_26000_DPI.svg" alt="" /><span
+                  >26000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_22_4_8000.svg" alt="" /><span
+                  >8000</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_22_5_65_g.svg" alt="" /><span
+                  >65 g</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.590.000đ</p>
+            <span class="nhan_giam_gia">-50%</span>
+          </div>
+          <p class="gia_san_pham">795.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_23_Chu_t_gaming_kh_ng_d_y_Logitec.jpg"
+            class="anh_san_pham"
+            alt="Chuột gaming không dây Logitech G304 X Superlight Black"
+          />
+          <h3 class="ten_san_pham">
+            Chuột gaming không dây Logitech G304 X Superlight Black
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_23_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_23_2_HERO_44K.svg" alt="" /><span
+                  >HERO 44K</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_23_3_44000_DPI.svg" alt="" /><span
+                  >44000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_23_4_1000.svg" alt="" /><span
+                  >1000</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_23_5_59_g.svg" alt="" /><span
+                  >59 g</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.390.000đ</p>
+            <span class="nhan_giam_gia">-25%</span>
+          </div>
+          <p class="gia_san_pham">1.792.500đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 4 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_24_Chu_t_Razer_Basilisk_V3_Pro_35.jpg"
+            class="anh_san_pham"
+            alt="Chuột Razer Basilisk V3 Pro 35K Phantom Green Edition"
+          />
+          <h3 class="ten_san_pham">
+            Chuột Razer Basilisk V3 Pro 35K Phantom Green Edition
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_24_1_Xanh.svg" alt="" /><span
+                  >Xanh</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_24_2__a_k_t_n_i.svg" alt="" /><span
+                  >Đa kết nối</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_24_3_Focus_Pro_35K.svg"
+                  alt=""
+                /><span>Focus Pro 35K</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_24_4_35000_DPI.svg" alt="" /><span
+                  >35000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_24_5_8000.svg" alt="" /><span
+                  >8000</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">4.290.000đ</p>
+            <span class="nhan_giam_gia">-8%</span>
+          </div>
+          <p class="gia_san_pham">3.946.800đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 5 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_25_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây HyperWork Silentium MS01 Đen"
+          />
+          <h3 class="ten_san_pham">
+            Chuột không dây HyperWork Silentium MS01 Đen
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_25_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_25_2_2400_DPI.svg" alt="" /><span
+                  >2400 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_25_3_Pin_s_c.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_25_4_Kh_ng.svg" alt="" /><span
+                  >Không</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">590.000đ</p>
+            <span class="nhan_giam_gia">-17%</span>
+          </div>
+          <p class="gia_san_pham">489.700đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 6 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_26_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây HyperWork Silentium MS01 Trắng"
+          />
+          <h3 class="ten_san_pham">
+            Chuột không dây HyperWork Silentium MS01 Trắng
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_26_1_Tr_ng.svg" alt="" /><span
+                  >Trắng</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_26_2_2400_DPI.svg" alt="" /><span
+                  >2400 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_26_3_Pin_s_c.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_26_4_Kh_ng.svg" alt="" /><span
+                  >Không</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">590.000đ</p>
+            <span class="nhan_giam_gia">-17%</span>
+          </div>
+          <p class="gia_san_pham">489.700đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 7 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_27_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây HyperWork Silentium Gen 2 MS01 Đen"
+          />
+          <h3 class="ten_san_pham">
+            Chuột không dây HyperWork Silentium Gen 2 MS01 Đen
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_27_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_27_2_Quang_h_c.svg" alt="" /><span
+                  >Quang học</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_27_3_1000_DPI.svg" alt="" /><span
+                  >1000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_27_4_100_g.svg" alt="" /><span
+                  >100 g</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_27_5_Pin_s_c.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">690.000đ</p>
+            <span class="nhan_giam_gia">-6%</span>
+          </div>
+          <p class="gia_san_pham">648.600đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 8 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_28_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây HyperWork Silentium Gen 2 MS01 Trắng"
+          />
+          <h3 class="ten_san_pham">
+            Chuột không dây HyperWork Silentium Gen 2 MS01 Trắng
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_28_1_Tr_ng.svg" alt="" /><span
+                  >Trắng</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_28_2_Quang_h_c.svg" alt="" /><span
+                  >Quang học</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_28_3_4800_DPI.svg" alt="" /><span
+                  >4800 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_28_4_100_g.svg" alt="" /><span
+                  >100 g</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_28_5_Pin_s_c.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">690.000đ</p>
+            <span class="nhan_giam_gia">-6%</span>
+          </div>
+          <p class="gia_san_pham">648.600đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 9 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_29_Chu_t_kh_ng_d_y_HyperWork_Macr.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây HyperWork Macro MS02 Đen"
+          />
+          <h3 class="ten_san_pham">Chuột không dây HyperWork Macro MS02 Đen</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_29_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_29_2_PixArt.svg" alt="" /><span
+                  >PixArt</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_29_3_6000_DPI.svg" alt="" /><span
+                  >6000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_29_4_1000_Hz.svg" alt="" /><span
+                  >1000 Hz</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_29_5_97_g.svg" alt="" /><span
+                  >97 g</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">690.000đ</p>
+            <span class="nhan_giam_gia">-6%</span>
+          </div>
+          <p class="gia_san_pham">648.600đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 10 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_30_Chu_t_MSI_VERSA_WIRELESS_MLG_E.png"
+            class="anh_san_pham"
+            alt="Chuột MSI VERSA WIRELESS MLG EDITION"
+          />
+          <h3 class="ten_san_pham">Chuột MSI VERSA WIRELESS MLG EDITION</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_30_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_30_2_Wireless.svg" alt="" /><span
+                  >Wireless</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_30_3_1000_Hz.svg" alt="" /><span
+                  >1000 Hz</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_30_4_Pin_s_c_Li_ion.svg"
+                  alt=""
+                /><span>Pin sạc Li-ion</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.390.000đ</p>
+            <span class="nhan_giam_gia">-5%</span>
+          </div>
+          <p class="gia_san_pham">1.320.500đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 11 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_31_Chu_t_kh_ng_d_y_Logitech_Signa.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây Logitech Signature Comfort M840 L White"
+          />
+          <h3 class="ten_san_pham">
+            Chuột không dây Logitech Signature Comfort M840 L White
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_1_Tr_ng.svg" alt="" /><span
+                  >Trắng</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_2_Bluetooth.svg" alt="" /><span
+                  >Bluetooth</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_3_Quang_h_c.svg" alt="" /><span
+                  >Quang học</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_31_4_400___4000_DPI.svg"
+                  alt=""
+                /><span>400 - 4000 DPI</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_5_103_g.svg" alt="" /><span
+                  >103 g</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.490.000đ</p>
+            <span class="nhan_giam_gia">-34%</span>
+          </div>
+          <p class="gia_san_pham">983.400đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 12 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_32_Chu_t_kh_ng_d_y_AKKO_Nest_Blac.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây AKKO Nest Black"
+          />
+          <h3 class="ten_san_pham">Chuột không dây AKKO Nest Black</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_32_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_32_2_PixArt_PAW3950.svg"
+                  alt=""
+                /><span>PixArt PAW3950</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_32_3_400___30000_DPI.svg"
+                  alt=""
+                /><span>PixArt PAW3335</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_32_4_8000_250.svg" alt="" /><span
+                  >400 - 30000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_32_5_49_g.svg" alt="" /><span
+                  >8000;250</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.690.000đ</p>
+            <span class="nhan_giam_gia">-6%</span>
+          </div>
+          <p class="gia_san_pham">1.588.600đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 13 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_33_Chu_t_kh_ng_d_y_AKKO_Nest_Whit.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây AKKO Nest White"
+          />
+          <h3 class="ten_san_pham">Chuột không dây AKKO Nest White</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_33_1_Tr_ng.svg" alt="" /><span
+                  >Trắng</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_33_2_PixArt_PAW3950.svg"
+                  alt=""
+                /><span>PAW3395</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_33_3_400___30000_DPI.svg"
+                  alt=""
+                /><span>100 - 26000 DPI</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_33_4_8000_250.svg" alt="" /><span
+                  >40 g</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_33_5_49_g.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.690.000đ</p>
+            <span class="nhan_giam_gia">-6%</span>
+          </div>
+          <p class="gia_san_pham">1.588.600đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 14 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_34_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây AKKO Dash V9 Max Black"
+          />
+          <h3 class="ten_san_pham">Chuột không dây AKKO Dash V9 Max Black</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_34_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_34_2_PAW3395.svg" alt="" /><span
+                  >PAW3395</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_34_3_100___26000_DPI.svg"
+                  alt=""
+                /><span>100 - 26000 DPI</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_34_4_40_g.svg" alt="" /><span
+                  >40 g</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_34_5_Pin_s_c.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.190.000đ</p>
+            <span class="nhan_giam_gia">-8%</span>
+          </div>
+          <p class="gia_san_pham">1.094.800đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 15 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_35_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
+            class="anh_san_pham"
+            alt="Chuột không dây AKKO Dash V9 Max White"
+          />
+          <h3 class="ten_san_pham">Chuột không dây AKKO Dash V9 Max White</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_35_1_Tr_ng.svg" alt="" /><span
+                  >Trắng</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_35_2_PAW3395.svg" alt="" /><span
+                  >PAW3395</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_35_3_26000_DPI.svg" alt="" /><span
+                  >26000 DPI</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_35_4_41_g.svg" alt="" /><span
+                  >41 g</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_35_5_Pin_s_c.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.190.000đ</p>
+            <span class="nhan_giam_gia">-17%</span>
+          </div>
+          <p class="gia_san_pham">987.700đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 16 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_39_Chu_t_Razer_DeathAdder_V4_Pro_.png"
+            class="anh_san_pham"
+            alt="Chuột Razer DeathAdder V4 Pro Black"
+          />
+          <h3 class="ten_san_pham">Chuột Razer DeathAdder V4 Pro Black</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_39_1__en.svg" alt="" /><span
+                  >Đen</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_39_2__a_k_t_n_i.svg" alt="" /><span
+                  >Đa kết nối</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_39_3_Focus_Pro_45K_Gen_2.svg"
+                  alt=""
+                /><span>Focus Pro 45K Gen-2</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_39_4_100___45000_DPI.svg"
+                  alt=""
+                /><span>100 - 45000 DPI</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_39_5_4000_1000_2000_8000.svg"
+                  alt=""
+                /><span>4000;1000;2000;8000</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">5.190.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham">5.086.200đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC CỤM LỚN: CÁC HÃNG CHUỘT GAMING -->
+    <div class="khung_chua cum_phan_loai_lon">
+      <h1 class="tieu_de_nhom_to">CÁC HÃNG CHUỘT GAMING</h1>
+
+      <!-- HÃNG RAZER -->
+      <section class="san_pham" id="hang_razer">
+        <h2 class="tieu_de_phan">RAZER</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 4 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_24_Chu_t_Razer_Basilisk_V3_Pro_35.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột Razer Basilisk V3 Pro 35K Phantom Green Edition
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_24_1_Xanh.svg" alt="" /><span
+                    >Xanh</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_24_2__a_k_t_n_i.svg"
+                    alt=""
+                  /><span>Đa kết nối</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_24_3_Focus_Pro_35K.svg"
+                    alt=""
+                  /><span>Focus Pro 35K</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_24_4_35000_DPI.svg"
+                    alt=""
+                  /><span>35000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_24_5_8000.svg" alt="" /><span
+                    >8000</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">4.290.000đ</p>
+              <span class="nhan_giam_gia">-8%</span>
+            </div>
+            <p class="gia_san_pham">3.946.800đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 16 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_39_Chu_t_Razer_DeathAdder_V4_Pro_.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột Razer DeathAdder V4 Pro Black</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_39_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_39_2__a_k_t_n_i.svg"
+                    alt=""
+                  /><span>Đa kết nối</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_39_3_Focus_Pro_45K_Gen_2.svg"
+                    alt=""
+                  /><span>Focus Pro 45K Gen-2</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_39_4_100___45000_DPI.svg"
+                    alt=""
+                  /><span>100 - 45000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_39_5_4000_1000_2000_8000.svg"
+                    alt=""
+                  /><span>4000;1000;2000;8000</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">5.190.000đ</p>
+              <span class="nhan_giam_gia">-2%</span>
+            </div>
+            <p class="gia_san_pham">5.086.200đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG AKKO -->
+      <section class="san_pham" id="hang_akko" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">AKKO</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 2 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_22_Chu_t_AKKO_AG_ONE_8K_Joy_of_Li.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột Gaming AKKO AG ONE 8K Joy of Li</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_22_1___c_bi_t.svg" alt="" /><span
+                    >Đặc biệt</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_22_2_PAW3395.svg" alt="" /><span
+                    >PAW3395</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_22_3_26000_DPI.svg"
+                    alt=""
+                  /><span>26000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_22_4_8000.svg" alt="" /><span
+                    >8000</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_22_5_65_g.svg" alt="" /><span
+                    >65 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-50%</span>
+            </div>
+            <p class="gia_san_pham">795.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 12 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_32_Chu_t_kh_ng_d_y_AKKO_Nest_Blac.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột không dây AKKO Nest Black</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_32_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_32_2_PixArt_PAW3950.svg"
+                    alt=""
+                  /><span>PixArt PAW3950</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_32_3_400___30000_DPI.svg"
+                    alt=""
+                  /><span>PixArt PAW3335</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_32_4_8000_250.svg" alt="" /><span
+                    >400 - 30000 DPI</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_32_5_49_g.svg" alt="" /><span
+                    >8000;250</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.690.000đ</p>
+              <span class="nhan_giam_gia">-6%</span>
+            </div>
+            <p class="gia_san_pham">1.588.600đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 13 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_33_Chu_t_kh_ng_d_y_AKKO_Nest_Whit.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột không dây AKKO Nest White</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_33_1_Tr_ng.svg" alt="" /><span
+                    >Trắng</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_33_2_PixArt_PAW3950.svg"
+                    alt=""
+                  /><span>PAW3395</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_33_3_400___30000_DPI.svg"
+                    alt=""
+                  /><span>100 - 26000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_33_4_8000_250.svg" alt="" /><span
+                    >40 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_33_5_49_g.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.690.000đ</p>
+              <span class="nhan_giam_gia">-6%</span>
+            </div>
+            <p class="gia_san_pham">1.588.600đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 14 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_34_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột không dây AKKO Dash V9 Max Black</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_34_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_34_2_PAW3395.svg" alt="" /><span
+                    >PAW3395</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_34_3_100___26000_DPI.svg"
+                    alt=""
+                  /><span>100 - 26000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_34_4_40_g.svg" alt="" /><span
+                    >40 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_34_5_Pin_s_c.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.190.000đ</p>
+              <span class="nhan_giam_gia">-8%</span>
+            </div>
+            <p class="gia_san_pham">1.094.800đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 15 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_35_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột không dây AKKO Dash V9 Max White</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_35_1_Tr_ng.svg" alt="" /><span
+                    >Trắng</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_35_2_PAW3395.svg" alt="" /><span
+                    >PAW3395</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_35_3_26000_DPI.svg"
+                    alt=""
+                  /><span>26000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_35_4_41_g.svg" alt="" /><span
+                    >41 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_35_5_Pin_s_c.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam" id="#flash_sale">
+              <p class="gia_cu_san_pham">1.190.000đ</p>
+              <span class="nhan_giam_gia">-17%</span>
+            </div>
+            <p class="gia_san_pham">987.700đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG LOGITECH -->
+      <section class="san_pham" id="hang_logitech" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">LOGITECH</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 3 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_23_Chu_t_gaming_kh_ng_d_y_Logitec.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột gaming không dây Logitech G304 X Superlight Black
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_23_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_23_2_HERO_44K.svg" alt="" /><span
+                    >HERO 44K</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_23_3_44000_DPI.svg"
+                    alt=""
+                  /><span>44000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_23_4_1000.svg" alt="" /><span
+                    >1000</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_23_5_59_g.svg" alt="" /><span
+                    >59 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.390.000đ</p>
+              <span class="nhan_giam_gia">-25%</span>
+            </div>
+            <p class="gia_san_pham">1.792.500đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 11 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_31_Chu_t_kh_ng_d_y_Logitech_Signa.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột không dây Logitech Signature Comfort M840 L White
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_31_1_Tr_ng.svg" alt="" /><span
+                    >Trắng</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_31_2_Bluetooth.svg"
+                    alt=""
+                  /><span>Bluetooth</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_31_3_Quang_h_c.svg"
+                    alt=""
+                  /><span>Quang học</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_31_4_400___4000_DPI.svg"
+                    alt=""
+                  /><span>400 - 4000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_31_5_103_g.svg" alt="" /><span
+                    >103 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.490.000đ</p>
+              <span class="nhan_giam_gia">-34%</span>
+            </div>
+            <p class="gia_san_pham">983.400đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG HYPERWORK -->
+      <section class="san_pham" id="hang_hyperwork" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">HYPERWORK</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 5 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_25_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột không dây HyperWork Silentium MS01 Đen
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_25_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_25_2_2400_DPI.svg" alt="" /><span
+                    >2400 DPI</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_25_3_Pin_s_c.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_25_4_Kh_ng.svg" alt="" /><span
+                    >Không</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">590.000đ</p>
+              <span class="nhan_giam_gia">-17%</span>
+            </div>
+            <p class="gia_san_pham">489.700đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 6 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_26_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột không dây HyperWork Silentium MS01 Trắng
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_26_1_Tr_ng.svg" alt="" /><span
+                    >Trắng</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_26_2_2400_DPI.svg" alt="" /><span
+                    >2400 DPI</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_26_3_Pin_s_c.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_26_4_Kh_ng.svg" alt="" /><span
+                    >Không</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">590.000đ</p>
+              <span class="nhan_giam_gia">-17%</span>
+            </div>
+            <p class="gia_san_pham">489.700đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 7 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_27_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột không dây HyperWork Silentium Gen 2 MS01 Đen
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_27_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_27_2_Quang_h_c.svg"
+                    alt=""
+                  /><span>Quang học</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_27_3_1000_DPI.svg" alt="" /><span
+                    >1000 DPI</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_27_4_100_g.svg" alt="" /><span
+                    >100 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_27_5_Pin_s_c.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">690.000đ</p>
+              <span class="nhan_giam_gia">-6%</span>
+            </div>
+            <p class="gia_san_pham">648.600đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 8 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_28_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột không dây HyperWork Silentium Gen 2 MS01 Trắng
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_28_1_Tr_ng.svg" alt="" /><span
+                    >Trắng</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_28_2_Quang_h_c.svg"
+                    alt=""
+                  /><span>Quang học</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_28_3_4800_DPI.svg" alt="" /><span
+                    >4800 DPI</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_28_4_100_g.svg" alt="" /><span
+                    >100 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_28_5_Pin_s_c.svg" alt="" /><span
+                    >Pin sạc</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">690.000đ</p>
+              <span class="nhan_giam_gia">-6%</span>
+            </div>
+            <p class="gia_san_pham">648.600đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 9 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_29_Chu_t_kh_ng_d_y_HyperWork_Macr.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Chuột không dây HyperWork Macro MS02 Đen
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_29_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_29_2_PixArt.svg" alt="" /><span
+                    >PixArt</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_29_3_6000_DPI.svg" alt="" /><span
+                    >6000 DPI</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_29_4_1000_Hz.svg" alt="" /><span
+                    >1000 Hz</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_29_5_97_g.svg" alt="" /><span
+                    >97 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">690.000đ</p>
+              <span class="nhan_giam_gia">-6%</span>
+            </div>
+            <p class="gia_san_pham">648.600đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG KHÁC -->
+      <section class="san_pham" id="hang_khac" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">CÁC HÃNG KHÁC (PREDATOR, MSI...)</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 1 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_21_Chu_t_Gaming_Predator_Cestus_3.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột Gaming Predator Cestus 3</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_21_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_21_2_C_ng_USB.svg" alt="" /><span
+                    >Cổng USB</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_21_3_PixArt_PAW3335.svg"
+                    alt=""
+                  /><span>PixArt PAW3335</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_21_4_16000_DPI.svg"
+                    alt=""
+                  /><span>16000 DPI</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_21_5_2000.svg" alt="" /><span
+                    >2000</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.500.000đ</p>
+              <span class="nhan_giam_gia">-2%</span>
+            </div>
+            <p class="gia_san_pham">1.470.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 10 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_30_Chu_t_MSI_VERSA_WIRELESS_MLG_E.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Chuột MSI VERSA WIRELESS MLG EDITION</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_30_1__en.svg" alt="" /><span
+                    >Đen</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_30_2_Wireless.svg" alt="" /><span
+                    >Wireless</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_30_3_1000_Hz.svg" alt="" /><span
+                    >1000 Hz</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_30_4_Pin_s_c_Li_ion.svg"
+                    alt=""
+                  /><span>Pin sạc Li-ion</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.390.000đ</p>
+              <span class="nhan_giam_gia">-5%</span>
+            </div>
+            <p class="gia_san_pham">1.320.500đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Giỏ hàng Sidebar -->
+    <div
+      class="lop_phu_gio_hang"
+      id="lop_phu_gio_hang_id"
+      onclick="dongGioHang()"
+    ></div>
+    <div class="thanh_ben_gio_hang" id="thanh_ben_gio_hang_id">
+      <div class="dau_gio_hang">
+        <h3>Giỏ hàng của bạn</h3>
+        <button class="nut_dong_gio_hang" onclick="dongGioHang()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div
+        class="cac_mon_hang"
+        style="padding: 20px; color: gray; text-align: center"
+      >
+        Giỏ hàng trống.
+      </div>
+    </div>
+
+   <footer class="phan_cuoi">
+      <div class="khung-chua noi_dung_footer">
+        <div class="cot_footer">
+          <h3>TERRAX STORE</h3>
+          <p>
+            Hệ thống cung cấp PC Gaming, Laptop và linh kiện công nghệ cao cấp,
+            mang lại trải nghiệm tối ưu cho game thủ và nhà sáng tạo.
+          </p>
+          <div class="mang_xa_hoi">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              >◎</a
+            >
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noopener"
+              title="Zalo"
+              >Z</a
+            >
+          </div>
+        </div>
+        <div class="cot_footer">
+          <h4>Danh mục sản phẩm</h4>
+          <ul>
+            <li><a href="pc.html">PC Gaming & Workstation</a></li>
+            <li><a href="laptop.html">Laptop Chính Hãng</a></li>
+            <li><a href="ban-phim.html">Bàn Phím Cơ</a></li>
+            <li><a href="chuot.html">Chuột Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="cot_footer">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="lien_he.html">Giới thiệu thành viên</a></li>
+            <li><a href="#lien-he">Kết nối liên hệ</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="cot_footer">
+          <h4>Hỗ trợ & Liên hệ</h4>
+          <p><strong>Đơn vị:</strong> Đại Học Công Nghệ Đông Á</p>
+          <p><strong>Hotline:</strong> 038.953.9590 - 038.866.1893</p>
+          <p><strong>Email:</strong> support@terrax.vn</p>
+        </div>
+      </div>
+
+      <div class="ban_quyen">
+        <div class="khung-chua">
+          <p>
+            &copy; 2026 TERRAX Technology Store. All rights reserved. Phát triển
+            bởi Nguyễn Bá Trung & Phùng Tuấn Thăng.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="java.js"></script>
+    <!-- CHATBOT HỖ TRỢ -->
+    <button class="nut_bat_chatbot" onclick="batTatChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="khung_chatbot" id="khung_chatbot_id">
+      <div class="dau_chatbot">
+        <h3><i class="fas fa-robot"></i> Trợ lý ảo TERRAX</h3>
+        <button class="nut_dong_chat" onclick="batTatChatbot()">&times;</button>
+      </div>
+      <div class="than_chatbot" id="than_chatbot_id">
+        <div class="tin_nhan_chat may">
+          Xin chào! Tôi là trợ lý ảo của TERRAX. Bạn cần tư vấn mua Laptop, PC,
+          hay hỏi về chính sách bảo hành?
+        </div>
+      </div>
+      <div class="cuoi_chatbot">
+        <input
+          type="text"
+          id="o_nhap_chat_id"
+          placeholder="Nhập câu hỏi..."
+          onkeypress="kiemTraEnter(event)"
+        />
+        <button onclick="guiTinNhan()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1264 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraX - Technology Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="images/svg_logo.svg" type="image/png" />
+  </head>
+  <body>
+    <!--      HEADER      -->
+    <div class="dau_trang_co_dinh">
+      <header class="phan_dau_chinh">
+        <div class="khung_chua khung_phan_dau">
+          <a href="index.html" class="logo_chinh">
+            <img src="Images/logo.png" alt="Logo TERRAX" />
+          </a>
+
+          <div class="hop_tim_kiem_lon">
+            <input
+              type="text"
+              id="o_tim_kiem"
+              placeholder="Tìm kiếm sản phẩm (vd: RTX, Laptop, Bàn phím...)"
+            />
+            <button id="nut_tim_kiem">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div id="ket_qua_tim_kiem"></div>
+          </div>
+
+          <div class="hanh_dong_phai">
+            <div
+              class="muc_hanh_dong"
+              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+            >
+              <i class="far fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+
+            <div class="muc_hanh_dong" onclick="moGioHang()">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Giỏ hàng (<span id="dem_gio_hang">0</span>)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--THANH ĐIỀU HƯỚNG-->
+      <nav class="thanh_dieu_huong">
+        <div class="khung_chua khung_dieu_huong">
+          <div class="muc_menu co_menu_con">
+            <i class="fas fa-bars"></i>
+            <span>DANH MỤC SẢN PHẨM</span>
+            <i class="fas fa-chevron-down icon_mui_ten"></i>
+
+            <div class="noi_dung_menu_con">
+              <a href="pc.html"
+                ><i class="fas fa-desktop"></i> PC Gaming / Workstation</a
+              >
+              <a href="laptop.html"
+                ><i class="fas fa-laptop"></i> Laptop Gaming & Văn Phòng</a
+              >
+              <a href="bo-mach-chu.html"
+                ><i class="fas fa-microchip"></i> Linh Kiện PC</a
+              >
+              <a href="man-hinh.html"
+                ><i class="fas fa-tv"></i> Màn Hình Máy Tính</a
+              >
+              <a href="ban-phim.html"
+                ><i class="fas fa-keyboard"></i> Bàn Phím Cơ</a
+              >
+              <a href="chuot.html"><i class="fas fa-mouse"></i> Chuột Gaming</a>
+              <a href="tai-nghe.html"
+                ><i class="fas fa-headphones"></i> Tai Nghe & Âm Thanh</a
+              >
+            </div>
+          </div>
+
+          <a href="index.html"><i class="fas fa-home"></i> TRANG CHỦ</a>
+          <a href="laptop.html" class="lien_ket_menu"
+            ><i class="fas fa-laptop-code"></i> LAPTOP</a
+          >
+          <a href="pc.html" class="lien_ket_menu"
+            ><i class="fas fa-gamepad"></i> PC GAMING</a
+          >
+          <a href="#flash_sale" class="lien_ket_menu"
+            ><i class="fas fa-bolt"></i> KHUYẾN MÃI</a
+          >
+          <a
+            href="https://tinhte.vn/?utm_source=chatgpt.com"
+            class="lien_ket_menu"
+            ><i class="fas fa-newspaper"></i> TIN TỨC</a
+          >
+          <a href="lien_he.html"><i class="fas fa-users"></i> Thành viên</a>
+        </div>
+      </nav>
+    </div>
+    <section
+      class="bang_chuyen_anh"
+      id="#flash_sale"
+      style="background-image: url(images/banner-banphim1.png)"
+    ></section>
+    <!--  DANH MỤC DẠNG THẺ PILL  -->
+    <section class="khung_chua" style="margin-top: 30px">
+      <div class="khung_bo_loc_danh_muc">
+        <div class="dong_bo_loc">
+          <span class="nhan_tieu_de">Loại sản phẩm:</span>
+          <div class="danh_sach_tag">
+            <a href="index.html" class="tag_pill dang_chon">Tất cả</a>
+            <a href="pc.html" class="tag_pill">PC Gaming</a>
+            <a href="laptop.html" class="tag_pill">Laptop</a>
+            <a href="chuot.html" class="tag_pill">Chuột gaming</a>
+            <a href="man-hinh.html" class="tag_pill">Màn hình</a>
+            <a href="bo-mach-chu.html" class="tag_pill">Bo mạch chủ</a>
+            <a href="tai-nghe.html" class="tag_pill">Tai nghe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  BÀN PHÍM CƠ  -->
+    <section class="san_pham khung_chua danh-muc-san-pham" id="ban-phim-co">
+      <h2 class="tieu_de_phan">BÀN PHÍM CƠ</h2>
+      <div class="luoi_san_pham">
+        <!-- SP 41 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_41_B_n_ph_m_c__ASUS_ROG_Falchion_.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X White"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X White
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_3_PBT.svg" alt="" /><span
+                  >PBT</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">5.990.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham">5.890.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi</span>
+                  <div class="km_text">Giảm 5% khi mua kèm PC / Laptop</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 42 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_42_B_n_ph_m_c__ASUS_ROG_Falchion_.png"
+            class="anh_san_pham"
+            alt="Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Red"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Red
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_2_Bluetooth.svg" alt="" /><span
+                  >Có dây;USB-C</span
+                >
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_3_PBT.svg" alt="" /><span
+                  >PBT</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">5.990.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham">5.890.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi</span>
+                  <div class="km_text">Tặng Pad chuột ASUS ROG cao cấp</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 43 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-co-asus-rog-falchion-ace-75-he-v2x-black-1_109fef2d13f84841a011563e54f88a05.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Black"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X Black
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_3_PBT.svg" alt="" /><span
+                  >PBT Double-shot</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">5.990.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham">5.890.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi thanh toán</span>
+                  <div class="km_text">Giảm 2% khi quét mã VNPAY</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 47 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/-co-gaming-khong-day-dareu-flex-75-white-black-3-mode-pegasus-switch-1_ef87df7f5c394723bf512fb8ac0c72d1.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím cơ gaming không dây DareU Flex 75 White Black"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím cơ gaming không dây DareU Flex 75 White Black 3 Mode
+            Pegasus switch
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/icon-keys.svg" alt="" /><span
+                  >79 phím</span
+                >
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_3_PBT.svg" alt="" /><span
+                  >PBT</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">790.000đ</p>
+            <span class="nhan_giam_gia">-12%</span>
+          </div>
+          <p class="gia_san_pham">690.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi</span>
+                  <div class="km_text">Miễn phí giao hàng toàn quốc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 48 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/m-co-gaming-khong-day-dareu-flex-75-black-grey-3-mode-pegasus-switch-1_944a72db55ce4f5db4a6320fbb9bcb3b.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím cơ gaming không dây DareU Flex 75 Black Grey"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím cơ gaming không dây DareU Flex 75 Black Grey 3 Mode Pegasus
+            switch
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/icon-keys.svg" alt="" /><span
+                  >79 phím</span
+                >
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_3_PBT.svg" alt="" /><span
+                  >PBT</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">790.000đ</p>
+            <span class="nhan_giam_gia">-12%</span>
+          </div>
+          <p class="gia_san_pham">690.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi</span>
+                  <div class="km_text">Miễn phí giao hàng toàn quốc</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 60 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/2562345345_afbd959e034f47f1abb60ee56acd7e42.png"
+            class="anh_san_pham"
+            alt="Bàn phím không dây AKKO 5087 V3 Prunus Lannesiana"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím không dây AKKO 5087 V3 Prunus Lannesiana Akko Piano Pro
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/icon-keys.svg" alt="" /><span
+                  >87 phím</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_3_PBT.svg" alt="" /><span
+                  >PBT/ABS</span
+                >
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB (South-facing)</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.490.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham">1.390.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Quà tặng</span>
+                  <div class="km_text">Tặng kèm keycap dự phòng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--  BÀN PHÍM GAMING  -->
+    <section class="san_pham khung_chua danh-muc-san-pham" id="ban-phim-gaming">
+      <h2 class="tieu_de_phan">BÀN PHÍM GAMING</h2>
+      <div class="luoi_san_pham">
+        <!-- SP 49 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-gaming-asus-rog-azoth-96-he-white-1_a55dfa663d2c4919ac0c08f9cc18d36c.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím gaming ASUS ROG Azoth 96 HE White"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím gaming ASUS ROG Azoth 96 HE White
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_44_1_75_.svg" alt="" /><span
+                  >96%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_41_2_PBT.svg" alt="" /><span
+                  >Kim loại</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <span class="nhan_giam_gia">Hàng Mới</span>
+          </div>
+          <p class="gia_san_pham">9.590.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Quà khủng</span>
+                  <div class="km_text">Tặng tai nghe ASUS ROG Cetra II</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 50 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-gaming-asus-rog-azoth-96-he-black-2_dd879173c9dd43caa2611bf50c9de0b9.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím gaming ASUS ROG Azoth 96 HE Black"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím gaming ASUS ROG Azoth 96 HE Black
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_41_1_75_.svg" alt="" /><span
+                  >96%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_41_2_PBT.svg" alt="" /><span
+                  >Kim loại</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <span class="nhan_giam_gia">Hàng Mới</span>
+          </div>
+          <p class="gia_san_pham">9.590.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Quà khủng</span>
+                  <div class="km_text">Tặng tai nghe ASUS ROG Cetra II</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 51 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-logitech-g316-x-98-rgb-trang-tactile-1_389cf1cd0b2e428fa789f31795b206dd.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím Logitech G316 X 98 RGB Trắng Tactile"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím Logitech G316 X 98 RGB Trắng Tactile
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Tactile Switch</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.290.000đ</p>
+            <span class="nhan_giam_gia">-13%</span>
+          </div>
+          <p class="gia_san_pham">1.990.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Combo Gaming</span>
+                  <div class="km_text">
+                    Giảm 100K khi mua kèm chuột Logitech
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 52 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-logitech-g316-x-98-rgb-den-tactile-1_2d4976d094c94113ae3fb56c1a77a256.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím Logitech G316 X 98 RGB Đen Tactile"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím Logitech G316 X 98 RGB Đen Tactile
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Tactile Switch</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.290.000đ</p>
+            <span class="nhan_giam_gia">-13%</span>
+          </div>
+          <p class="gia_san_pham">1.990.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Combo Gaming</span>
+                  <div class="km_text">
+                    Giảm 100K khi mua kèm chuột Logitech
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 59 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-rapoo-v501-87-1_06151fe3937d43dab56bcea730f070dd.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím Rapoo V501-87"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">Bàn phím Rapoo V501-87</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >87 phím</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_4_RGB.svg" alt="" /><span
+                  >RGB</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">690.000đ</p>
+            <span class="nhan_giam_gia">-14%</span>
+          </div>
+          <p class="gia_san_pham">590.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi</span>
+                  <div class="km_text">Bảo hành 24 tháng chính hãng</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--BÀN PHÍM KHÔNG DÂY -->
+    <section
+      class="san_pham khung_chua danh-muc-san-pham"
+      id="ban-phim-khong-day"
+    >
+      <h2 class="tieu_de_phan">BÀN PHÍM KHÔNG DÂY</h2>
+      <div class="luoi_san_pham">
+        <!-- SP 53 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-khong-day-hyperwork-core-type-ct01-den-1_713fe503b9f441328b1207bfb7533cb7.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím không dây HyperWork Core Type CT01 Đen"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím không dây HyperWork Core Type CT01 Đen
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_2_Bluetooth.svg" alt="" /><span
+                  >Bluetooth</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Pin sạc</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">390.000đ</p>
+            <span class="nhan_giam_gia">-21%</span>
+          </div>
+          <p class="gia_san_pham">310.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Văn phòng</span>
+                  <div class="km_text">Tặng túi chống sốc HyperWork</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 54 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-khong-day-hyperwork-silentkey-ts01-trang-1_e4520a51587844478e73217bd9dd1467.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím không dây HyperWork SilentKey TS01 Trắng"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím không dây HyperWork SilentKey TS01 Trắng
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Silent Switch</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_2_Bluetooth.svg" alt="" /><span
+                  >Bluetooth/2.4G</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">890.000đ</p>
+            <span class="nhan_giam_gia">-12%</span>
+          </div>
+          <p class="gia_san_pham">780.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Vận chuyển</span>
+                  <div class="km_text">Freeship toàn quốc đơn trên 500k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 55 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-khong-day-hyperwork-silentkey-mini-ts01m-trang-1_c870283b002d4a3bbfd931de978cdf9d.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím không dây HyperWork SilentKey Mini TS01M Trắng"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím không dây HyperWork SilentKey Mini TS01M Trắng
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_42_1_75_.svg" alt="" /><span
+                  >75%</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_41_2_PBT.svg" alt="" /><span
+                  >84 phím</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_41_1_75_.svg" alt="" /><span
+                  >Nhựa</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">790.000đ</p>
+            <span class="nhan_giam_gia">-5%</span>
+          </div>
+          <p class="gia_san_pham">750.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Vận chuyển</span>
+                  <div class="km_text">Freeship toàn quốc đơn trên 500k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 56 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-khong-day-hyperwork-silentkey-ts01-den-1_f5088747899447bc8d060270bdc49c57.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím không dây HyperWork SilentKey TS01 Đen"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím không dây HyperWork SilentKey TS01 Đen
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Silent Switch</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_31_2_Bluetooth.svg" alt="" /><span
+                  >Bluetooth/2.4G</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">890.000đ</p>
+            <span class="nhan_giam_gia">-12%</span>
+          </div>
+          <p class="gia_san_pham">780.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Vận chuyển</span>
+                  <div class="km_text">Freeship toàn quốc đơn trên 500k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SP 57 -->
+        <div class="the_san_pham">
+          <img
+            src="https://cdn.hstatic.net/products/200000722513/ban-phim-khong-day-hyperwork-hyperone-gen-3-plus-den-1_ebf4e98f5b6041788e1dee83c236eeed.jpg"
+            class="anh_san_pham"
+            alt="Bàn phím không dây HyperWork HyperOne Gen 3 Plus Đen"
+            loading="lazy"
+          />
+          <h3 class="ten_san_pham">
+            Bàn phím không dây HyperWork HyperOne Gen 3 Plus Đen
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Multi-device</span
+                >
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_48_1_75_.svg" alt="" /><span
+                  >Pin trâu 6 tháng</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">990.000đ</p>
+            <span class="nhan_giam_gia">-20%</span>
+          </div>
+          <p class="gia_san_pham">790.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Vận chuyển</span>
+                  <div class="km_text">Freeship toàn quốc đơn trên 500k</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="nut_bam nut_day nut_them_gio_card"
+            onclick="themVaoGioHang(this)"
+          >
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GIỎ HÀNG -->
+    <div
+      class="lop_phu_gio_hang"
+      id="lop_phu_gio_hang_id"
+      onclick="dongGioHang()"
+    ></div>
+    <div class="thanh_ben_gio_hang" id="thanh_ben_gio_hang_id">
+      <div class="dau_gio_hang">
+        <h3>🛒 Giỏ hàng của bạn</h3>
+        <button class="nut_dong_gio_hang" onclick="dongGioHang()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div
+        class="cac_mon_hang"
+        id="cac_mon_hang_id"
+        style="padding: 20px; color: gray; text-align: center"
+      >
+        Giỏ hàng trống.
+      </div>
+      <div class="chan_gio_hang">
+        <div class="tong_tien_thanh_toan">
+          <span>Tổng tiền</span><span id="tong_tien_gio">0đ</span>
+        </div>
+        <button
+          class="nut_bam nut_day"
+          style="width: 100%"
+          onclick="alert('Chức năng thanh toán đang phát triển!')"
+        >
+          THANH TOÁN
+        </button>
+      </div>
+    </div>
+
+    <footer class="phan_cuoi">
+      <div class="khung-chua noi_dung_footer">
+        <div class="cot_footer">
+          <h3>TERRAX STORE</h3>
+          <p>
+            Hệ thống cung cấp PC Gaming, Laptop và linh kiện công nghệ cao cấp,
+            mang lại trải nghiệm tối ưu cho game thủ và nhà sáng tạo.
+          </p>
+          <div class="mang_xa_hoi">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              >◎</a
+            >
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noopener"
+              title="Zalo"
+              >Z</a
+            >
+          </div>
+        </div>
+        <div class="cot_footer">
+          <h4>Danh mục sản phẩm</h4>
+          <ul>
+            <li><a href="pc.html">PC Gaming & Workstation</a></li>
+            <li><a href="laptop.html">Laptop Chính Hãng</a></li>
+            <li><a href="ban-phim.html">Bàn Phím Cơ</a></li>
+            <li><a href="chuot.html">Chuột Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="cot_footer">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="lien_he.html">Giới thiệu thành viên</a></li>
+            <li><a href="#lien-he">Kết nối liên hệ</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="cot_footer">
+          <h4>Hỗ trợ & Liên hệ</h4>
+          <p><strong>Đơn vị:</strong> Đại Học Công Nghệ Đông Á</p>
+          <p><strong>Hotline:</strong> 038.953.9590 - 038.866.1893</p>
+          <p><strong>Email:</strong> support@terrax.vn</p>
+        </div>
+      </div>
+
+      <div class="ban_quyen">
+        <div class="khung-chua">
+          <p>
+            &copy; 2026 TERRAX Technology Store. All rights reserved. Phát triển
+            bởi Nguyễn Bá Trung & Phùng Tuấn Thăng.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="java.js"></script>
+    <!-- CHATBOT HỖ TRỢ -->
+    <button class="nut_bat_chatbot" onclick="batTatChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="khung_chatbot" id="khung_chatbot_id">
+      <div class="dau_chatbot">
+        <h3><i class="fas fa-robot"></i> Trợ lý ảo TERRAX</h3>
+        <button class="nut_dong_chat" onclick="batTatChatbot()">&times;</button>
+      </div>
+      <div class="than_chatbot" id="than_chatbot_id">
+        <div class="tin_nhan_chat may">
+          Xin chào! Tôi là trợ lý ảo của TERRAX. Bạn cần tư vấn mua Laptop, PC,
+          hay hỏi về chính sách bảo hành?
+        </div>
+      </div>
+      <div class="cuoi_chatbot">
+        <input
+          type="text"
+          id="o_nhap_chat_id"
+          placeholder="Nhập câu hỏi..."
+          onkeypress="kiemTraEnter(event)"
+        />
+        <button onclick="guiTinNhan()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

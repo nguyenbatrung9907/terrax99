@@ -1,0 +1,2162 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraX - Technology Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="images/svg_logo.svg" type="image/png" />
+  </head>
+
+  <body>
+    <!--      HEADER      -->
+    <div class="dau_trang_co_dinh">
+      <header class="phan_dau_chinh">
+        <div class="khung_chua khung_phan_dau">
+          <a href="index.html" class="logo_chinh">
+            <img src="Images/logo.png" alt="Logo TERRAX" />
+          </a>
+
+          <div class="hop_tim_kiem_lon">
+            <input
+              type="text"
+              id="o_tim_kiem"
+              placeholder="Tìm kiếm sản phẩm (vd: RTX, Laptop, Bàn phím...)"
+            />
+            <button id="nut_tim_kiem">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div id="ket_qua_tim_kiem"></div>
+          </div>
+
+          <div class="hanh_dong_phai">
+            <div
+              class="muc_hanh_dong"
+              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+            >
+              <i class="far fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+
+            <div class="muc_hanh_dong" onclick="moGioHang()">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Giỏ hàng (<span id="dem_gio_hang">0</span>)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--THANH ĐIỀU HƯỚNG-->
+      <nav class="thanh_dieu_huong">
+        <div class="khung_chua khung_dieu_huong">
+          <div class="muc_menu co_menu_con">
+            <i class="fas fa-bars"></i>
+            <span>DANH MỤC SẢN PHẨM</span>
+            <i class="fas fa-chevron-down icon_mui_ten"></i>
+            <div class="noi_dung_menu_con">
+              <a href="pc.html"
+                ><i class="fas fa-desktop"></i> PC Gaming / Workstation</a
+              >
+              <a href="laptop.html"
+                ><i class="fas fa-laptop"></i> Laptop Gaming & Văn Phòng</a
+              >
+              <a href="bo-mach-chu.html"
+                ><i class="fas fa-microchip"></i> Linh Kiện PC</a
+              >
+              <a href="man-hinh.html"
+                ><i class="fas fa-tv"></i> Màn Hình Máy Tính</a
+              >
+              <a href="ban-phim.html"
+                ><i class="fas fa-keyboard"></i> Bàn Phím Cơ</a
+              >
+              <a href="chuot.html"><i class="fas fa-mouse"></i> Chuột Gaming</a>
+              <a href="tai-nghe.html"
+                ><i class="fas fa-headphones"></i> Tai Nghe & Âm Thanh</a
+              >
+            </div>
+          </div>
+
+          <a href="index.html" class="lien_ket_menu"
+            ><i class="fas fa-home"></i> TRANG CHỦ</a
+          >
+          <a href="laptop.html" class="lien_ket_menu"
+            ><i class="fas fa-laptop-code"></i> LAPTOP</a
+          >
+          <a href="pc.html" class="lien_ket_menu"
+            ><i class="fas fa-gamepad"></i> PC GAMING</a
+          >
+          <a href="#flash_sale" class="lien_ket_menu"
+            ><i class="fas fa-bolt"></i> KHUYẾN MÃI</a
+          >
+          <a
+            href="https://tinhte.vn/?utm_source=chatgpt.com"
+            class="lien_ket_menu"
+            ><i class="fas fa-newspaper"></i> TIN TỨC</a
+          >
+          <a href="lien_he.html"><i class="fas fa-users"></i> Thành viên</a>
+        </div>
+      </nav>
+    </div>
+    <section
+      class="bang_chuyen_anh"
+      style="background-image: url(images/banner-tainghe.png)"
+    ></section>
+
+    <section class="khung_chua" style="margin-top: 30px">
+      <div class="khung_bo_loc_danh_muc">
+        <div class="dong_bo_loc">
+          <span class="nhan_tieu_de">Thương hiệu:</span>
+          <div class="danh_sach_tag">
+            <a href="#hang_razer" class="tag_pill">Razer</a>
+            <a href="#hang_hyperx" class="tag_pill">HyperX</a>
+            <a href="#hang_logitech" class="tag_pill">Logitech</a>
+            <a href="#hang_akko" class="tag_pill">Akko</a>
+            <a href="#hang_asus" class="tag_pill">ASUS ROG</a>
+            <a href="#hang_khac" class="tag_pill">Khác (Acer, Usams...)</a>
+          </div>
+        </div>
+
+        <div class="dong_bo_loc">
+          <span class="nhan_tieu_de">Kiểu tai nghe:</span>
+          <div class="danh_sach_tag">
+            <a href="#kieu_in_ear" class="tag_pill"
+              >Tai nghe In-Ear (Nhét tai)</a
+            >
+            <a href="#kieu_over_ear" class="tag_pill"
+              >Tai nghe Over-Ear (Chùm đầu)</a
+            >
+            <a href="#kieu_phu_kien" class="tag_pill">Phụ kiện Tai nghe</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      class="san_pham khung_chua"
+      id="san_pham_noi_bat"
+      style="margin-top: 40px"
+    >
+      <h2 class="tieu_de_phan">SẢN PHẨM NỔI BẬT</h2>
+      <div class="luoi_san_pham">
+        <!-- SẢN PHẨM 1 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_111_Tai_nghe_Razer_Hammerhead_V3_X.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe Razer Hammerhead V3 X"
+          />
+
+          <h3 class="ten_san_pham">Tai nghe Razer Hammerhead V3 X</h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_111_1_In_ear.svg" alt="In-ear" />
+                <span>In-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>Có dây</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>5.3 g</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.990.000đ</p>
+            <span class="nhan_giam_gia">-10%</span>
+          </div>
+
+          <p class="gia_san_pham">2.860.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_113_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe HP HyperX Cloud Earbuds"
+          />
+
+          <h3 class="ten_san_pham">Tai nghe HP HyperX Cloud Earbuds</h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>In-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>Có dây</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Không LED</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Đỏ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.790.000đ</p>
+            <span class="nhan_giam_gia">-11%</span>
+          </div>
+
+          <p class="gia_san_pham">1.590.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_117_Tai_nghe_gaming_kh_ng_d_y_Logi.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe gaming không dây Logitech Astro A20 X"
+          />
+
+          <h3 class="ten_san_pham">
+            Tai nghe gaming không dây Logitech Astro A20 X
+          </h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>Gaming</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>LED RGB</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>290 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Đen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">4.190.000đ</p>
+            <span class="nhan_giam_gia">-14%</span>
+          </div>
+
+          <p class="gia_san_pham">3.590.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 4 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_120_Tai_nghe_Razer_BlackShark_V3_W.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe Razer BlackShark V3 White"
+          />
+
+          <h3 class="ten_san_pham">Tai nghe Razer BlackShark V3 White</h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>Over-Ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>Không dây</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>270 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Trắng</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">5.190.000đ</p>
+            <span class="nhan_giam_gia">-15%</span>
+          </div>
+
+          <p class="gia_san_pham">4.420.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 5 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_109_Tai_Nghe_Gaming_Kh_ng_D_y_Pred.jpg"
+            class="anh_san_pham"
+            alt="Tai Nghe Gaming Không Dây Predator Galea 550 (PHR235)"
+          />
+          <h3 class="ten_san_pham">
+            Tai Nghe Gaming Không Dây Predator Galea 550 (PHR235)
+          </h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">3.000.000đ</p>
+            <span class="nhan_giam_gia">-0%</span>
+          </div>
+          <p class="gia_san_pham">3.000.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 6 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_110_Tai_nghe_HyperX_Cloud_Stinger_.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe HyperX Cloud Stinger 3 Black"
+          />
+          <h3 class="ten_san_pham">Tai nghe HyperX Cloud Stinger 3 Black</h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.390.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham">1.292.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 7 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_112_Ph__ki_n_h_p___ng_tai_nghe_Usa.jpg"
+            class="anh_san_pham"
+            alt="Phụ kiện hộp đựng tai nghe Usams"
+          />
+          <h3 class="ten_san_pham">Phụ kiện hộp đựng tai nghe Usams</h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">99.000đ</p>
+            <span class="nhan_giam_gia">-0%</span>
+          </div>
+          <p class="gia_san_pham">99.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 8 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_114_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe HP HYPERX Cloud Earbuds III S Red"
+          />
+          <h3 class="ten_san_pham">
+            Tai nghe HP HYPERX Cloud Earbuds III S Red
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>In-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>Có dây</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Không LED</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Đỏ</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.590.000đ</p>
+            <span class="nhan_giam_gia">-9%</span>
+          </div>
+          <p class="gia_san_pham">1.446.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 9 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_115_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe HP HYPERX Cloud Earbuds III Red"
+          />
+          <h3 class="ten_san_pham">Tai nghe HP HYPERX Cloud Earbuds III Red</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>In-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>Có dây</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_115_4_21_2_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>5.3 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_115_3_Kh_ng.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Không LED</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Đỏ</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">990.000đ</p>
+            <span class="nhan_giam_gia">-4%</span>
+          </div>
+          <p class="gia_san_pham">950.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 10 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_121_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe gaming không dây Akko Verge S9 Ultra White"
+          />
+          <h3 class="ten_san_pham">
+            Tai nghe gaming không dây Akko Verge S9 Ultra White
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>over-ear (chụp tai)</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>PC, PS, Nitendo</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>270 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Trắng</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.590.000đ</p>
+            <span class="nhan_giam_gia">-19%</span>
+          </div>
+          <p class="gia_san_pham">1.287.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 11 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_122_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe gaming không dây Akko Verge S9 Ultra Black Red"
+          />
+          <h3 class="ten_san_pham">
+            Tai nghe gaming không dây Akko Verge S9 Ultra Black Red
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>over-ear (chụp tai)</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="Có Mic" />
+                <span>PC, PS, Nitendo</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>270 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Đen&Đỏ</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.590.000đ</p>
+            <span class="nhan_giam_gia">-19%</span>
+          </div>
+          <p class="gia_san_pham">1.287.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 12 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_123_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe gaming không dây Akko Verge S9 Ultra Black"
+          />
+          <h3 class="ten_san_pham">
+            Tai nghe gaming không dây Akko Verge S9 Ultra Black
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="In-ear" />
+                <span>Over-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_123_2_270_g.svg" alt="Có Mic" />
+                <span>270 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>Màu Đen</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.590.000đ</p>
+            <span class="nhan_giam_gia">-15%</span>
+          </div>
+          <p class="gia_san_pham">1.351.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 13 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_124_Tai_nghe_ASUS_ROG_Kithara_Gami.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe ASUS ROG Kithara Gaming"
+          />
+
+          <h3 class="ten_san_pham">Tai nghe ASUS ROG Kithara Gaming</h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg"
+                  alt="Loại tai nghe"
+                />
+                <span>Over-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>420 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="Màu sắc" />
+                <span>Màu Đen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">8.990.000đ</p>
+            <span class="nhan_giam_gia">-15%</span>
+          </div>
+
+          <p class="gia_san_pham">7.642.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 14 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_125_Tai_nghe_Razer_BlackShark_V3_P.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe Razer BlackShark V3 Pro - NiKo Edition"
+          />
+
+          <h3 class="ten_san_pham">
+            Tai nghe Razer BlackShark V3 Pro - NiKo Edition
+          </h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg"
+                  alt="Loại tai nghe"
+                />
+                <span>Over-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>387 g</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">8.790.000đ</p>
+            <span class="nhan_giam_gia">-15%</span>
+          </div>
+
+          <p class="gia_san_pham">7.472.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 15 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_127_Tai_nghe_kh_ng_d_y_AKKO_GH300_.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe không dây AKKO GH300 Black"
+          />
+
+          <h3 class="ten_san_pham">Tai nghe không dây AKKO GH300 Black</h3>
+
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg"
+                  alt="Loại tai nghe"
+                />
+                <span>Over-ear</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="Màu sắc" />
+                <span>Màu Đen</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.190.000đ</p>
+            <span class="nhan_giam_gia">-25%</span>
+          </div>
+
+          <p class="gia_san_pham">893.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 16 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_128_Tai_nghe_kh_ng_d_y_Logitech_G3.jpg"
+            class="anh_san_pham"
+            alt="Tai nghe không dây Logitech G325 LIGHTSPEED White"
+          />
+
+          <h3 class="ten_san_pham">
+            Tai nghe không dây Logitech G325 LIGHTSPEED White
+          </h3>
+
+          <div class="nhanh_thong_so" id="#flash_sale">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg"
+                  alt="Loại tai nghe"
+                />
+                <span>Tai nghe Gaming</span>
+              </div>
+
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg"
+                  alt="Trọng lượng"
+                />
+                <span>212 g</span>
+              </div>
+
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="Màu sắc" />
+                <span>Màu Trắng</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.790.000đ</p>
+            <span class="nhan_giam_gia">-14%</span>
+          </div>
+
+          <p class="gia_san_pham">2.399.000đ</p>
+
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC CỤM LỚN 1: CÁC HÃNG TAI NGHE -->
+    <div class="khung_chua cum_phan_loai_lon">
+      <h1 class="tieu_de_nhom_to">
+        <i
+          class="fas fa-headphones"
+          style="color: var(--mau_chinh, #d32f2f)"
+        ></i>
+        CÁC HÃNG TAI NGHE
+      </h1>
+
+      <!-- HÃNG RAZER -->
+      <section class="san_pham" id="hang_razer">
+        <h2 class="tieu_de_phan">RAZER</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 1 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_111_Tai_nghe_Razer_Hammerhead_V3_X.jpg"
+              class="anh_san_pham"
+              alt="Tai nghe Razer Hammerhead V3 X"
+            />
+            <h3 class="ten_san_pham">Tai nghe Razer Hammerhead V3 X</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_111_1_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >5.3 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.990.000đ</p>
+              <span class="nhan_giam_gia">-10%</span>
+            </div>
+            <p class="gia_san_pham">2.860.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 4 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_120_Tai_nghe_Razer_BlackShark_V3_W.jpg"
+              class="anh_san_pham"
+              alt="Tai nghe Razer BlackShark V3 White"
+            />
+            <h3 class="ten_san_pham">Tai nghe Razer BlackShark V3 White</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-Ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Không dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Trắng</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">5.190.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">4.420.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 14 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_125_Tai_nghe_Razer_BlackShark_V3_P.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe Razer BlackShark V3 Pro - NiKo Edition
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >387 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">8.790.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">7.472.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG HYPERX -->
+      <section class="san_pham" id="hang_hyperx" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">HYPERX</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 2 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_113_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe HP HyperX Cloud Earbuds</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.790.000đ</p>
+              <span class="nhan_giam_gia">-11%</span>
+            </div>
+            <p class="gia_san_pham">1.590.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 6 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_110_Tai_nghe_HyperX_Cloud_Stinger_.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe HyperX Cloud Stinger 3 Black</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.390.000đ</p>
+              <span class="nhan_giam_gia">-7%</span>
+            </div>
+            <p class="gia_san_pham">1.292.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 8 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_114_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe HP HYPERX Cloud Earbuds III S Red
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Không LED</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-9%</span>
+            </div>
+            <p class="gia_san_pham">1.446.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 9 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_115_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe HP HYPERX Cloud Earbuds III Red
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_115_4_21_2_g.svg" alt="" /><span
+                    >5.3 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_115_3_Kh_ng.svg" alt="" /><span
+                    >Không LED</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">990.000đ</p>
+              <span class="nhan_giam_gia">-4%</span>
+            </div>
+            <p class="gia_san_pham">950.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG LOGITECH -->
+      <section class="san_pham" id="hang_logitech" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">LOGITECH</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 3 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_117_Tai_nghe_gaming_kh_ng_d_y_Logi.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Logitech Astro A20 X
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Gaming</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >LED RGB</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >290 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">4.190.000đ</p>
+              <span class="nhan_giam_gia">-14%</span>
+            </div>
+            <p class="gia_san_pham">3.590.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 16 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_128_Tai_nghe_kh_ng_d_y_Logitech_G3.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe không dây Logitech G325 LIGHTSPEED White
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Tai nghe Gaming</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >212 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Trắng</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.790.000đ</p>
+              <span class="nhan_giam_gia">-14%</span>
+            </div>
+            <p class="gia_san_pham">2.399.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG AKKO -->
+      <section class="san_pham" id="hang_akko" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">AKKO</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 10 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_121_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Akko Verge S9 Ultra White
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >over-ear (chụp tai)</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >PC, PS, Nitendo</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Trắng</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-19%</span>
+            </div>
+            <p class="gia_san_pham">1.287.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 11 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_122_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Akko Verge S9 Ultra Black Red
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >over-ear (chụp tai)</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >PC, PS, Nitendo</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen&Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-19%</span>
+            </div>
+            <p class="gia_san_pham">1.287.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 12 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_123_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Akko Verge S9 Ultra Black
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_123_2_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">1.351.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 15 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_127_Tai_nghe_kh_ng_d_y_AKKO_GH300_.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe không dây AKKO GH300 Black</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.190.000đ</p>
+              <span class="nhan_giam_gia">-25%</span>
+            </div>
+            <p class="gia_san_pham">893.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG ASUS ROG -->
+      <section class="san_pham" id="hang_asus" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">ASUS ROG</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 13 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_124_Tai_nghe_ASUS_ROG_Kithara_Gami.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe ASUS ROG Kithara Gaming</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >420 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">8.990.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">7.642.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG KHÁC -->
+      <section class="san_pham" id="hang_khac" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">CÁC HÃNG KHÁC (ACER, USAMS...)</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 5 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_109_Tai_Nghe_Gaming_Kh_ng_D_y_Pred.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai Nghe Gaming Không Dây Predator Galea 550 (PHR235)
+            </h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">3.000.000đ</p>
+              <span class="nhan_giam_gia">-0%</span>
+            </div>
+            <p class="gia_san_pham">3.000.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 7 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_112_Ph__ki_n_h_p___ng_tai_nghe_Usa.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Phụ kiện hộp đựng tai nghe Usams</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">99.000đ</p>
+              <span class="nhan_giam_gia">-0%</span>
+            </div>
+            <p class="gia_san_pham">99.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- MỤC CỤM LỚN 2: CÁC KIỂU TAI NGHE -->
+    <div class="khung_chua cum_phan_loai_lon">
+      <h1 class="tieu_de_nhom_to">
+        <i
+          class="fas fa-sliders-h"
+          style="color: var(--mau_chinh, #d32f2f)"
+        ></i>
+        CÁC KIỂU TAI NGHE
+      </h1>
+
+      <!-- KIỂU IN-EAR -->
+      <section class="san_pham" id="kieu_in_ear">
+        <h2 class="tieu_de_phan">Tai nghe In-Ear (Nhét tai)</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 1 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_111_Tai_nghe_Razer_Hammerhead_V3_X.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe Razer Hammerhead V3 X</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_111_1_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >5.3 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.990.000đ</p>
+              <span class="nhan_giam_gia">-10%</span>
+            </div>
+            <p class="gia_san_pham">2.860.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 2 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_113_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe HP HyperX Cloud Earbuds</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.790.000đ</p>
+              <span class="nhan_giam_gia">-11%</span>
+            </div>
+            <p class="gia_san_pham">1.590.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 8 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_114_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe HP HYPERX Cloud Earbuds III S Red
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Không LED</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-9%</span>
+            </div>
+            <p class="gia_san_pham">1.446.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 9 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_115_Tai_nghe_HP_HYPERX_Cloud_Earbu.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe HP HYPERX Cloud Earbuds III Red
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >In-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Có dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_115_4_21_2_g.svg" alt="" /><span
+                    >5.3 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_115_3_Kh_ng.svg" alt="" /><span
+                    >Không LED</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">990.000đ</p>
+              <span class="nhan_giam_gia">-4%</span>
+            </div>
+            <p class="gia_san_pham">950.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- KIỂU OVER-EAR -->
+      <section class="san_pham" id="kieu_over_ear" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">Tai nghe Over-Ear (Chùm đầu)</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 3 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_117_Tai_nghe_gaming_kh_ng_d_y_Logi.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Logitech Astro A20 X
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Gaming</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >LED RGB</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >290 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">4.190.000đ</p>
+              <span class="nhan_giam_gia">-14%</span>
+            </div>
+            <p class="gia_san_pham">3.590.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 4 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_120_Tai_nghe_Razer_BlackShark_V3_W.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe Razer BlackShark V3 White</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-Ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Không dây</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Trắng</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">5.190.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">4.420.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 5 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_109_Tai_Nghe_Gaming_Kh_ng_D_y_Pred.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai Nghe Gaming Không Dây Predator Galea 550 (PHR235)
+            </h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">3.000.000đ</p>
+              <span class="nhan_giam_gia">-0%</span>
+            </div>
+            <p class="gia_san_pham">3.000.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 6 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_110_Tai_nghe_HyperX_Cloud_Stinger_.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe HyperX Cloud Stinger 3 Black</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.390.000đ</p>
+              <span class="nhan_giam_gia">-7%</span>
+            </div>
+            <p class="gia_san_pham">1.292.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 10 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_121_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Akko Verge S9 Ultra White
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >over-ear (chụp tai)</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >PC, PS, Nitendo</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Trắng</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-19%</span>
+            </div>
+            <p class="gia_san_pham">1.287.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 11 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_122_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Akko Verge S9 Ultra Black Red
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >over-ear (chụp tai)</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >PC, PS, Nitendo</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen&Đỏ</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-19%</span>
+            </div>
+            <p class="gia_san_pham">1.287.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 12 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_123_Tai_nghe_gaming_kh_ng_d_y_Akko.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe gaming không dây Akko Verge S9 Ultra Black
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_123_2_270_g.svg" alt="" /><span
+                    >270 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.590.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">1.351.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 13 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_124_Tai_nghe_ASUS_ROG_Kithara_Gami.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe ASUS ROG Kithara Gaming</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >420 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">8.990.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">7.642.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 14 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_125_Tai_nghe_Razer_BlackShark_V3_P.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe Razer BlackShark V3 Pro - NiKo Edition
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_1_C__d_y.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >387 g</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">8.790.000đ</p>
+              <span class="nhan_giam_gia">-15%</span>
+            </div>
+            <p class="gia_san_pham">7.472.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 15 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_127_Tai_nghe_kh_ng_d_y_AKKO_GH300_.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Tai nghe không dây AKKO GH300 Black</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Over-ear</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Đen</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.190.000đ</p>
+              <span class="nhan_giam_gia">-25%</span>
+            </div>
+            <p class="gia_san_pham">893.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+          <!-- SP 16 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_128_Tai_nghe_kh_ng_d_y_Logitech_G3.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Tai nghe không dây Logitech G325 LIGHTSPEED White
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_113_2_In_ear.svg" alt="" /><span
+                    >Tai nghe Gaming</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >212 g</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_121_3_270_g.svg" alt="" /><span
+                    >Màu Trắng</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.790.000đ</p>
+              <span class="nhan_giam_gia">-14%</span>
+            </div>
+            <p class="gia_san_pham">2.399.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- PHỤ KIỆN -->
+      <section class="san_pham" id="kieu_phu_kien" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">Phụ kiện Tai nghe</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 7 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_112_Ph__ki_n_h_p___ng_tai_nghe_Usa.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Phụ kiện hộp đựng tai nghe Usams</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">99.000đ</p>
+              <span class="nhan_giam_gia">-0%</span>
+            </div>
+            <p class="gia_san_pham">99.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Giỏ hàng Sidebar -->
+    <div
+      class="lop_phu_gio_hang"
+      id="lop_phu_gio_hang_id"
+      onclick="dongGioHang()"
+    ></div>
+    <div class="thanh_ben_gio_hang" id="thanh_ben_gio_hang_id">
+      <div class="dau_gio_hang">
+        <h3>🛒 Giỏ hàng của bạn</h3>
+        <button class="nut_dong_gio_hang" onclick="dongGioHang()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div
+        class="cac_mon_hang"
+        style="padding: 20px; color: gray; text-align: center"
+      >
+        Giỏ hàng trống.
+      </div>
+    </div>
+    <footer class="phan_cuoi">
+      <div class="khung-chua noi_dung_footer">
+        <div class="cot_footer">
+          <h3>TERRAX STORE</h3>
+          <p>
+            Hệ thống cung cấp PC Gaming, Laptop và linh kiện công nghệ cao cấp,
+            mang lại trải nghiệm tối ưu cho game thủ và nhà sáng tạo.
+          </p>
+          <div class="mang_xa_hoi">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              >◎</a
+            >
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noopener"
+              title="Zalo"
+              >Z</a
+            >
+          </div>
+        </div>
+        <div class="cot_footer">
+          <h4>Danh mục sản phẩm</h4>
+          <ul>
+            <li><a href="pc.html">PC Gaming & Workstation</a></li>
+            <li><a href="laptop.html">Laptop Chính Hãng</a></li>
+            <li><a href="ban-phim.html">Bàn Phím Cơ</a></li>
+            <li><a href="chuot.html">Chuột Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="cot_footer">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="lien_he.html">Giới thiệu thành viên</a></li>
+            <li><a href="#lien-he">Kết nối liên hệ</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="cot_footer">
+          <h4>Hỗ trợ & Liên hệ</h4>
+          <p><strong>Đơn vị:</strong> Đại Học Công Nghệ Đông Á</p>
+          <p><strong>Hotline:</strong> 038.953.9590 - 038.866.1893</p>
+          <p><strong>Email:</strong> support@terrax.vn</p>
+        </div>
+      </div>
+
+      <div class="ban_quyen">
+        <div class="khung-chua">
+          <p>
+            &copy; 2026 TERRAX Technology Store. All rights reserved. Phát triển
+            bởi Nguyễn Bá Trung & Phùng Tuấn Thăng.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="java.js"></script>
+    <!-- CHATBOT HỖ TRỢ -->
+    <button class="nut_bat_chatbot" onclick="batTatChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="khung_chatbot" id="khung_chatbot_id">
+      <div class="dau_chatbot">
+        <h3><i class="fas fa-robot"></i> Trợ lý ảo TERRAX</h3>
+        <button class="nut_dong_chat" onclick="batTatChatbot()">&times;</button>
+      </div>
+      <div class="than_chatbot" id="than_chatbot_id">
+        <div class="tin_nhan_chat may">
+          Xin chào! Tôi là trợ lý ảo của TERRAX. Bạn cần tư vấn mua Laptop, PC,
+          hay hỏi về chính sách bảo hành?
+        </div>
+      </div>
+      <div class="cuoi_chatbot">
+        <input
+          type="text"
+          id="o_nhap_chat_id"
+          placeholder="Nhập câu hỏi..."
+          onkeypress="kiemTraEnter(event)"
+        />
+        <button onclick="guiTinNhan()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

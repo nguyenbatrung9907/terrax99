@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222222;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.khung-chua {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.dau-trang {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #c8102e;
+  border-bottom: 1px solid #a50d25;
+  box-shadow: 0 4px 15px rgba(200, 16, 46, 0.25);
+}
+
+.noi-dung-dau-trang {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bieu-tuong {
+  display: block;
+  width: 205px;
+  flex-shrink: 0;
+}
+
+.bieu-tuong img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 5px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+.thanh-dieu-huong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+  flex-grow: 1;
+}
+
+.thanh-dieu-huong a {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 29px 0;
+  position: relative;
+  transition: 0.3s;
+  white-space: nowrap;
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.thanh-dieu-huong a:hover,
+.thanh-dieu-huong a.dang-chon {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.thanh-dieu-huong a.dang-chon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 19px;
+  height: 3px;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.khoang-trong-can-bang {
+  width: 205px;
+  flex-shrink: 0;
+}
+
+.gioi-thieu {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 70px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 65%, #fff3f5 100%);
+}
+
+.tieu-de-gioi-thieu {
+  text-align: center;
+  margin-bottom: 45px;
+}
+.tieu-de-gioi-thieu h1 {
+  font-size: 50px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.tieu-de-gioi-thieu h1 span,
+.tieu-de-lien-he h2 span {
+  color: #c8102e;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tieu-de-gioi-thieu p {
+  color: #6d737c;
+  font-size: 17px;
+}
+
+.danh-sach-thanh-vien {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.the-thanh-vien {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 25px;
+  align-items: center;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+}
+
+.the-thanh-vien:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.1);
+}
+
+.the-thanh-vien img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f2f2f2;
+}
+
+.the-thanh-vien h2 {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+.logo_chinh img {
+  height: 60px;
+  width: auto;
+  max-width: 300px;
+  object-fit: contain;
+  display: block;
+}
+.vai-tro {
+  color: #c8102e;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.mo-ta {
+  color: #000000;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.danh-sach-the {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.danh-sach-the span {
+  background: #fff4f5;
+  color: #a50d25;
+  border: 1px solid #f0d4d8;
+  padding: 5px 10px;
+  border-radius: 30px;
+  font-size: 12px;
+}
+.gia-tri-cot-loi {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.the-gia-tri {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 13px;
+  padding: 20px;
+}
+
+.bieu-tuong-gia-tri {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff4f5;
+  color: #c8102e;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.the-gia-tri h3 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.the-gia-tri p {
+  color: #70757d;
+  font-size: 13px;
+}
+
+.su-manh {
+  margin-top: 30px;
+  background: #c8102e;
+  color: white;
+  border-radius: 16px;
+  padding: 32px 25px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+
+.lien-he {
+  padding: 85px 0;
+  background: #111827; 
+  color: #ffffff;
+}
+
+.noi-dung-lien-he {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: start;
+}
+.tieu-de-lien-he h2 {
+  font-size: 38px;
+  line-height: 1.2;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.tieu-de-lien-he h2 span {
+  color: #ef4444;
+}
+
+.tieu-de-lien-he p {
+  color: #d1d5db; 
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 430px;
+}
+
+.danh-sach-lien-he {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.the-lien-he {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #1f2937; 
+  border: 1px solid #374151; 
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: all 0.3s ease;
+}
+
+.the-lien-he:hover {
+  border-color: #ef4444;
+  background: #253346;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.25); 
+
+.bieu-tuong-lien-he {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #ef4444,
+    #c8102e
+  ); 
+  color: #ffffff; 
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.the-lien-he strong {
+  display: block;
+  font-size: 15px;
+  color: #ffffff; /* Tiêu đề thẻ trắng tinh */
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.the-lien-he small {
+  display: block;
+  color: #9ca3af; /* Chữ phụ xám bạc dễ đọc */
+  font-size: 13px;
+}
+
+/* Responsive cho thiết bị di động */
+@media (max-width: 950px) {
+  .noi-dung-lien-he {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .danh-sach-lien-he {
+    grid-template-columns: 1fr;
+  }
+
+  .tieu-de-lien-he h2 {
+    font-size: 30px;
+  }
+}

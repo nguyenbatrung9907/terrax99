@@ -1,0 +1,1620 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TerraX - Technology Store</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/svg_logo.svg" type="image/png" />
+    <style>
+      /* Can deu cac the PC va giu cac nut mua hang thang hang */
+      .luoi_san_pham {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        align-items: stretch !important;
+        grid-auto-rows: 1fr;
+      }
+      .luoi_san_pham > .the_san_pham {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+        min-height: 360px;
+        box-sizing: border-box;
+      }
+      .luoi_san_pham > .the_san_pham .nut_bam {
+        margin-top: auto !important;
+        flex-shrink: 0;
+      }
+      @media (max-width: 1024px) {
+        .luoi_san_pham {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      @media (max-width: 768px) {
+        .luoi_san_pham {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--      HEADER      -->
+    <div class="dau_trang_co_dinh">
+      <header class="phan_dau_chinh">
+        <div class="khung_chua khung_phan_dau">
+          <a href="index.html" class="logo_chinh">
+            <img src="Images/logo.png" alt="Logo TERRAX" />
+          </a>
+
+          <div class="hop_tim_kiem_lon">
+            <input
+              type="text"
+              id="o_tim_kiem"
+              placeholder="Tìm kiếm sản phẩm (vd: RTX, Laptop, Bàn phím...)"
+            />
+            <button id="nut_tim_kiem">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div id="ket_qua_tim_kiem"></div>
+          </div>
+
+          <div class="hanh_dong_phai">
+            <div
+              class="muc_hanh_dong"
+              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+            >
+              <i class="far fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+
+            <div class="muc_hanh_dong" onclick="moGioHang()">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Giỏ hàng (<span id="dem_gio_hang">0</span>)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--THANH ĐIỀU HƯỚNG-->
+      <nav class="thanh_dieu_huong">
+        <div class="khung_chua khung_dieu_huong">
+          <div class="muc_menu co_menu_con">
+            <i class="fas fa-bars"></i>
+            <span>DANH MỤC SẢN PHẨM</span>
+            <i class="fas fa-chevron-down icon_mui_ten"></i>
+
+            <div class="noi_dung_menu_con">
+              <a href="pc.html"
+                ><i class="fas fa-desktop"></i> PC Gaming / Workstation</a
+              >
+              <a href="laptop.html"
+                ><i class="fas fa-laptop"></i> Laptop Gaming & Văn Phòng</a
+              >
+              <a href="bo-mach-chu.html"
+                ><i class="fas fa-microchip"></i> Linh Kiện PC</a
+              >
+              <a href="man-hinh.html"
+                ><i class="fas fa-tv"></i> Màn Hình Máy Tính</a
+              >
+              <a href="ban-phim.html"
+                ><i class="fas fa-keyboard"></i> Bàn Phím Cơ</a
+              >
+              <a href="chuot.html"><i class="fas fa-mouse"></i> Chuột Gaming</a>
+              <a href="tai-nghe.html"
+                ><i class="fas fa-headphones"></i> Tai Nghe & Âm Thanh</a
+              >
+            </div>
+          </div>
+
+          <a href="index.html"><i class="fas fa-home"></i> TRANG CHỦ</a>
+          <a href="laptop.html" class="lien_ket_menu"
+            ><i class="fas fa-laptop-code"></i> LAPTOP</a
+          >
+          <a
+            href="pc.html"
+            class="lien_ket_menu dang_chon"
+            class="lien_ket_menu"
+            ><i class="fas fa-gamepad"></i> PC GAMING</a
+          >
+          <a href="#flash_sale" class="lien_ket_menu"
+            ><i class="fas fa-bolt"></i> KHUYẾN MÃI</a
+          >
+          <a
+            href="https://tinhte.vn/?utm_source=chatgpt.com"
+            class="lien_ket_menu"
+            ><i class="fas fa-newspaper"></i> TIN TỨC</a
+          >
+          <a href="lien_he.html"><i class="fas fa-users"></i> Thành viên</a>
+        </div>
+      </nav>
+    </div>
+    <!--       == BANNER       == -->
+    <section class="bang_chuyen_anh">
+      <img src="images/banner-pc.png" alt="Banner PC" />
+    </section>
+
+    <!--       == BỘ LỌC DANH MỤC       == -->
+    <section class="khung_chua" style="margin-top: 30px">
+      <div class="khung_bo_loc_danh_muc">
+        <div class="dong_bo_loc">
+          <span class="nhan_tieu_de"> Loại PC: </span>
+          <div class="danh_sach_tag">
+            <a class="tag_pill dang_chon" href="#pc-gaming">Tất cả PC</a>
+            <a class="tag_pill" href="#pc-gaming">PC Gaming</a>
+            <a class="tag_pill" href="#pc-do-hoa">PC Đồ họa</a>
+            <a class="tag_pill" href="#pc-ai">PC AI</a>
+            <a class="tag_pill" href="#pc-workstation">PC Workstation</a>
+            <a class="tag_pill" href="#pc-van-phong">PC Văn phòng</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--       == PC GAMING       == -->
+    <section
+      class="san_pham khung_chua"
+      id="pc-gaming"
+      style="margin-top: 40px"
+    >
+      <h2 class="tieu_de_phan">PC GAMING</h2>
+
+      <!-- GAMING PHỔ THÔNG -->
+      <h3
+        class="tieu_de_phan"
+        id="gaming-pho-thong"
+        style="font-size: 16px; margin-top: 20px"
+      >
+        GAMING PHỔ THÔNG
+      </h3>
+
+      <div class="luoi_san_pham">
+        <!-- PC 82 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-12400F VGA RX 6500XT"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_82_PC_GVN_Intel_i5_12400F__VGA_RX.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Intel i5-12400F/ VGA RX 6500XT (H610)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_82_1_Intel_Core_i5_12400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-12400F</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_82_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_82_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_82_5_RX_6500XT_4GB.svg"
+                  alt="vga"
+                /><span>RX 6500XT</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">19.320.000đ</p>
+            <span class="nhan_giam_gia">-10%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="17388000">17.388.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span>
+              <span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 89 -->
+        <div class="the_san_pham" id="#flash_sale">
+          <img
+            alt="PC GVN Intel i3-12100F VGA RX 6500XT"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_89_PC_GVN_Intel_i3_12100F__VGA_RX.jpg"
+          />
+          <h3 class="ten_san_pham">PC GVN Intel i3-12100F/ VGA RX 6500XT</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_89_1_Intel_Core_i3_12100F.svg"
+                  alt="CPU"
+                /><span>Intel Core i3-12100F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_82_5_RX_6500XT_4GB.svg"
+                  alt="GPU"
+                /><span>RX 6500XT</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_89_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_89_4_256_GB.svg"
+                  alt="SSD"
+                /><span>256 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">18.320.000đ</p>
+            <span class="nhan_giam_gia">-5%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="17400000">17.400.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+        <!-- PC 87 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-12400F VGA RTX 3060"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_87_PC_GVN_Intel_i5_12400F__VGA_RT.png"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Intel i5-12400F/ VGA RTX 3060 (Main H)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_1_Intel_Core_i5_12400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-12400F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_5_RTX_3060_8GB.svg"
+                  alt="GPU"
+                /><span>RTX 3060 8GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">26.520.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="24660000">24.660.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+        <!-- PC 100 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN AMD R5-5600X VGA RTX 3050"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_100_PC_GVN_AMD_R5_5600X__VGA_RTX_3.jpg"
+          />
+          <h3 class="ten_san_pham">PC GVN AMD R5-5600X/ VGA RTX 3050</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_100_1_Ryzen_5_5600X.svg"
+                  alt="CPU"
+                /><span>Ryzen 5 5600X</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_100_5_RTX_3050.svg"
+                  alt="GPU"
+                /><span>RTX 3050</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_100_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_100_4_256_GB.svg"
+                  alt="SSD"
+                /><span>256 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">21.530.000đ</p>
+            <span class="nhan_giam_gia">-9%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="19590000">19.590.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+
+      <!-- GAMING TẦM TRUNG -->
+      <h3
+        class="tieu_de_phan"
+        id="gaming-tam-trung"
+        style="font-size: 16px; margin-top: 30px"
+      >
+        GAMING TẦM TRUNG
+      </h3>
+      <div class="luoi_san_pham">
+        <!-- PC 81 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-12400F VGA RTX 3050"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_81_PC_GVN_Intel_i5_12400F__VGA_RT.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Intel i5-12400F/ VGA RTX 3050 (Main H)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_81_1_Intel_Core_i5_12400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-12400F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_81_5_RTX_3050_6GB.svg"
+                  alt="GPU"
+                /><span>RTX 3050 6GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_81_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_81_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">20.620.000đ</p>
+            <span class="nhan_giam_gia">-9%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="18760000">18.760.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 86 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-12400F VGA RTX 5060"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_86_PC_GVN_Intel_i5_12400F__VGA_RT.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Intel i5-12400F/ VGA RTX 5060 (Main H)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_86_1_Intel_Core_i5_12400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-12400F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_86_5_RTX_5060_8GB.svg"
+                  alt="GPU"
+                /><span>RTX 5060 8GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_86_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_86_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">28.520.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="26520000">26.520.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 87 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-12400F VGA RTX 3060"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_87_PC_GVN_Intel_i5_12400F__VGA_RT.png"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Intel i5-12400F/ VGA RTX 3060 (Main H)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_1_Intel_Core_i5_12400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-12400F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_5_RTX_3060_8GB.svg"
+                  alt="GPU"
+                /><span>RTX 3060 8GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_87_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">26.520.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="24660000">24.660.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 91 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-12400F Intel Arc B580"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_91_PC_GVN_Intel_i5_12400F_VGA_ARC.jpg"
+          />
+          <h3 class="ten_san_pham">PC GVN Intel i5-12400F/VGA ARC B580</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_91_1_Intel_Core_i5_12400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-12400F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_91_5_Intel_Arc_B580_12GB.svg"
+                  alt="GPU"
+                /><span>Intel Arc B580 12GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_91_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_91_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">25.620.000đ</p>
+            <span class="nhan_giam_gia">-8%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="23570000">23.570.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+
+      <!-- GAMING CAO CẤP -->
+      <h3
+        class="tieu_de_phan"
+        id="gaming-cao-cap"
+        style="font-size: 16px; margin-top: 30px"
+      >
+        GAMING CAO CẤP
+      </h3>
+      <div class="luoi_san_pham">
+        <!-- PC 95 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN AMD Ryzen 7 7800X3D VGA RTX 5060"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_95_PC_GVN_AMD_Ryzen_7_7800X3D___V.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN AMD Ryzen 7 7800X3D / VGA RTX 5060
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_95_1_Ryzen7_7800X3D.svg"
+                  alt="CPU"
+                /><span>Ryzen 7 7800X3D</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_95_2_B650M_WIFI_DDR5_.svg"
+                  alt="GPU"
+                /><span>RTX 5060</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_95_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_95_4_1024_GB.svg"
+                  alt="SSD"
+                /><span>1024 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">46.420.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="45490000">45.490.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 85 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN AMD Ryzen 7 7800X3D VGA RTX 5080"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_85_PC_GVN_AMD_Ryzen_7_7800X3D___V.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN AMD Ryzen 7 7800X3D / VGA RTX 5080
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_1_Intel_Core_I7_14700F.svg"
+                  alt="CPU"
+                /><span>Ryzen 7 7800X3D</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_85_5_RTX_5080.svg"
+                  alt="GPU"
+                /><span>RTX 5080</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_4_1024_GB.svg"
+                  alt="SSD"
+                /><span>1024 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">86.310.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="84990000">84.990.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 92 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN ASUS Blackwell RTX 5090"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_92_PC_GVN_x_ASUS_Blackwell__Intel.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN x ASUS Blackwell (Ultra 9 285K/ RTX 5090)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_92_1_Core_Ultra_9_285K.svg"
+                  alt="CPU"
+                /><span>Core Ultra 9 285K</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_92_5_RTX_5090.svg"
+                  alt="GPU"
+                /><span>RTX 5090</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_92_3_64_GB.svg"
+                  alt="RAM"
+                /><span>64 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_92_4_1024_GB.svg"
+                  alt="SSD"
+                /><span>1024 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">347.120.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="340180000">340.180.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 93 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN ASUS Extreme RTX 5090"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_93_PC_GVN_x_ASUS_Extreme__AMD_Ryz.png"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN x ASUS Extreme (Ryzen 9 9950X3D/ RTX 5090)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_93_1_AMD_Ryzen_9_9950X3D.svg"
+                  alt="CPU"
+                /><span>Ryzen 9 9950X3D</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_93_5_RTX_5090_32GB.svg"
+                  alt="GPU"
+                /><span>RTX 5090 32GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_93_3_64_GB.svg"
+                  alt="RAM"
+                /><span>64 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_93_4_1024_GB.svg"
+                  alt="SSD"
+                /><span>1024 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">363.120.000đ</p>
+            <span class="nhan_giam_gia">-2%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="355860000">355.860.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--       == PC ĐỒ HỌA       == -->
+    <section
+      class="san_pham khung_chua"
+      id="pc-do-hoa"
+      style="margin-top: 50px"
+    >
+      <h2 class="tieu_de_phan">PC ĐỒ HỌA</h2>
+      <div class="luoi_san_pham">
+        <!-- PC 94 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i5-14400F RTX 5060 Ti"
+            class="anh_san_pham"
+            src="https://cdn.hstatic.net/products/200000722513/post-09_e8df47265f224c688e4d36731243d016.jpg"
+          />
+          <h3 class="ten_san_pham">PC GVN Intel i5-12400F/ VGA RTX 5060 Ti</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_94_1_Intel_Core_i5_14400F.svg"
+                  alt="CPU"
+                /><span>Intel Core i5-14400F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_94_5_RTX_5060Ti_8GB.svg"
+                  alt="GPU"
+                /><span>RTX 5060Ti 8GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_94_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_94_4_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">36.620.000đ</p>
+            <span class="nhan_giam_gia">-5%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="34790000">34.790.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- PC 84 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Intel i7-14700F RTX 5070 Ti"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_84_PC_GVN_Intel_i7_14700F__VGA_RT.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Intel i7-14700F/ VGA RTX 5070Ti (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_1_Intel_Core_i7_14700F.svg"
+                  alt="CPU"
+                /><span>Intel Core i7-14700F</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_5_RTX_5070_Ti.svg"
+                  alt="GPU"
+                /><span>RTX 5070 Ti</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_3_16_GB.svg"
+                  alt="RAM"
+                /><span>16 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_84_4_1024_GB.svg"
+                  alt="SSD"
+                /><span>1024 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">74.020.000đ</p>
+            <span class="nhan_giam_gia">-1%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="72990000">72.990.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--       == PC AI       == -->
+    <section class="san_pham khung_chua" id="pc-ai" style="margin-top: 50px">
+      <h2 class="tieu_de_phan">PC AI</h2>
+      <div class="luoi_san_pham">
+        <!-- PC 99 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN AI XTREME"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_99_PC_GVN_AI_XTREME_3xPRO_6000_MA.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN AI XTREME 3xPRO 6000 MAX-Q 288GB / TR PRO
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_1_WRX90_workstation.svg"
+                  alt="CPU"
+                /><span>Đang cập nhật</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_2_512_GB.svg"
+                  alt="GPU"
+                /><span>Đang cập nhật</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_2_512_GB.svg"
+                  alt="RAM"
+                /><span>512 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_3_4096_GB.svg"
+                  alt="SSD"
+                /><span>4096 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham"></p>
+            <span class="nhan_giam_gia">PC AI</span>
+          </div>
+          <p class="gia_san_pham" data-gia="0">Liên hệ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--  PC WORKSTATION -->
+    <section
+      class="san_pham khung_chua"
+      id="pc-workstation"
+      style="margin-top: 50px"
+    >
+      <h2 class="tieu_de_phan">PC WORKSTATION</h2>
+      <div class="luoi_san_pham">
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN AI XTREME Workstation"
+            class="anh_san_pham"
+            src="https://cdn.hstatic.net/products/200000722513/cooler_master_haf_700_evo__h700e-ignn-s00__94921a5eb9784d4cb7fc6bef075c4dd8.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN Workstation 3xPRO 6000 MAX-Q 288GB
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_88_1_Core_i5_11600__.svg"
+                  alt="CPU"
+                /><span>Đang cập nhật</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_1_WRX90_workstation.svg"
+                  alt="GPU"
+                /><span>Workstation</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_2_512_GB.svg"
+                  alt="RAM"
+                /><span>512 GB</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_99_3_4096_GB.svg"
+                  alt="SSD"
+                /><span>4096 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham"></p>
+            <span class="nhan_giam_gia">WORKSTATION</span>
+          </div>
+          <p class="gia_san_pham" data-gia="0">Liên hệ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PC VĂN PHÒNG -->
+    <section
+      class="san_pham khung_chua"
+      id="pc-van-phong"
+      style="margin-top: 50px"
+    >
+      <h2 class="tieu_de_phan">PC VĂN PHÒNG</h2>
+      <div class="luoi_san_pham">
+        <!-- PC 88 -->
+        <div class="the_san_pham">
+          <img
+            alt="PC GVN Acer Altos P130F7"
+            class="anh_san_pham"
+            src="Images_san_pham/SP_88_PC_GVN_x_Acer___M_y_b__Altos_P.jpg"
+          />
+          <h3 class="ten_san_pham">
+            PC GVN x Acer - Máy bộ Altos P130F7 (I5/RAM 8GB/SSD 512GB)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_88_1_Core_i5_11600__.svg"
+                  alt="CPU"
+                /><span>Core i5</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_88_2_8_GB.svg"
+                  alt="RAM"
+                /><span>8 GB</span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img
+                  class="spec_icon"
+                  src="Tat_Ca_Icon_SVG/SP_88_3_512_GB.svg"
+                  alt="SSD"
+                /><span>512 GB</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">15.490.000đ</p>
+            <span class="nhan_giam_gia">-3%</span>
+          </div>
+          <p class="gia_san_pham" data-gia="14990000">14.990.000đ</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">Mua kèm giá ưu đãi:</span
+              ><span class="km_gia">Xem ưu đãi</span>
+            </div>
+            <span class="km_so_luong">+1</span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"></i><b>Ưu đãi đi kèm</b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"></i>
+                <div>
+                  <span class="km_nhan">Ưu đãi theo phạm vi</span>
+                  <div class="km_text">
+                    [PC] Giảm 1% tối đa 500k cho HSSV khi mua PC
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--  GIỎ HÀNG SIDEBAR-->
+    <div
+      class="lop_phu_gio_hang"
+      id="lop_phu_gio_hang_id"
+      onclick="dongGioHang()"
+    ></div>
+    <div class="thanh_ben_gio_hang" id="thanh_ben_gio_hang_id">
+      <div class="dau_gio_hang">
+        <h3>Giỏ hàng của bạn</h3>
+        <button class="nut_dong_gio_hang" onclick="dongGioHang()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div
+        class="cac_mon_hang"
+        id="danh_sach_gio_hang"
+        style="padding: 20px; color: gray; text-align: center"
+      >
+        Giỏ hàng trống.
+      </div>
+      <div class="chan_gio_hang">
+        <div class="tong_tien_thanh_toan">
+          <span>Tổng thanh toán:</span>
+          <span id="tong_tien_thanh_toan_id">0đ</span>
+        </div>
+        <button class="nut_bam nut_day" onclick="thanhToanDonHang()">
+          TIẾN HÀNH THANH TOÁN
+        </button>
+      </div>
+    </div>
+
+    <footer class="phan_cuoi">
+      <div class="khung-chua noi_dung_footer">
+        <div class="cot_footer">
+          <h3>TERRAX STORE</h3>
+          <p>
+            Hệ thống cung cấp PC Gaming, Laptop và linh kiện công nghệ cao cấp,
+            mang lại trải nghiệm tối ưu cho game thủ và nhà sáng tạo.
+          </p>
+          <div class="mang_xa_hoi">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              >◎</a
+            >
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noopener"
+              title="Zalo"
+              >Z</a
+            >
+          </div>
+        </div>
+        <div class="cot_footer">
+          <h4>Danh mục sản phẩm</h4>
+          <ul>
+            <li><a href="pc.html">PC Gaming & Workstation</a></li>
+            <li><a href="laptop.html">Laptop Chính Hãng</a></li>
+            <li><a href="ban-phim.html">Bàn Phím Cơ</a></li>
+            <li><a href="chuot.html">Chuột Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="cot_footer">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="lien_he.html">Giới thiệu thành viên</a></li>
+            <li><a href="#lien-he">Kết nối liên hệ</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="cot_footer">
+          <h4>Hỗ trợ & Liên hệ</h4>
+          <p><strong>Đơn vị:</strong> Đại Học Công Nghệ Đông Á</p>
+          <p><strong>Hotline:</strong> 038.953.9590 - 038.866.1893</p>
+          <p><strong>Email:</strong> support@terrax.vn</p>
+        </div>
+      </div>
+
+      <div class="ban_quyen">
+        <div class="khung-chua">
+          <p>
+            &copy; 2026 TERRAX Technology Store. All rights reserved. Phát triển
+            bởi Nguyễn Bá Trung & Phùng Tuấn Thăng.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="java.js"></script>
+    <!-- CHATBOT HỖ TRỢ -->
+    <button class="nut_bat_chatbot" onclick="batTatChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="khung_chatbot" id="khung_chatbot_id">
+      <div class="dau_chatbot">
+        <h3><i class="fas fa-robot"></i> Trợ lý ảo TERRAX</h3>
+        <button class="nut_dong_chat" onclick="batTatChatbot()">&times;</button>
+      </div>
+      <div class="than_chatbot" id="than_chatbot_id">
+        <div class="tin_nhan_chat may">
+          Xin chào! Tôi là trợ lý ảo của TERRAX. Bạn cần tư vấn mua Laptop, PC,
+          hay hỏi về chính sách bảo hành?
+        </div>
+      </div>
+      <div class="cuoi_chatbot">
+        <input
+          type="text"
+          id="o_nhap_chat_id"
+          placeholder="Nhập câu hỏi..."
+          onkeypress="kiemTraEnter(event)"
+        />
+        <button onclick="guiTinNhan()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

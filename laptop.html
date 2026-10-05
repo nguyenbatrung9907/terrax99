@@ -1,0 +1,1313 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>TerraX - Technology Store</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="images/svg_logo.svg" type="image/png" />
+  </head>
+  <body class="trang_laptop">
+    <!--      HEADER      -->
+    <div class="dau_trang_co_dinh">
+      <header class="phan_dau_chinh">
+        <div class="khung_chua khung_phan_dau">
+          <a href="index.html" class="logo_chinh">
+            <img src="Images/logo.png" alt="Logo TERRAX" />
+          </a>
+
+          <div class="hop_tim_kiem_lon">
+            <input
+              type="text"
+              id="o_tim_kiem"
+              placeholder="Tìm kiếm sản phẩm (vd: RTX, Laptop, Bàn phím...)"
+            />
+            <button id="nut_tim_kiem">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div id="ket_qua_tim_kiem"></div>
+          </div>
+
+          <div class="hanh_dong_phai">
+            <div
+              class="muc_hanh_dong"
+              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+            >
+              <i class="far fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+
+            <div class="muc_hanh_dong" onclick="moGioHang()">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Giỏ hàng (<span id="dem_gio_hang">0</span>)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--THANH ĐIỀU HƯỚNG-->
+      <nav class="thanh_dieu_huong">
+        <div class="khung_chua khung_dieu_huong">
+          <div class="muc_menu co_menu_con">
+            <i class="fas fa-bars"></i>
+            <span>DANH MỤC SẢN PHẨM</span>
+            <i class="fas fa-chevron-down icon_mui_ten"></i>
+
+            <div class="noi_dung_menu_con">
+              <a href="pc.html"
+                ><i class="fas fa-desktop"></i> PC Gaming / Workstation</a
+              >
+              <a href="laptop.html"
+                ><i class="fas fa-laptop"></i> Laptop Gaming & Văn Phòng</a
+              >
+              <a href="bo-mach-chu.html"
+                ><i class="fas fa-microchip"></i> Linh Kiện PC</a
+              >
+              <a href="man-hinh.html"
+                ><i class="fas fa-tv"></i> Màn Hình Máy Tính</a
+              >
+              <a href="ban-phim.html"
+                ><i class="fas fa-keyboard"></i> Bàn Phím Cơ</a
+              >
+              <a href="chuot.html"><i class="fas fa-mouse"></i> Chuột Gaming</a>
+              <a href="tai-nghe.html"
+                ><i class="fas fa-headphones"></i> Tai Nghe & Âm Thanh</a
+              >
+            </div>
+          </div>
+
+          <a href="index.html"><i class="fas fa-home"></i> TRANG CHỦ</a>
+          <a
+            href="laptop.html"
+            class="lien_ket_menu dang_chon"
+            class="lien_ket_menu"
+            ><i class="fas fa-laptop-code"></i> LAPTOP</a
+          >
+          <a href="pc.html" class="lien_ket_menu"
+            ><i class="fas fa-gamepad"></i> PC GAMING</a
+          >
+          <a href="#flash_sale" class="lien_ket_menu"
+            ><i class="fas fa-bolt"></i> KHUYẾN MÃI</a
+          >
+          <a
+            href="https://tinhte.vn/?utm_source=chatgpt.com"
+            class="lien_ket_menu"
+            ><i class="fas fa-newspaper"></i> TIN TỨC</a
+          >
+          <a href="lien_he.html"><i class="fas fa-users"></i> Thành viên</a>
+        </div>
+      </nav>
+    </div>
+    <!--BANNER LAPTOP -->
+    <section class="bang_chuyen_anh">
+      <img src="images/laptop1.png" alt="Banner Laptop" />
+    </section>
+    <!--BỘ LỌC DANH MỤC LAPTOP -->
+    <section class="khung_chua">
+      <div class="khung_bo_loc_danh_muc">
+        <div class="dong_bo_loc">
+          <span class="nhan_tieu_de"> Ph&acirc;n loại Laptop: </span>
+          <div class="danh_sach_tag">
+            <a class="tag_pill dang_chon" href="#laptop"> Tất cả Laptop </a>
+            <a class="tag_pill" href="#laptop-gaming"> Laptop Gaming (7) </a>
+            <a class="tag_pill" href="#laptop-van-phong">
+              Laptop V&abreve;n ph&ograve;ng / Học tập (6)
+            </a>
+          </div>
+        </div>
+        <div class="dong_bo_loc">
+          <span class="nhan_tieu_de"> Thương hiệu: </span>
+          <div class="danh_sach_tag">
+            <a class="tag_pill" href="#brand-acer"> Acer </a>
+            <a class="tag_pill" href="#brand-asus"> ASUS </a>
+            <a class="tag_pill" href="#brand-lenovo"> Lenovo </a>
+            <a class="tag_pill" href="#brand-gigabyte"> GIGABYTE </a>
+            <a class="tag_pill" href="#brand-dell"> Dell </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--         =
+         LAPTOP GAMING
+            == -->
+    <section class="san_pham khung_chua" id="laptop-gaming">
+      <h2 class="tieu_de_phan">LAPTOP GAMING</h2>
+      <div class="luoi_san_pham">
+        <!-- 1. ACER ASPIRE 7 59RD -->
+        <div
+          class="the_san_pham"
+          data-loai="gaming"
+          data-thuong-hieu="ACER"
+          id="brand-acer"
+        >
+          <img
+            alt='Laptop gaming Acer Aspire 7 A715-59G-59RD (Core 5-210H/ RTX 3050 4GB/ 16GB/ 512GB/ 15.6" FHD/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/aspire-7-a715-59g-non-fingerprint-with-backlit-on-wp-titanium-black-01_07be39d40c6c4c1c8022e1b52959befc.png"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming Acer Aspire 7 A715-59G-59RD (Core 5-210H/ RTX 3050
+            4GB/ 16GB/ 512GB/ 15.6" FHD/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> Core 5 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 3050 </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 16 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">27.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -13% </span>
+          </div>
+          <p class="gia_san_pham">24.490.000&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Giảm gi&aacute; theo chương tr&igrave;nh hiện c&oacute;.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 2. ASUS V16 -->
+        <div
+          class="the_san_pham"
+          data-loai="gaming"
+          data-thuong-hieu="ASUS"
+          id="brand-asus"
+        >
+          <img
+            alt='Laptop gaming ASUS V16 V3607VJ-TK189W (Core 5-210H/ RTX 3050 6GB/ 16GB/ 512GB/ 16" WUXGA 144Hz/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/7vj-tk189w-core-5-210h-rtx-3050-6gb-16gb-512gb-16-wuxga-144hz-win-11-1_36b9dbe6e4634789bff08e7f71105335.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming ASUS V16 V3607VJ-TK189W (Core 5-210H/ RTX 3050 6GB/
+            16GB/ 512GB/ 16" WUXGA 144Hz/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> Core 5 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 3050 </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 16 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">29.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -12% </span>
+          </div>
+          <p class="gia_san_pham">26.391.200&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i: [Laptop]
+                    Giảm 1% tối &dstrok;a 500k cho HSSV khi mua laptop
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 3. LENOVO LOQ 15ARP10E -->
+        <div
+          class="the_san_pham"
+          data-loai="gaming"
+          data-thuong-hieu="LENOVO"
+          id="brand-lenovo"
+        >
+          <img
+            alt='Laptop gaming Lenovo LOQ 15ARP10E 83S0006RVN (Ryzen 7-7735HS/ RTX 3050 6GB/ 16GB/ 1TB/ 15.6" FHD/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/lenovo_loq-15arp10e-83s0006rvn_08769f14b28a41d3928d6886a19ceedf.png"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming Lenovo LOQ 15ARP10E 83S0006RVN (Ryzen 7-7735HS/ RTX
+            3050 6GB/ 16GB/ 1TB/ 15.6" FHD/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> Ryzen 7 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 3050 </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 16 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 1024 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">32.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -6% </span>
+          </div>
+          <p class="gia_san_pham">31.010.600&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i: [Laptop]
+                    Giảm 1% tối &dstrok;a 500k cho HSSV khi mua laptop
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 4. ACER NITRO PROPANEL (GIỮ LẠI 1 BẢN ĐẠI DIỆN) -->
+        <div class="the_san_pham" data-loai="gaming" data-thuong-hieu="ACER">
+          <img
+            alt="Laptop gaming Acer Nitro ProPanel ANV15-52-73Z8 (Core 7-240H/ RTX 4050/ 16GB/ 512GB/ Win 11)"
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/nt-with-backlit-on-wp-black-01_ed85b5c0cb9d4fec9a4b07ed64c89d85_master_34754c0a5c344a4c902c4bb67e4a85b2.png"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming Acer Nitro ProPanel ANV15-52-73Z8 (Core 7-240H/ RTX
+            4050/ 16GB/ 512GB/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> Core 7 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 4050 </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 16 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">37.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -12% </span>
+          </div>
+          <p class="gia_san_pham">33.490.000&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Giảm gi&aacute; theo chương tr&igrave;nh hiện c&oacute;.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 5. LENOVO LOQ 15IRX9 -->
+        <div class="the_san_pham" data-loai="gaming" data-thuong-hieu="LENOVO">
+          <img
+            alt='Laptop gaming Lenovo LOQ 15IRX9 83DV01ALVN (I7-13650HX/ RTX 4050 6GB/ 16GB/ 512GB/ 15.6" FHD/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/loq_15irx9_ct1_03_a7423803083747b9847a13420e5106df.png"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming Lenovo LOQ 15IRX9 83DV01ALVN (I7-13650HX/ RTX 4050
+            6GB/ 16GB/ 512GB/ 15.6" FHD/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> i7 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 4050 </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 16 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">45.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -4% </span>
+          </div>
+          <p class="gia_san_pham">44.150.400&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i: [Laptop]
+                    Giảm 1% tối &dstrok;a 500k cho HSSV khi mua laptop
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 6. GIGABYTE AORUS MASTER 16 -->
+        <div
+          class="the_san_pham"
+          data-loai="gaming"
+          data-thuong-hieu="GIGABYTE"
+          id="brand-gigabyte"
+        >
+          <img
+            alt='Laptop gaming GIGABYTE AORUS Master 16 6XJM4VNE64SH (Ryzen 9 9955HX3D/ RTX 5070 Ti 12GB/ 32GB/ 1TB/ 16" QHD+ OLED 240Hz/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/-ryzen-9-9955hx3d-rtx-5070-ti-12gb-32gb-1tb-16-qhd-oled-240hz-win-11-2_9b49da576ce9401a9467680cdabd943f.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming GIGABYTE AORUS Master 16 6XJM4VNE64SH (Ryzen 9
+            9955HX3D/ RTX 5070 Ti 12GB/ 32GB/ 1TB/ 16" QHD+ OLED 240Hz/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> Ryzen 9 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 5070 Ti </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 32 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 1024 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham"></p>
+            <span class="nhan_giam_gia"> </span>
+          </div>
+          <p class="gia_san_pham">86.990.000&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Giảm gi&aacute; theo chương tr&igrave;nh hiện c&oacute;.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 7. ASUS ROG STRIX G16 -->
+        <div class="the_san_pham" data-loai="gaming" data-thuong-hieu="ASUS">
+          <img
+            alt='Laptop gaming ASUS ROG Strix G16 G614PM-TS147W (Ryzen 9-8940HX/ RTX 5060 8GB/ 16GB/ 512GB/ 16" WQXGA 300Hz/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/laptop-gaming-asus-rog-strix-g16-g614pm-ts147w-1_d5fc323b82f848eb94bc3ea2da1524d4.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop gaming ASUS ROG Strix G16 G614PM-TS147W (Ryzen 9-8940HX/ RTX
+            5060 8GB/ 16GB/ 512GB/ 16" WQXGA 300Hz/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_1_Core_5.svg" alt=""
+                /></span>
+                <span> Ryzen 9 </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_4_RTX_3050.svg" alt=""
+                /></span>
+                <span> RTX 5060 </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_2_16_GB.svg" alt=""
+                /></span>
+                <span> 16 GB </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">59.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -9% </span>
+          </div>
+          <p class="gia_san_pham">54.590.900&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i: [Laptop]
+                    Giảm 1% tối &dstrok;a 500k cho HSSV khi mua laptop
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--         =
+         LAPTOP VĂN PHÒNG / HỌC TẬP
+            == -->
+    <section class="san_pham khung_chua" id="laptop-van-phong">
+      <h2 class="tieu_de_phan">LAPTOP V&Abreve;N PH&Ograve;NG / HỌC TẬP</h2>
+      <div class="luoi_san_pham">
+        <!-- 1. ACER ASPIRE LITE 14 -->
+        <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ACER">
+          <img
+            alt='Laptop Acer Aspire Lite 14 AL14-53M-53E8 (Core 5-120U/ 16GB/ 512GB/ 14" FHD+ IPS/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/acer-aspire-lite-14-al14-53m-53e8-core-5-120u-8gb-512gb-14-0-fhd-ips-1_acdaef2a122444c98f37b6c3108fdcc8.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop Acer Aspire Lite 14 AL14-53M-53E8 (Core 5-120U/ 16GB/ 512GB/
+            14" FHD+ IPS/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img
+                    src="Tat_Ca_Icon_SVG/SP_2_1_Intel_UHD_Graphics.svg"
+                    alt=""
+                /></span>
+                <span> Intel UHD Graphics </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_2_14_inch.svg" alt=""
+                /></span>
+                <span> 14 inch </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_3_Core_5.svg" alt=""
+                /></span>
+                <span> Core 5 </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">23.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -5% </span>
+          </div>
+          <p class="gia_san_pham">22.890.000&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Giảm gi&aacute; theo chương tr&igrave;nh hiện c&oacute;.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 2. ACER SWIFT AIR 14 -->
+        <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ACER">
+          <img
+            alt='Laptop Acer Swift Air 14 SFA14-I31-52BV (Core 5-320/ 12GB/ 512GB/ 14" FHD+ IPS 120Hz/ Green/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/fa14-i31-non-fingerprint-with-backlit-on-wp-strat-screen-sage-green-01_b15c59a3f11848e79e050110728e2fc0.png"
+          />
+          <h3 class="ten_san_pham">
+            Laptop Acer Swift Air 14 SFA14-I31-52BV (Core 5-320/ 12GB/ 512GB/
+            14" FHD+ IPS 120Hz/ Green/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img
+                    src="Tat_Ca_Icon_SVG/SP_2_1_Intel_UHD_Graphics.svg"
+                    alt=""
+                /></span>
+                <span> Intel UHD Graphics </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon">
+                  <img src="Tat_Ca_Icon_SVG/SP_2_2_14_inch.svg" alt=""
+                /></span>
+                <span> 14 inch </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_3_Core_5.svg" alt=""
+                /></span>
+                <span> Core 5 </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">24.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -6% </span>
+          </div>
+          <p class="gia_san_pham">23.490.000&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Giảm gi&aacute; theo chương tr&igrave;nh hiện c&oacute;.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 3. ASUS EXPERTBOOK P1403CVA -->
+        <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ASUS">
+          <img
+            alt='Laptop Asus ExpertBook P1403CVA-C5H16-50W (Core 5-210H/ 16GB/ 512GB/ 14" FHD/ Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/laptop-asus-expertbook-p1403cva-c5h16-50w-1_7b1ab501dd6b44bc822f0fcfc8d15315.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop Asus ExpertBook P1403CVA-C5H16-50W (Core 5-210H/ 16GB/ 512GB/
+            14" FHD/ Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img
+                    src="Tat_Ca_Icon_SVG/SP_2_1_Intel_UHD_Graphics.svg"
+                    alt=""
+                /></span>
+                <span> Intel&reg; UHD Graphics </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_2_14_inch.svg" alt=""
+                /></span>
+                <span> 14 inch </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_3_Core_5.svg" alt="" />
+                </span>
+                <span> Core 5 </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">27.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -16% </span>
+          </div>
+          <p class="gia_san_pham">23.511.600&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+                    1.890.000&dstrok;
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 4. ACER SWIFT GO AI OLED -->
+        <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ACER">
+          <img
+            alt='Laptop Acer Swift Go AI OLED SFG14-75-765M (Ultra 7-258V/ 32GB/ 512GB/ 14" FHD+ OLED/ Win11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/er-swift-go-ai-oled-sfg14-75-765m-14-fhd-oled-u7-258v-32lp-512gb-win-1_274743531c7c4e4fbdfbff89cada24fb.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop Acer Swift Go AI OLED SFG14-75-765M (Ultra 7-258V/ 32GB/
+            512GB/ 14" FHD+ OLED/ Win11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img
+                    src="Tat_Ca_Icon_SVG/SP_2_1_Intel_UHD_Graphics.svg"
+                    alt=""
+                /></span>
+                <span> Intel UHD Graphics </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_2_14_inch.svg" alt=""
+                /></span>
+                <span> 14 inch </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_3_Core_5.svg" alt=""
+                /></span>
+                <span> Ultra 7 </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">40.990.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -2% </span>
+          </div>
+          <p class="gia_san_pham">39.990.000&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Giảm gi&aacute; theo chương tr&igrave;nh hiện c&oacute;.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 5. ASUS EXPERTBOOK P3 -->
+        <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ASUS">
+          <img
+            alt='Laptop Asus ExpertBook P3 P3406CCAP-U516W (Ultra 5-225H/ 16GB/ 512GB/ 14" WUXGA / Win 11)'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/ccap-u516w-14-ips-60hz-intel-core-ultra-5-225h-16gb-512gb-windows-11-3_5d2cdb0ea3a04f918aef100836ab608c.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop Asus ExpertBook P3 P3406CCAP-U516W (Ultra 5-225H/ 16GB/
+            512GB/ 14" WUXGA / Win 11)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img
+                    src="Tat_Ca_Icon_SVG/SP_2_1_Intel_UHD_Graphics.svg"
+                    alt=""
+                /></span>
+                <span> Intel UHD Graphics </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_2_14_inch.svg" alt=""
+                /></span>
+                <span> 14 inch </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_3_Core_5.svg" alt=""
+                /></span>
+                <span> Core Ultra 5 </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">30.490.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -13% </span>
+          </div>
+          <p class="gia_san_pham">26.526.300&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+                    1.890.000&dstrok;
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+
+        <!-- 6. DELL 15 PRO ESSENTIAL -->
+        <div
+          class="the_san_pham"
+          data-loai="van-phong"
+          data-thuong-hieu="DELL"
+          id="brand-dell"
+        >
+          <img
+            alt='Laptop Dell 15 Pro Essential PV15250 VKVKD (I5-1334U/ 8GB/ 512GB/ 15.6" FHD/DOS) - Nhập Khẩu Ch&iacute;nh H&atilde;ng'
+            class="anh_san_pham"
+            loading="lazy"
+            src="https://cdn.hstatic.net/products/200000722513/ptop-dell-15-pro-essential-pv15250-vkvkd-i5-1334u-8gb-512gb-15-6-fhd-1_06d4ebbe867f4c428cdf4ad98367d7ae.jpg"
+          />
+          <h3 class="ten_san_pham">
+            Laptop Dell 15 Pro Essential PV15250 VKVKD (I5-1334U/ 8GB/ 512GB/
+            15.6" FHD/DOS) - Nhập Khẩu Ch&iacute;nh H&atilde;ng
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img
+                    src="Tat_Ca_Icon_SVG/SP_2_1_Intel_UHD_Graphics.svg"
+                    alt=""
+                /></span>
+                <span> Intel UHD Graphics </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_1_3_512_GB.svg" alt=""
+                /></span>
+                <span> 512 GB </span>
+              </div>
+            </div>
+            <div class="spec-row">
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_2_14_inch.svg" alt=""
+                /></span>
+                <span> 15.6 inch </span>
+              </div>
+              <div class="spec-chip">
+                <span class="spec_icon"
+                  ><img src="Tat_Ca_Icon_SVG/SP_2_3_Core_5.svg" alt=""
+                /></span>
+                <span> i5 </span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">17.490.000&dstrok;</p>
+            <span class="nhan_giam_gia"> -9% </span>
+          </div>
+          <p class="gia_san_pham">15.915.900&dstrok;</p>
+          <div class="khuyen_mai">
+            <div class="km_noi_dung">
+              <span class="km_tieu_de">
+                Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+              </span>
+              <span class="km_gia"> Xem ưu &dstrok;&atilde;i </span>
+            </div>
+            <span class="km_so_luong"> +1 </span>
+            <div class="hop_km">
+              <div class="hop_km_tieu_de">
+                <i class="far fa-square"> </i>
+                <b> Ưu &dstrok;&atilde;i &dstrok;i k&egrave;m </b>
+              </div>
+              <div class="hop_km_noi_dung">
+                <i class="fas fa-tag"> </i>
+                <div>
+                  <span class="km_nhan"> Ưu &dstrok;&atilde;i </span>
+                  <div class="km_text">
+                    Mua k&egrave;m gi&aacute; ưu &dstrok;&atilde;i:
+                    1.890.000&dstrok;
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nut_bam nut_day" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"> </i>
+            TH&Ecirc;M V&Agrave;O GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!--GIỎ HÀNG-->
+    <div
+      class="lop_phu_gio_hang"
+      id="lop_phu_gio_hang_id"
+      onclick="dongGioHang()"
+    ></div>
+    <div class="thanh_ben_gio_hang" id="thanh_ben_gio_hang_id">
+      <div class="dau_gio_hang">
+        <h3>Giỏ h&agrave;ng của bạn</h3>
+        <button class="nut_dong_gio_hang" onclick="dongGioHang()">
+          <i class="fas fa-times"> </i>
+        </button>
+      </div>
+      <div
+        class="cac_mon_hang"
+        style="padding: 20px; color: gray; text-align: center"
+      >
+        Giỏ h&agrave;ng trống.
+      </div>
+    </div>
+    <footer class="phan_cuoi">
+      <div class="khung-chua noi_dung_footer">
+        <div class="cot_footer">
+          <h3>TERRAX STORE</h3>
+          <p>
+            Hệ thống cung cấp PC Gaming, Laptop và linh kiện công nghệ cao cấp,
+            mang lại trải nghiệm tối ưu cho game thủ và nhà sáng tạo.
+          </p>
+          <div class="mang_xa_hoi">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              >◎</a
+            >
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noopener"
+              title="Zalo"
+              >Z</a
+            >
+          </div>
+        </div>
+        <div class="cot_footer">
+          <h4>Danh mục sản phẩm</h4>
+          <ul>
+            <li><a href="pc.html">PC Gaming & Workstation</a></li>
+            <li><a href="laptop.html">Laptop Chính Hãng</a></li>
+            <li><a href="ban-phim.html">Bàn Phím Cơ</a></li>
+            <li><a href="chuot.html">Chuột Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="cot_footer">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="lien_he.html">Giới thiệu thành viên</a></li>
+            <li><a href="#lien-he">Kết nối liên hệ</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="cot_footer">
+          <h4>Hỗ trợ & Liên hệ</h4>
+          <p><strong>Đơn vị:</strong> Đại Học Công Nghệ Đông Á</p>
+          <p><strong>Hotline:</strong> 038.953.9590 - 038.866.1893</p>
+          <p><strong>Email:</strong> support@terrax.vn</p>
+        </div>
+      </div>
+
+      <div class="ban_quyen">
+        <div class="khung-chua">
+          <p>
+            &copy; 2026 TERRAX Technology Store. All rights reserved. Phát triển
+            bởi Nguyễn Bá Trung & Phùng Tuấn Thăng.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="java.js"></script>
+    <!-- CHATBOT HỖ TRỢ -->
+    <button class="nut_bat_chatbot" onclick="batTatChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="khung_chatbot" id="khung_chatbot_id">
+      <div class="dau_chatbot">
+        <h3><i class="fas fa-robot"></i> Trợ lý ảo TERRAX</h3>
+        <button class="nut_dong_chat" onclick="batTatChatbot()">&times;</button>
+      </div>
+      <div class="than_chatbot" id="than_chatbot_id">
+        <div class="tin_nhan_chat may">
+          Xin chào! Tôi là trợ lý ảo của TERRAX. Bạn cần tư vấn mua Laptop, PC,
+          hay hỏi về chính sách bảo hành?
+        </div>
+      </div>
+      <div class="cuoi_chatbot">
+        <input
+          type="text"
+          id="o_nhap_chat_id"
+          placeholder="Nhập câu hỏi..."
+          onkeypress="kiemTraEnter(event)"
+        />
+        <button onclick="guiTinNhan()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

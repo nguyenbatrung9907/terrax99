@@ -1,0 +1,1694 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TerraX - Technology Store</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Smooth Scroll khi bấm vào link Teleport */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* CSS cho Thanh Điều Hướng Nhanh (Teleport) */
+      .thanh_dieu_huong_nhanh {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 20px 24px;
+        margin: 20px auto;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .tieu_de_loc_nhanh {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 2px solid #f1f5f9;
+        padding-bottom: 8px;
+      }
+
+      .dong_loc {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+
+      .dong_loc:last-child {
+        margin-bottom: 0;
+      }
+
+      .nhan_loc {
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.95rem;
+        min-width: 160px;
+      }
+
+      .nhom_nut_loc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .nut_teleport {
+        display: inline-block;
+        padding: 6px 14px;
+        background-color: #f8fafc;
+        color: #334155;
+        border: 1px solid #cbd5e1;
+        border-radius: 20px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .nut_teleport:hover {
+        background-color: var(--mau_chinh, #d32f2f);
+        color: #ffffff;
+        border-color: var(--mau_chinh, #d32f2f);
+        transform: translateY(-2px);
+        box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+      }
+
+      /* Offset cho Header Cố Định khi Cuộn tới Anchor */
+      section[id] {
+        scroll-margin-top: 140px;
+      }
+
+      /* CSS Cụm Tổng Cho Phân Loại */
+      .cum_phan_loai_lon {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 24px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+
+      .tieu_de_nhom_to {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 3px solid var(--mau_chinh, #d32f2f);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    </style>
+    <link rel="icon" href="images/svg_logo.svg" type="image/png" />
+  </head>
+
+  <body>
+    <!--      HEADER      -->
+    <div class="dau_trang_co_dinh">
+      <header class="phan_dau_chinh">
+        <div class="khung_chua khung_phan_dau">
+          <a href="index.html" class="logo_chinh">
+            <img src="Images/logo.png" alt="Logo TERRAX" />
+          </a>
+
+          <div class="hop_tim_kiem_lon">
+            <input
+              type="text"
+              id="o_tim_kiem"
+              placeholder="Tìm kiếm sản phẩm (vd: RTX, Laptop, Bàn phím...)"
+            />
+            <button id="nut_tim_kiem">
+              <i class="fas fa-search"></i>
+            </button>
+
+            <div id="ket_qua_tim_kiem"></div>
+          </div>
+
+          <div class="hanh_dong_phai">
+            <div
+              class="muc_hanh_dong"
+              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+            >
+              <i class="far fa-user"></i>
+              <span>Tài khoản</span>
+            </div>
+
+            <div class="muc_hanh_dong" onclick="moGioHang()">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Giỏ hàng (<span id="dem_gio_hang">0</span>)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--THANH ĐIỀU HƯỚNG-->
+      <nav class="thanh_dieu_huong">
+        <div class="khung_chua khung_dieu_huong">
+          <div class="muc_menu co_menu_con">
+            <i class="fas fa-bars"></i>
+            <span>DANH MỤC SẢN PHẨM</span>
+            <i class="fas fa-chevron-down icon_mui_ten"></i>
+
+            <div class="noi_dung_menu_con">
+              <a href="pc.html"
+                ><i class="fas fa-desktop"></i> PC Gaming / Workstation</a
+              >
+              <a href="laptop.html"
+                ><i class="fas fa-laptop"></i> Laptop Gaming & Văn Phòng</a
+              >
+              <a href="bo-mach-chu.html"
+                ><i class="fas fa-microchip"></i> Linh Kiện PC</a
+              >
+              <a href="man-hinh.html"
+                ><i class="fas fa-tv"></i> Màn Hình Máy Tính</a
+              >
+              <a href="ban-phim.html"
+                ><i class="fas fa-keyboard"></i> Bàn Phím Cơ</a
+              >
+              <a href="chuot.html"><i class="fas fa-mouse"></i> Chuột Gaming</a>
+              <a href="tai-nghe.html"
+                ><i class="fas fa-headphones"></i> Tai Nghe & Âm Thanh</a
+              >
+            </div>
+          </div>
+
+          <a href="index.html"><i class="fas fa-home"></i> TRANG CHỦ</a>
+          <a href="laptop.html" class="lien_ket_menu"
+            ><i class="fas fa-laptop-code"></i> LAPTOP</a
+          >
+          <a href="pc.html" class="lien_ket_menu"
+            ><i class="fas fa-gamepad"></i> PC GAMING</a
+          >
+          <a href="#flash_sale" class="lien_ket_menu"
+            ><i class="fas fa-bolt"></i> KHUYẾN MÃI</a
+          >
+          <a
+            href="https://tinhte.vn/?utm_source=chatgpt.com"
+            class="lien_ket_menu"
+            ><i class="fas fa-newspaper"></i> TIN TỨC</a
+          >
+          <a href="lien_he.html"><i class="fas fa-users"></i> Thành viên</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- = BANNER CHÍNH = -->
+    <section
+      class="bang_chuyen_anh"
+      style="background-image: url(images/banner-bomachchu.png)"
+    ></section>
+
+    <!-- THANH LỌC VÀ ĐIỀU HƯỚNG NHANH -->
+    <section class="khung_chua thanh_dieu_huong_nhanh">
+      <div class="dong_loc">
+        <span class="nhan_loc">Thương hiệu:</span>
+        <div class="nhom_nut_loc">
+          <a href="#hang_asus" class="nut_teleport">ASUS</a>
+          <a href="#hang_gigabyte" class="nut_teleport">GIGABYTE</a>
+          <a href="#hang_msi" class="nut_teleport">MSI</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SẢN PHẨM NỔI BẬT-->
+    <section
+      class="san_pham khung_chua"
+      id="san_pham_noi_bat"
+      style="margin-top: 40px"
+    >
+      <h2 class="tieu_de_phan">SẢN PHẨM NỔI BẬT</h2>
+      <div class="luoi_san_pham">
+        <!-- SẢN PHẨM 1 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_132_Bo_m_ch_ch__ASUS_H610M_F_WIFI_.png"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS H610M-F WIFI DDR4 "
+          />
+          <h3 class="ten_san_pham">Bo mạch chủ ASUS H610M-F WIFI DDR4</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR4</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1700</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>Micro ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>1 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel H610</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.390.000đ</p>
+            <span class="nhan_giam_gia">-4%</span>
+          </div>
+          <p class="gia_san_pham">2.294.400đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 2 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_133_Bo_m_ch_ch__ASUS_ROG_CROSSHAIR.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ROG CROSSHAIR X870E EXTREME (DDR5)"
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ROG CROSSHAIR X870E EXTREME (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_133_1_DDR5.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_133_2_AM5.svg" alt="" />
+                <span>AM5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_133_3_E_ATX.svg" alt="" />
+                <span>E-ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_133_4_5_khe.svg" alt="" />
+                <span>5 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_133_5_AMD_X870E.svg" alt="" />
+                <span>AMD X870E</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">32.990.000đ</p>
+            <span class="nhan_giam_gia">-3%</span>
+          </div>
+          <p class="gia_san_pham">32.000.300đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 3 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_134_Bo_m_ch_ch__ASUS_ROG_MAXIMUS_Z.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ROG MAXIMUS Z890 APEX (DDR5)"
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ROG MAXIMUS Z890 APEX (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_134_1_DDR5.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_134_2_LGA_1851.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_134_3_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_134_4_6_khe.svg" alt="" />
+                <span>6 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img
+                  src="Tat_Ca_Icon_SVG/SP_134_5_Intel_Core_Ultra.svg"
+                  alt=""
+                />
+                <span>Intel Core Ultra</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">22.690.000đ</p>
+            <span class="nhan_giam_gia">-11%</span>
+          </div>
+          <p class="gia_san_pham">20.194.100đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 4 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_136_Bo_m_ch_ch__ASUS_ROG_MAXIMUS_Z.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ROG MAXIMUS Z890 EXTREME (DDR5)"
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ROG MAXIMUS Z890 EXTREME (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>E-ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>4 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Core Ultra</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">32.690.000đ</p>
+            <span class="nhan_giam_gia">-11%</span>
+          </div>
+          <p class="gia_san_pham">29.094.100đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 5 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_129_Bo_M_ch_Ch__Gigabyte_A520M_K_V.png"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS PRIME B760M-K (DDR5)"
+          />
+          <h3 class="ten_san_pham">Bo mạch chủ ASUS PRIME B760M-K (DDR5)</h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.690.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham">2.501.700đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 6 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_130_Bo_m_ch_ch__ASUS_PRIME_B760M_K.png"
+            class="anh_san_pham"
+            alt="Bo Mạch Chủ Gigabyte A520M-K V2"
+          />
+          <h3 class="ten_san_pham">Bo Mạch Chủ Gigabyte A520M-K V2</h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.690.000đ</p>
+            <span class="nhan_giam_gia">-6%</span>
+          </div>
+          <p class="gia_san_pham">1.588.600đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 7 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_131_Bo_m_ch_ch__MSI_PRO_A620AM_B_E.png"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS PRIME B760M-K (DDR5)"
+          />
+          <h3 class="ten_san_pham">Bo mạch chủ ASUS PRIME B760M-K (DDR5)</h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">2.690.000đ</p>
+            <span class="nhan_giam_gia">-7%</span>
+          </div>
+          <p class="gia_san_pham">2.501.700đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 8 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_137_Bo_m_ch_ch__GIGABYTE_B760M_GAM.png"
+            class="anh_san_pham"
+            alt="Bo mạch chủ GIGABYTE B760M GAMING WIFI PLUS DDR5 "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ GIGABYTE B760M GAMING WIFI PLUS DDR5
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1700</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>Micro ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>2 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel B760</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">3.690.000đ</p>
+            <span class="nhan_giam_gia">-4%</span>
+          </div>
+          <p class="gia_san_pham">3.542.400đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 9 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_138_Bo_m_ch_ch__GIGABYTE_H610M_H_V.png"
+            class="anh_san_pham"
+            alt="Bo mạch chủ GIGABYTE H610M-H V3 (DDR4) "
+          />
+          <h3 class="ten_san_pham">Bo mạch chủ GIGABYTE H610M-H V3 (DDR4)</h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR4</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1700</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>Micro ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>1 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel H610</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">1.990.000đ</p>
+            <span class="nhan_giam_gia">-10%</span>
+          </div>
+          <p class="gia_san_pham">1.791.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 10 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_139_Bo_m_ch_ch__ASUS_ProArt_Z890_C.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ProArt Z890-CREATOR WIFI (DDR5) "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ProArt Z890-CREATOR WIFI (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>5 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Core Ultra</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">16.590.000đ</p>
+            <span class="nhan_giam_gia">-10%</span>
+          </div>
+          <p class="gia_san_pham">14.931.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 11 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_140_Bo_m_ch_ch__ASUS_ROG_MAXIMUS_Z.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ROG MAXIMUS Z890 HERO (DDR5) "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ROG MAXIMUS Z890 HERO (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>6 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Core Ultra</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">22.890.000đ</p>
+            <span class="nhan_giam_gia">-13%</span>
+          </div>
+          <p class="gia_san_pham">19.914.300đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 12 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_141_Bo_m_ch_ch__ASUS_ROG_Strix_Z89.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ROG Strix Z890-E GAMING WIFI (DDR5) "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ROG Strix Z890-E GAMING WIFI (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>7 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Core Ultra</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">17.690.000đ</p>
+            <span class="nhan_giam_gia">-11%</span>
+          </div>
+          <p class="gia_san_pham">15.744.100đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 13 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_142_Bo_m_ch_ch__ASUS_ROG_Strix_Z89.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS ROG Strix Z890-A GAMING WIFI (DDR5) "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS ROG Strix Z890-A GAMING WIFI (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1700</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>4 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Z890</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">14.990.000đ</p>
+            <span class="nhan_giam_gia">-13%</span>
+          </div>
+          <p class="gia_san_pham">13.041.300đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 14 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_143_Bo_m_ch_ch__ASUS_TUF_Gaming_Z8.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS TUF Gaming Z890-PRO WIFI DDR5 "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS TUF Gaming Z890-PRO WIFI (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>4 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Core Ultra</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">12.890.000đ</p>
+            <span class="nhan_giam_gia">-19%</span>
+          </div>
+          <p class="gia_san_pham">10.440.900đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 15 (KHÔNG CÓ THÔNG SỐ) -->
+        <div class="the_san_pham khong_thong_so">
+          <img
+            src="Images_san_pham/SP_144_Bo_m_ch_ch__ASUS_TUF_Gaming_Z8.jpg"
+            class="anh_san_pham"
+            alt="Bo mạch chủ ASUS TUF Gaming Z890-PLUS WIFI DDR5 "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ ASUS TUF Gaming Z890-PLUS WIFI (DDR5)
+          </h3>
+          <div class="nhanh_thong_so"></div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">8.990.000đ</p>
+            <span class="nhan_giam_gia">-0%</span>
+          </div>
+          <p class="gia_san_pham">8.990.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+
+        <!-- SẢN PHẨM 16 -->
+        <div class="the_san_pham">
+          <img
+            src="Images_san_pham/SP_145_Bo_m_ch_ch__MSI_MPG_Z890_CARBO.png"
+            class="anh_san_pham"
+            alt="Bo mạch chủ MSI MPG Z890 CARBON WIFI DDR5 "
+          />
+          <h3 class="ten_san_pham">
+            Bo mạch chủ MSI MPG Z890 CARBON WIFI (DDR5)
+          </h3>
+          <div class="nhanh_thong_so">
+            <div class="spec-row">
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" />
+                <span>DDR5</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg" alt="" />
+                <span>LGA 1851</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg" alt="" />
+                <span>ATX</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" />
+                <span>5 khe</span>
+              </div>
+              <div class="spec-chip">
+                <img src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg" alt="" />
+                <span>Intel Core Gen 15</span>
+              </div>
+            </div>
+          </div>
+          <div class="gia_cu_va_giam">
+            <p class="gia_cu_san_pham">16.990.000đ</p>
+            <span class="nhan_giam_gia">-0%</span>
+          </div>
+          <p class="gia_san_pham">16.990.000đ</p>
+          <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+            <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- MỤC CỤM LỚN: CÁC HÃNG BO MẠCH CHỦ -->
+    <div class="khung_chua cum_phan_loai_lon">
+      <h1 class="tieu_de_nhom_to">
+        <i
+          class="fas fa-microchip"
+          style="color: var(--mau_chinh, #d32f2f)"
+        ></i>
+        CÁC HÃNG BO MẠCH CHỦ
+      </h1>
+
+      <!-- HÃNG ASUS -->
+      <section class="san_pham" id="hang_asus">
+        <h2 class="tieu_de_phan">ASUS</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 1 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_132_Bo_m_ch_ch__ASUS_H610M_F_WIFI_.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Bo mạch chủ ASUS H610M-F WIFI DDR4</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR4</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1700</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>Micro ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >1 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel H610</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.390.000đ</p>
+              <span class="nhan_giam_gia">-4%</span>
+            </div>
+            <p class="gia_san_pham">2.294.400đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 2 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_133_Bo_m_ch_ch__ASUS_ROG_CROSSHAIR.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ROG CROSSHAIR X870E EXTREME (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_133_1_DDR5.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_133_2_AM5.svg" alt="" /><span
+                    >AM5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_133_3_E_ATX.svg" alt="" /><span
+                    >E-ATX</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_133_4_5_khe.svg" alt="" /><span
+                    >5 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_133_5_AMD_X870E.svg"
+                    alt=""
+                  /><span>AMD X870E</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">32.990.000đ</p>
+              <span class="nhan_giam_gia">-3%</span>
+            </div>
+            <p class="gia_san_pham">32.000.300đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 3 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_134_Bo_m_ch_ch__ASUS_ROG_MAXIMUS_Z.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ROG MAXIMUS Z890 APEX (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_134_1_DDR5.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_134_2_LGA_1851.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_134_3_ATX.svg" alt="" /><span
+                    >ATX</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_134_4_6_khe.svg" alt="" /><span
+                    >6 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_134_5_Intel_Core_Ultra.svg"
+                    alt=""
+                  /><span>Intel Core Ultra</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">22.690.000đ</p>
+              <span class="nhan_giam_gia">-11%</span>
+            </div>
+            <p class="gia_san_pham">20.194.100đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 4 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_136_Bo_m_ch_ch__ASUS_ROG_MAXIMUS_Z.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ROG MAXIMUS Z890 EXTREME (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>E-ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >4 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Core Ultra</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">32.690.000đ</p>
+              <span class="nhan_giam_gia">-11%</span>
+            </div>
+            <p class="gia_san_pham">29.094.100đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 5 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_129_Bo_M_ch_Ch__Gigabyte_A520M_K_V.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Bo mạch chủ ASUS PRIME B760M-K (DDR5)</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.690.000đ</p>
+              <span class="nhan_giam_gia">-7%</span>
+            </div>
+            <p class="gia_san_pham">2.501.700đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 7 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_131_Bo_m_ch_ch__MSI_PRO_A620AM_B_E.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Bo mạch chủ ASUS PRIME B760M-K (DDR5)</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">2.690.000đ</p>
+              <span class="nhan_giam_gia">-7%</span>
+            </div>
+            <p class="gia_san_pham">2.501.700đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 10 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_139_Bo_m_ch_ch__ASUS_ProArt_Z890_C.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ProArt Z890-CREATOR WIFI (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >5 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Core Ultra</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">16.590.000đ</p>
+              <span class="nhan_giam_gia">-10%</span>
+            </div>
+            <p class="gia_san_pham">14.931.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 11 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_140_Bo_m_ch_ch__ASUS_ROG_MAXIMUS_Z.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ROG MAXIMUS Z890 HERO (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >6 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Core Ultra</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">22.890.000đ</p>
+              <span class="nhan_giam_gia">-13%</span>
+            </div>
+            <p class="gia_san_pham">19.914.300đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 12 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_141_Bo_m_ch_ch__ASUS_ROG_Strix_Z89.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ROG Strix Z890-E GAMING WIFI (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >7 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Core Ultra</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">17.690.000đ</p>
+              <span class="nhan_giam_gia">-11%</span>
+            </div>
+            <p class="gia_san_pham">15.744.100đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 13 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_142_Bo_m_ch_ch__ASUS_ROG_Strix_Z89.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS ROG Strix Z890-A GAMING WIFI (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1700</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >4 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Z890</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">14.990.000đ</p>
+              <span class="nhan_giam_gia">-13%</span>
+            </div>
+            <p class="gia_san_pham">13.041.300đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 14 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_143_Bo_m_ch_ch__ASUS_TUF_Gaming_Z8.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS TUF Gaming Z890-PRO WIFI (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >4 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Core Ultra</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">12.890.000đ</p>
+              <span class="nhan_giam_gia">-19%</span>
+            </div>
+            <p class="gia_san_pham">10.440.900đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 15 (KHÔNG CÓ THÔNG SỐ) -->
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_144_Bo_m_ch_ch__ASUS_TUF_Gaming_Z8.jpg"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ ASUS TUF Gaming Z890-PLUS WIFI (DDR5)
+            </h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">8.990.000đ</p>
+              <span class="nhan_giam_gia">-0%</span>
+            </div>
+            <p class="gia_san_pham">8.990.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="san_pham"
+        id="hang_gigabyte"
+        style="margin-top: 30px"
+        id="#flash_sale"
+      >
+        <h2 class="tieu_de_phan">GIGABYTE</h2>
+        <div class="luoi_san_pham">
+          <div class="the_san_pham khong_thong_so">
+            <img
+              src="Images_san_pham/SP_130_Bo_m_ch_ch__ASUS_PRIME_B760M_K.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Bo Mạch Chủ Gigabyte A520M-K V2</h3>
+            <div class="nhanh_thong_so"></div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.690.000đ</p>
+              <span class="nhan_giam_gia">-6%</span>
+            </div>
+            <p class="gia_san_pham">1.588.600đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 8 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_137_Bo_m_ch_ch__GIGABYTE_B760M_GAM.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ GIGABYTE B760M GAMING WIFI PLUS DDR5
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1700</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>Micro ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >2 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel B760</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">3.690.000đ</p>
+              <span class="nhan_giam_gia">-4%</span>
+            </div>
+            <p class="gia_san_pham">3.542.400đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+
+          <!-- SP 9 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_138_Bo_m_ch_ch__GIGABYTE_H610M_H_V.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">Bo mạch chủ GIGABYTE H610M-H V3 (DDR4)</h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR4</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1700</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>Micro ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >1 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel H610</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">1.990.000đ</p>
+              <span class="nhan_giam_gia">-10%</span>
+            </div>
+            <p class="gia_san_pham">1.791.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- HÃNG MSI -->
+      <section class="san_pham" id="hang_msi" style="margin-top: 30px">
+        <h2 class="tieu_de_phan">MSI</h2>
+        <div class="luoi_san_pham">
+          <!-- SP 16 -->
+          <div class="the_san_pham">
+            <img
+              src="Images_san_pham/SP_145_Bo_m_ch_ch__MSI_MPG_Z890_CARBO.png"
+              class="anh_san_pham"
+              alt=""
+            />
+            <h3 class="ten_san_pham">
+              Bo mạch chủ MSI MPG Z890 CARBON WIFI (DDR5)
+            </h3>
+            <div class="nhanh_thong_so">
+              <div class="spec-row">
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_1_DDR4.svg" alt="" /><span
+                    >DDR5</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_2_LGA_1700.svg"
+                    alt=""
+                  /><span>LGA 1851</span>
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_3_Micro_ATX.svg"
+                    alt=""
+                  /><span>ATX</span>
+                </div>
+                <div class="spec-chip">
+                  <img src="Tat_Ca_Icon_SVG/SP_132_4_1_khe.svg" alt="" /><span
+                    >5 khe</span
+                  >
+                </div>
+                <div class="spec-chip">
+                  <img
+                    src="Tat_Ca_Icon_SVG/SP_132_5_Intel_H610.svg"
+                    alt=""
+                  /><span>Intel Core Gen 15</span>
+                </div>
+              </div>
+            </div>
+            <div class="gia_cu_va_giam">
+              <p class="gia_cu_san_pham">16.990.000đ</p>
+              <span class="nhan_giam_gia">-0%</span>
+            </div>
+            <p class="gia_san_pham">16.990.000đ</p>
+            <button class="nut_them_gio_card" onclick="themVaoGioHang(this)">
+              <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- = GIỎ HÀNG SIDEBAR = -->
+    <div
+      class="lop_phu_gio_hang"
+      id="lop_phu_gio_hang_id"
+      onclick="dongGioHang()"
+    ></div>
+
+    <div class="thanh_ben_gio_hang" id="thanh_ben_gio_hang_id">
+      <div class="dau_gio_hang">
+        <h3>🛒 Giỏ hàng của bạn</h3>
+        <button class="nut_dong_gio_hang" onclick="dongGioHang()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="cac_mon_hang" style="padding: 15px"></div>
+
+      <div class="chan_gio_hang">
+        <div class="tong_tien_thanh_toan">
+          <span>Tổng thanh toán:</span>
+          <span id="tong_tien_thanh_toan_id">0đ</span>
+        </div>
+
+        <button class="nut_bam nut_day" onclick="thanhToanDonHang()">
+          TIẾN HÀNH THANH TOÁN
+        </button>
+      </div>
+    </div>
+
+    <footer class="phan_cuoi">
+      <div class="khung-chua noi_dung_footer">
+        <div class="cot_footer">
+          <h3>TERRAX STORE</h3>
+          <p>
+            Hệ thống cung cấp PC Gaming, Laptop và linh kiện công nghệ cao cấp,
+            mang lại trải nghiệm tối ưu cho game thủ và nhà sáng tạo.
+          </p>
+          <div class="mang_xa_hoi">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener"
+              title="Facebook"
+              >f</a
+            >
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener"
+              title="Instagram"
+              >◎</a
+            >
+            <a
+              href="https://zalo.me"
+              target="_blank"
+              rel="noopener"
+              title="Zalo"
+              >Z</a
+            >
+          </div>
+        </div>
+        <div class="cot_footer">
+          <h4>Danh mục sản phẩm</h4>
+          <ul>
+            <li><a href="pc.html">PC Gaming & Workstation</a></li>
+            <li><a href="laptop.html">Laptop Chính Hãng</a></li>
+            <li><a href="ban-phim.html">Bàn Phím Cơ</a></li>
+            <li><a href="chuot.html">Chuột Gaming</a></li>
+          </ul>
+        </div>
+
+        <div class="cot_footer">
+          <h4>Về chúng tôi</h4>
+          <ul>
+            <li><a href="lien_he.html">Giới thiệu thành viên</a></li>
+            <li><a href="#lien-he">Kết nối liên hệ</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+          </ul>
+        </div>
+        <div class="cot_footer">
+          <h4>Hỗ trợ & Liên hệ</h4>
+          <p><strong>Đơn vị:</strong> Đại Học Công Nghệ Đông Á</p>
+          <p><strong>Hotline:</strong> 038.953.9590 - 038.866.1893</p>
+          <p><strong>Email:</strong> support@terrax.vn</p>
+        </div>
+      </div>
+
+      <div class="ban_quyen">
+        <div class="khung-chua">
+          <p>
+            &copy; 2026 TERRAX Technology Store. All rights reserved. Phát triển
+            bởi Nguyễn Bá Trung & Phùng Tuấn Thăng.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="java.js"></script>
+    <!-- CHATBOT HỖ TRỢ -->
+    <button class="nut_bat_chatbot" onclick="batTatChatbot()">
+      <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="khung_chatbot" id="khung_chatbot_id">
+      <div class="dau_chatbot">
+        <h3><i class="fas fa-robot"></i> Trợ lý ảo TERRAX</h3>
+        <button class="nut_dong_chat" onclick="batTatChatbot()">&times;</button>
+      </div>
+      <div class="than_chatbot" id="than_chatbot_id">
+        <div class="tin_nhan_chat may">
+          Xin chào! Tôi là trợ lý ảo của TERRAX. Bạn cần tư vấn mua Laptop, PC,
+          hay hỏi về chính sách bảo hành?
+        </div>
+      </div>
+      <div class="cuoi_chatbot">
+        <input
+          type="text"
+          id="o_nhap_chat_id"
+          placeholder="Nhập câu hỏi..."
+          onkeypress="kiemTraEnter(event)"
+        />
+        <button onclick="guiTinNhan()">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
