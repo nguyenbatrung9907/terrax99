@@ -12,12 +12,12 @@
     <link rel="icon" href="images/svg_logo.svg" type="image/png" />
   </head>
   <body class="trang_laptop">
-    <!--      HEADER      -->
+    <!-- header -->
     <div class="dau_trang_co_dinh">
       <header class="phan_dau_chinh">
         <div class="khung_chua khung_phan_dau">
           <a href="index.html" class="logo_chinh">
-            <img src="images/logo.png" alt="Logo TERRAX" />
+            <img src="Images/logo.png" alt="Logo TERRAX" />
           </a>
 
           <div class="hop_tim_kiem_lon">
@@ -36,7 +36,7 @@
           <div class="hanh_dong_phai">
             <div
               class="muc_hanh_dong"
-              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+              onclick="openTerraXModal()"
             >
               <i class="far fa-user"></i>
               <span>Tài khoản</span>
@@ -49,7 +49,7 @@
           </div>
         </div>
       </header>
-      <!--THANH ĐIỀU HƯỚNG-->
+      <!-- thanh điều hướng -->
       <nav class="thanh_dieu_huong">
         <div class="khung_chua khung_dieu_huong">
           <div class="muc_menu co_menu_con">
@@ -102,11 +102,11 @@
         </div>
       </nav>
     </div>
-    <!--BANNER LAPTOP -->
+    <!-- banner laptop -->
     <section class="bang_chuyen_anh">
       <img src="images/laptop1.png" alt="Banner Laptop" />
     </section>
-    <!--BỘ LỌC DANH MỤC LAPTOP -->
+    <!-- bộ lọc danh mục laptop -->
     <section class="khung_chua">
       <div class="khung_bo_loc_danh_muc">
         <div class="dong_bo_loc">
@@ -131,13 +131,12 @@
         </div>
       </div>
     </section>
-    <!--         =
-         LAPTOP GAMING
-            == -->
+    <!-- laptop gaming -->
     <section class="san_pham khung_chua" id="laptop-gaming">
       <h2 class="tieu_de_phan">LAPTOP GAMING</h2>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- 1. ACER ASPIRE 7 59RD -->
+        <!-- 1. acer aspire 7 59rd -->
         <div
           class="the_san_pham"
           data-loai="gaming"
@@ -219,7 +218,7 @@
           </button>
         </div>
 
-        <!-- 2. ASUS V16 -->
+        <!-- 2. asus v16 -->
         <div
           class="the_san_pham"
           data-loai="gaming"
@@ -302,7 +301,7 @@
           </button>
         </div>
 
-        <!-- 3. LENOVO LOQ 15ARP10E -->
+        <!-- 3. lenovo loq 15arp10e -->
         <div
           class="the_san_pham"
           data-loai="gaming"
@@ -385,7 +384,7 @@
           </button>
         </div>
 
-        <!-- 4. ACER NITRO PROPANEL (GIỮ LẠI 1 BẢN ĐẠI DIỆN) -->
+        <!-- 4. acer nitro propanel (giữ lại 1 bản đại diện) -->
         <div class="the_san_pham" data-loai="gaming" data-thuong-hieu="ACER">
           <img
             alt="Laptop gaming Acer Nitro ProPanel ANV15-52-73Z8 (Core 7-240H/ RTX 4050/ 16GB/ 512GB/ Win 11)"
@@ -462,7 +461,7 @@
           </button>
         </div>
 
-        <!-- 5. LENOVO LOQ 15IRX9 -->
+        <!-- 5. lenovo loq 15irx9 -->
         <div class="the_san_pham" data-loai="gaming" data-thuong-hieu="LENOVO">
           <img
             alt='Laptop gaming Lenovo LOQ 15IRX9 83DV01ALVN (I7-13650HX/ RTX 4050 6GB/ 16GB/ 512GB/ 15.6" FHD/ Win 11)'
@@ -540,7 +539,7 @@
           </button>
         </div>
 
-        <!-- 6. GIGABYTE AORUS MASTER 16 -->
+        <!-- 6. gigabyte aorus master 16 -->
         <div
           class="the_san_pham"
           data-loai="gaming"
@@ -622,7 +621,7 @@
           </button>
         </div>
 
-        <!-- 7. ASUS ROG STRIX G16 -->
+        <!-- 7. asus rog strix g16 -->
         <div class="the_san_pham" data-loai="gaming" data-thuong-hieu="ASUS">
           <img
             alt='Laptop gaming ASUS ROG Strix G16 G614PM-TS147W (Ryzen 9-8940HX/ RTX 5060 8GB/ 16GB/ 512GB/ 16" WQXGA 300Hz/ Win 11)'
@@ -700,15 +699,15 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!--         =
-         LAPTOP VĂN PHÒNG / HỌC TẬP
-            == -->
+    <!-- laptop văn phòng / học tập -->
     <section class="san_pham khung_chua" id="laptop-van-phong">
       <h2 class="tieu_de_phan">LAPTOP V&Abreve;N PH&Ograve;NG / HỌC TẬP</h2>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- 1. ACER ASPIRE LITE 14 -->
+        <!-- 1. acer aspire lite 14 -->
         <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ACER">
           <img
             alt='Laptop Acer Aspire Lite 14 AL14-53M-53E8 (Core 5-120U/ 16GB/ 512GB/ 14" FHD+ IPS/ Win 11)'
@@ -787,7 +786,7 @@
           </button>
         </div>
 
-        <!-- 2. ACER SWIFT AIR 14 -->
+        <!-- 2. acer swift air 14 -->
         <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ACER">
           <img
             alt='Laptop Acer Swift Air 14 SFA14-I31-52BV (Core 5-320/ 12GB/ 512GB/ 14" FHD+ IPS 120Hz/ Green/ Win 11)'
@@ -866,7 +865,7 @@
           </button>
         </div>
 
-        <!-- 3. ASUS EXPERTBOOK P1403CVA -->
+        <!-- 3. asus expertbook p1403cva -->
         <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ASUS">
           <img
             alt='Laptop Asus ExpertBook P1403CVA-C5H16-50W (Core 5-210H/ 16GB/ 512GB/ 14" FHD/ Win 11)'
@@ -946,7 +945,7 @@
           </button>
         </div>
 
-        <!-- 4. ACER SWIFT GO AI OLED -->
+        <!-- 4. acer swift go ai oled -->
         <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ACER">
           <img
             alt='Laptop Acer Swift Go AI OLED SFG14-75-765M (Ultra 7-258V/ 32GB/ 512GB/ 14" FHD+ OLED/ Win11)'
@@ -1025,7 +1024,7 @@
           </button>
         </div>
 
-        <!-- 5. ASUS EXPERTBOOK P3 -->
+        <!-- 5. asus expertbook p3 -->
         <div class="the_san_pham" data-loai="van-phong" data-thuong-hieu="ASUS">
           <img
             alt='Laptop Asus ExpertBook P3 P3406CCAP-U516W (Ultra 5-225H/ 16GB/ 512GB/ 14" WUXGA / Win 11)'
@@ -1105,7 +1104,7 @@
           </button>
         </div>
 
-        <!-- 6. DELL 15 PRO ESSENTIAL -->
+        <!-- 6. dell 15 pro essential -->
         <div
           class="the_san_pham"
           data-loai="van-phong"
@@ -1190,9 +1189,10 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!--GIỎ HÀNG-->
+    <!-- giỏ hàng -->
     <div
       class="lop_phu_gio_hang"
       id="lop_phu_gio_hang_id"
@@ -1281,7 +1281,7 @@
       </div>
     </footer>
     <script src="java.js"></script>
-    <!-- CHATBOT HỖ TRỢ -->
+    <!-- chatbot hỗ trợ -->
     <button class="nut_bat_chatbot" onclick="batTatChatbot()">
       <i class="fas fa-comment-dots"></i>
     </button>
