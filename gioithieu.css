@@ -286,18 +286,18 @@ a {
   display: flex;
   align-items: center;
   gap: 16px;
-  background: #1f2937; 
-  border: 1px solid #374151; 
+  background: #253346;
+  border: 1px solid #ef4444;
   border-radius: 14px;
   padding: 18px 20px;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.25);
 }
 
 .the-lien-he:hover {
-  border-color: #ef4444;
-  background: #253346;
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(239, 68, 68, 0.25); 
+  box-shadow: 0 14px 30px rgba(239, 68, 68, 0.32);
+}
 
 .bieu-tuong-lien-he {
   width: 46px;
@@ -321,18 +321,18 @@ a {
 .the-lien-he strong {
   display: block;
   font-size: 15px;
-  color: #ffffff; /* Tiêu đề thẻ trắng tinh */
+  color: #ffffff; /* tiêu đề thẻ trắng tinh */
   font-weight: 700;
   margin-bottom: 2px;
 }
 
 .the-lien-he small {
   display: block;
-  color: #9ca3af; /* Chữ phụ xám bạc dễ đọc */
+  color: #9ca3af; /* chữ phụ xám bạc dễ đọc */
   font-size: 13px;
 }
 
-/* Responsive cho thiết bị di động */
+/* responsive cho thiết bị di động */
 @media (max-width: 950px) {
   .noi-dung-lien-he {
     grid-template-columns: 1fr;
