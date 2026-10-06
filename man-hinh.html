@@ -11,7 +11,7 @@
     />
     <link rel="icon" href="images/svg_logo.svg" type="image/png" />
     <style>
-      /* CSS riêng cho trang màn hình, không sửa file style.css dùng chung */
+      /* css riêng cho trang màn hình, không sửa file style.css dùng chung */
       html {
         scroll-behavior: smooth;
         scroll-padding-top: 24px;
@@ -163,7 +163,7 @@
         margin: 5px 0 8px;
       }
 
-      /* Tránh popup khuyến mãi bị cắt ở mép phải màn hình */
+      /* tránh popup khuyến mãi bị cắt ở mép phải màn hình */
       .the_san_pham:nth-child(4n) .hop_km,
       .the_san_pham:nth-child(4n-1) .hop_km {
         left: auto;
@@ -287,13 +287,13 @@
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       }
 
-      /* Header */
+      /* header */
       .dau_trang_co_dinh .phan_dau_chinh {
         position: relative !important;
         z-index: 10001 !important;
       }
 
-      /* Menu nav */
+      /* menu nav */
       .dau_trang_co_dinh .thanh_dieu_huong {
         position: relative !important;
         z-index: 10000 !important;
@@ -301,12 +301,12 @@
     </style>
   </head>
   <body>
-    <!--HEADER -->
+    <!-- header -->
     <div class="dau_trang_co_dinh">
       <header class="phan_dau_chinh">
         <div class="khung_chua khung_phan_dau">
           <a href="index.html" class="logo_chinh">
-            <img src="images/logo.png" alt="Logo TERRAX" />
+            <img src="Images/logo.png" alt="Logo TERRAX" />
           </a>
 
           <div class="hop_tim_kiem_lon">
@@ -325,7 +325,7 @@
           <div class="hanh_dong_phai">
             <div
               class="muc_hanh_dong"
-              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+              onclick="openTerraXModal()"
             >
               <i class="far fa-user"></i>
               <span>Tài khoản</span>
@@ -338,7 +338,7 @@
           </div>
         </div>
       </header>
-      <!--THANH ĐIỀU HƯỚNG-->
+      <!-- thanh điều hướng -->
       <nav class="thanh_dieu_huong">
         <div class="khung_chua khung_dieu_huong">
           <div class="muc_menu co_menu_con">
@@ -394,7 +394,7 @@
       style="background-image: url(images/banner-manhinh.png)"
     ></section>
 
-    <!--       == THANH LỌC VÀ ĐIỀU HƯỚNG NHANH       == -->
+    <!-- thanh lọc và điều hướng nhanh -->
     <section class="khung_chua thanh_dieu_huong_nhanh">
       <div class="dong_loc">
         <span class="nhan_loc">Thương hiệu:</span>
@@ -419,12 +419,13 @@
       </div>
     </section>
 
-    <!--       == SẢN PHẨM NỔI BẬT       == -->
+    <!-- sản phẩm nổi bật -->
     <section class="san_pham khung_chua" id="san_pham_noi_bat">
       <h2 class="tieu_de_phan">SẢN PHẨM NỔI BẬT</h2>
 
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- SẢN PHẨM 1 -->
+        <!-- sản phẩm 1 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_62_M_n_h_nh_LG_27U711B_B_27__IPS_.jpg"
@@ -507,7 +508,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 2 -->
+        <!-- sản phẩm 2 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_63_M_n_h_nh_VSP_G2410QS_24__IPS_2.jpg"
@@ -592,7 +593,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 3 -->
+        <!-- sản phẩm 3 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_64_M_n_h_nh_VSP_G2410Q1_24__IPS_2.jpg"
@@ -675,7 +676,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 4 -->
+        <!-- sản phẩm 4 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_65_M_n_h_nh_VSP_IP25Q180_25__IPS_.jpg"
@@ -760,7 +761,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 5 -->
+        <!-- sản phẩm 5 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_66_M_n_h_nh_ViewSonic_VA24G1_H_24.jpg"
@@ -810,7 +811,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 6 -->
+        <!-- sản phẩm 6 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_67_M_n_h_nh_BenQ_Zowie_XL2586X__2.jpg"
@@ -858,7 +859,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 7 -->
+        <!-- sản phẩm 7 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_68_M_n_h_nh_ASUS_TUF_GAMING_VG27A.jpg"
@@ -917,7 +918,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 8 -->
+        <!-- sản phẩm 8 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_70_M_n_h_nh_KOORUI_E2212F_22__100.jpg"
@@ -966,7 +967,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 9 -->
+        <!-- sản phẩm 9 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_72_M_n_h_nh_KOORUI_E2711F_27__IPS.jpg"
@@ -1015,7 +1016,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 10 -->
+        <!-- sản phẩm 10 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_73_M_n_h_nh_KOORUI_E2721F_27__IPS.jpg"
@@ -1064,7 +1065,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 11 -->
+        <!-- sản phẩm 11 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_75_M_n_h_nh_KOORUI_G2711P_24__IPS.jpg"
@@ -1115,7 +1116,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 12 -->
+        <!-- sản phẩm 12 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_80_M_n_h_nh_ASUS_TUF_GAMING_VG279.jpg"
@@ -1173,19 +1174,21 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!--                         = -->
-    <!--                  MỤC CỤM LỚN 1: CÁC HÃNG MÀN HÌNH                          -->
-    <!--                         = -->
+    <!--  -->
+    <!-- mục cụm lớn 1: các hãng màn hình -->
+    <!--  -->
     <div class="khung_chua cum_phan_loai_lon">
       <h1 class="tieu_de_nhom_to">
         <i class="fas fa-desktop"></i> CÁC HÃNG MÀN HÌNH
       </h1>
 
-      <!-- HÃNG LG -->
+      <!-- hãng lg -->
       <section class="san_pham" id="hang_lg">
         <h2 class="tieu_de_phan">LG</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1254,11 +1257,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG VSP -->
+      <!-- hãng vsp -->
       <section class="san_pham" id="hang_vsp" style="margin-top: 30px">
         <h2 class="tieu_de_phan">VSP</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1465,11 +1470,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG VIEWSONIC -->
+      <!-- hãng viewsonic -->
       <section class="san_pham" id="hang_viewsonic" style="margin-top: 30px">
         <h2 class="tieu_de_phan">VIEWSONIC</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1512,11 +1519,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG BENQ ZOWIE -->
+      <!-- hãng benq zowie -->
       <section class="san_pham" id="hang_benq" style="margin-top: 30px">
         <h2 class="tieu_de_phan">BENQ ZOWIE</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1557,11 +1566,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG ASUS & GVN -->
+      <!-- hãng asus & gvn -->
       <section class="san_pham" id="hang_asus" style="margin-top: 30px">
         <h2 class="tieu_de_phan">ASUS & GVN</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1660,11 +1671,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG KOORUI -->
+      <!-- hãng koorui -->
       <section class="san_pham" id="hang_koorui" style="margin-top: 30px">
         <h2 class="tieu_de_phan">KOORUI</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1830,21 +1843,23 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
     </div>
 
-    <!--                         = -->
-    <!--              MỤC CỤM LỚN 2: CÁC KÍCH THƯỚC MÀN HÌNH (INCH)                 -->
-    <!--                         = -->
+    <!--  -->
+    <!-- mục cụm lớn 2: các kích thước màn hình (inch) -->
+    <!--  -->
     <div class="khung_chua cum_phan_loai_lon">
       <h1 class="tieu_de_nhom_to">
         <i class="fas fa-ruler-combined" style="color: #0284c7"></i> CÁC KÍCH
         THƯỚC MÀN HÌNH (INCH)
       </h1>
 
-      <!-- CỠ 22 INCH -->
+      <!-- cỡ 22 inch -->
       <section class="san_pham" id="size_22">
         <h2 class="tieu_de_phan">Màn hình 22 Inch</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -1886,11 +1901,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- CỠ 24 INCH -->
+      <!-- cỡ 24 inch -->
       <section class="san_pham" id="size_24" style="margin-top: 30px">
         <h2 class="tieu_de_phan">Màn hình 24 Inch</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -2151,11 +2168,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- CỠ 25 INCH -->
+      <!-- cỡ 25 inch -->
       <section class="san_pham" id="size_25" style="margin-top: 30px">
         <h2 class="tieu_de_phan">Màn hình 25 Inch</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -2265,11 +2284,13 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- CỠ 27 INCH -->
+      <!-- cỡ 27 inch -->
       <section class="san_pham" id="size_27" style="margin-top: 30px">
         <h2 class="tieu_de_phan">Màn hình 27 Inch</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
           <div class="the_san_pham">
             <img
@@ -2477,6 +2498,7 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
     </div>
     <div
@@ -2568,7 +2590,7 @@
       </div>
     </footer>
     <script src="java.js"></script>
-    <!-- CHATBOT HỖ TRỢ -->
+    <!-- chatbot hỗ trợ -->
     <button class="nut_bat_chatbot" onclick="batTatChatbot()">
       <i class="fas fa-comment-dots"></i>
     </button>
