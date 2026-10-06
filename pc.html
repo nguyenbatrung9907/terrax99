@@ -11,7 +11,7 @@
     />
     <link rel="icon" href="images/svg_logo.svg" type="image/png" />
     <style>
-      /* Can deu cac the PC va giu cac nut mua hang thang hang */
+      /* can deu cac the pc va giu cac nut mua hang thang hang */
       .luoi_san_pham {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -32,7 +32,7 @@
       }
       @media (max-width: 1024px) {
         .luoi_san_pham {
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: repeat(4, minmax(0, 1fr));
         }
       }
       @media (max-width: 768px) {
@@ -43,12 +43,12 @@
     </style>
   </head>
   <body>
-    <!--      HEADER      -->
+    <!-- header -->
     <div class="dau_trang_co_dinh">
       <header class="phan_dau_chinh">
         <div class="khung_chua khung_phan_dau">
           <a href="index.html" class="logo_chinh">
-            <img src="images/logo.png" alt="Logo TERRAX" />
+            <img src="Images/logo.png" alt="Logo TERRAX" />
           </a>
 
           <div class="hop_tim_kiem_lon">
@@ -67,7 +67,7 @@
           <div class="hanh_dong_phai">
             <div
               class="muc_hanh_dong"
-              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+              onclick="openTerraXModal()"
             >
               <i class="far fa-user"></i>
               <span>Tài khoản</span>
@@ -80,7 +80,7 @@
           </div>
         </div>
       </header>
-      <!--THANH ĐIỀU HƯỚNG-->
+      <!-- thanh điều hướng -->
       <nav class="thanh_dieu_huong">
         <div class="khung_chua khung_dieu_huong">
           <div class="muc_menu co_menu_con">
@@ -133,12 +133,12 @@
         </div>
       </nav>
     </div>
-    <!--       == BANNER       == -->
+    <!-- banner -->
     <section class="bang_chuyen_anh">
       <img src="images/banner-pc.png" alt="Banner PC" />
     </section>
 
-    <!--       == BỘ LỌC DANH MỤC       == -->
+    <!-- bộ lọc danh mục -->
     <section class="khung_chua" style="margin-top: 30px">
       <div class="khung_bo_loc_danh_muc">
         <div class="dong_bo_loc">
@@ -155,7 +155,7 @@
       </div>
     </section>
 
-    <!--       == PC GAMING       == -->
+    <!-- pc gaming -->
     <section
       class="san_pham khung_chua"
       id="pc-gaming"
@@ -163,7 +163,7 @@
     >
       <h2 class="tieu_de_phan">PC GAMING</h2>
 
-      <!-- GAMING PHỔ THÔNG -->
+      <!-- gaming phổ thông -->
       <h3
         class="tieu_de_phan"
         id="gaming-pho-thong"
@@ -172,8 +172,9 @@
         GAMING PHỔ THÔNG
       </h3>
 
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- PC 82 -->
+        <!-- pc 82 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-12400F VGA RX 6500XT"
@@ -248,7 +249,7 @@
           </button>
         </div>
 
-        <!-- PC 89 -->
+        <!-- pc 89 -->
         <div class="the_san_pham" id="#flash_sale">
           <img
             alt="PC GVN Intel i3-12100F VGA RX 6500XT"
@@ -320,7 +321,7 @@
             <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
           </button>
         </div>
-        <!-- PC 87 -->
+        <!-- pc 87 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-12400F VGA RTX 3060"
@@ -394,7 +395,7 @@
             <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
           </button>
         </div>
-        <!-- PC 100 -->
+        <!-- pc 100 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN AMD R5-5600X VGA RTX 3050"
@@ -467,8 +468,9 @@
           </button>
         </div>
       </div>
+      </div>
 
-      <!-- GAMING TẦM TRUNG -->
+      <!-- gaming tầm trung -->
       <h3
         class="tieu_de_phan"
         id="gaming-tam-trung"
@@ -476,8 +478,9 @@
       >
         GAMING TẦM TRUNG
       </h3>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- PC 81 -->
+        <!-- pc 81 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-12400F VGA RTX 3050"
@@ -552,7 +555,7 @@
           </button>
         </div>
 
-        <!-- PC 86 -->
+        <!-- pc 86 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-12400F VGA RTX 5060"
@@ -627,7 +630,7 @@
           </button>
         </div>
 
-        <!-- PC 87 -->
+        <!-- pc 87 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-12400F VGA RTX 3060"
@@ -702,7 +705,7 @@
           </button>
         </div>
 
-        <!-- PC 91 -->
+        <!-- pc 91 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-12400F Intel Arc B580"
@@ -775,8 +778,9 @@
           </button>
         </div>
       </div>
+      </div>
 
-      <!-- GAMING CAO CẤP -->
+      <!-- gaming cao cấp -->
       <h3
         class="tieu_de_phan"
         id="gaming-cao-cap"
@@ -784,8 +788,9 @@
       >
         GAMING CAO CẤP
       </h3>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- PC 95 -->
+        <!-- pc 95 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN AMD Ryzen 7 7800X3D VGA RTX 5060"
@@ -860,7 +865,7 @@
           </button>
         </div>
 
-        <!-- PC 85 -->
+        <!-- pc 85 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN AMD Ryzen 7 7800X3D VGA RTX 5080"
@@ -935,7 +940,7 @@
           </button>
         </div>
 
-        <!-- PC 92 -->
+        <!-- pc 92 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN ASUS Blackwell RTX 5090"
@@ -1010,7 +1015,7 @@
           </button>
         </div>
 
-        <!-- PC 93 -->
+        <!-- pc 93 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN ASUS Extreme RTX 5090"
@@ -1085,17 +1090,19 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!--       == PC ĐỒ HỌA       == -->
+    <!-- pc đồ họa -->
     <section
       class="san_pham khung_chua"
       id="pc-do-hoa"
       style="margin-top: 50px"
     >
       <h2 class="tieu_de_phan">PC ĐỒ HỌA</h2>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- PC 94 -->
+        <!-- pc 94 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i5-14400F RTX 5060 Ti"
@@ -1168,7 +1175,7 @@
           </button>
         </div>
 
-        <!-- PC 84 -->
+        <!-- pc 84 -->
         <div class="the_san_pham">
           <img
             alt="PC GVN Intel i7-14700F RTX 5070 Ti"
@@ -1243,14 +1250,16 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!--       == PC AI       == -->
-    <section class="san_pham khung_chua" id="pc-ai" style="margin-top: 50px">
-      <h2 class="tieu_de_phan">PC AI</h2>
+    <!-- pc ai, workstation & văn phòng -->
+    <section class="san_pham khung_chua" style="margin-top: 50px">
+      <h2 class="tieu_de_phan">PC AI, WORKSTATION & VĂN PHÒNG</h2>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- PC 99 -->
-        <div class="the_san_pham">
+        <!-- pc 99 -->
+        <div class="the_san_pham" id="pc-ai">
           <img
             alt="PC GVN AI XTREME"
             class="anh_san_pham"
@@ -1323,18 +1332,7 @@
             <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
           </button>
         </div>
-      </div>
-    </section>
-
-    <!--  PC WORKSTATION -->
-    <section
-      class="san_pham khung_chua"
-      id="pc-workstation"
-      style="margin-top: 50px"
-    >
-      <h2 class="tieu_de_phan">PC WORKSTATION</h2>
-      <div class="luoi_san_pham">
-        <div class="the_san_pham">
+        <div class="the_san_pham" id="pc-workstation">
           <img
             alt="PC GVN AI XTREME Workstation"
             class="anh_san_pham"
@@ -1407,19 +1405,8 @@
             <i class="fas fa-cart-plus"></i> THÊM VÀO GIỎ
           </button>
         </div>
-      </div>
-    </section>
-
-    <!-- PC VĂN PHÒNG -->
-    <section
-      class="san_pham khung_chua"
-      id="pc-van-phong"
-      style="margin-top: 50px"
-    >
-      <h2 class="tieu_de_phan">PC VĂN PHÒNG</h2>
-      <div class="luoi_san_pham">
-        <!-- PC 88 -->
-        <div class="the_san_pham">
+        <!-- pc 88 -->
+        <div class="the_san_pham" id="pc-van-phong">
           <img
             alt="PC GVN Acer Altos P130F7"
             class="anh_san_pham"
@@ -1486,9 +1473,10 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!--  GIỎ HÀNG SIDEBAR-->
+    <!-- giỏ hàng sidebar -->
     <div
       class="lop_phu_gio_hang"
       id="lop_phu_gio_hang_id"
@@ -1588,7 +1576,7 @@
       </div>
     </footer>
     <script src="java.js"></script>
-    <!-- CHATBOT HỖ TRỢ -->
+    <!-- chatbot hỗ trợ -->
     <button class="nut_bat_chatbot" onclick="batTatChatbot()">
       <i class="fas fa-comment-dots"></i>
     </button>
