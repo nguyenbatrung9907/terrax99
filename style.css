@@ -180,7 +180,7 @@ button {
   color: #fff;
 }
 
-/*THANH ĐIỀU HƯỚNG*/
+/* thanh điều hướng */
 .thanh_dieu_huong,
 .khung_dieu_huong,
 .dau_trang_co_dinh {
@@ -226,11 +226,11 @@ button {
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Hiệu ứng Hover - Đổi nền, đổi màu chữ và icon phóng to nhẹ */
+/* hiệu ứng hover - đổi nền, đổi màu chữ và icon phóng to nhẹ */
 .thanh_dieu_huong a:hover,
 .thanh_dieu_huong .muc_menu:hover {
   color: var(--mau_chinh);
-  background: #fff5f5; /* Nền đỏ siêu nhạt sang trọng */
+  background: #fff5f5; /* nền đỏ siêu nhạt sang trọng */
 }
 
 .thanh_dieu_huong a:hover i,
@@ -245,12 +245,12 @@ button {
   background: #fff5f5;
 }
 
-/* Hiệu ứng gạch chân chạy ra từ giữa */
+/* hiệu ứng gạch chân chạy ra từ giữa */
 .thanh_dieu_huong .lien_ket_menu::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px; /* Đè vừa đúng lên viền đỏ của menu */
+  bottom: -2px; /* đè vừa đúng lên viền đỏ của menu */
   width: 100%;
   height: 3px;
   background: var(--mau_chinh);
@@ -264,7 +264,7 @@ button {
   transform: scaleX(1);
 }
 
-/* MENU CON        */
+/* menu con */
 .co_menu_con {
   position: relative;
 }
@@ -273,7 +273,7 @@ button {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  top: 120%; /* Nằm thấp hơn để tạo hiệu ứng trượt lên */
+  top: 120%; /* nằm thấp hơn để tạo hiệu ứng trượt lên */
   left: 0;
   min-width: 260px;
   background: #fff;
@@ -318,7 +318,7 @@ button {
   text-align: center;
 }
 
-/* Hover trong menu con (đẩy chữ chạy sang phải tạo chiều sâu) */
+/* hover trong menu con (đẩy chữ chạy sang phải tạo chiều sâu) */
 .noi_dung_menu_con a:hover {
   background-color: #f3f4f6;
   color: #ef4444 !important;
@@ -327,9 +327,7 @@ button {
 .noi_dung_menu_con a:hover i {
   color: var(--mau_chinh) !important;
 }
-/*                    
-   KHUNG KẾT QUẢ TÌM KIẾM
-                       */
+/* khung kết quả tìm kiếm */
 
 #ket_qua_tim_kiem {
   position: absolute !important;
@@ -385,7 +383,7 @@ button {
   white-space: nowrap;
 }
 
-/* BANNER CHÍNH*/
+/* banner chính */
 
 .bang_chuyen_anh {
   position: relative;
@@ -403,7 +401,7 @@ button {
   transition: transform 0.4s ease;
 }
 
-/*  DANH MỤC / BỘ LỌC DẠNG THẺ PILL */
+/* danh mục / bộ lọc dạng thẻ pill */
 
 .khung_bo_loc_danh_muc {
   background: #fff;
@@ -563,7 +561,7 @@ button {
   text-decoration: none;
 }
 
-/* Khung banner trống */
+/* khung banner trống */
 .magazine_banner_trong {
   position: relative;
   border-radius: 10px;
@@ -595,7 +593,7 @@ button {
   gap: 10px;
 }
 
-/*  KHU VỰC SẢN PHẨM & CARD NHỎ GỌN */
+/* khu vực sản phẩm & card nhỏ gọn */
 
 .san_pham {
   width: 100%;
@@ -773,8 +771,7 @@ button {
 .the_san_pham .nut_them_gio_card.nut_da_them {
   background: #28a745 !important;
 }
-/*                    
-   NÚT "THÊM VÀO GIỎ" - ĐỒNG BỘ TẤT CẢ CARD SẢN PHẨM*/
+/* nút "thêm vào giỏ" - đồng bộ tất cả card sản phẩm */
 
 .the_san_pham .nut_bam.nut_day {
   width: 100% !important;
@@ -808,13 +805,13 @@ button {
   box-sizing: border-box !important;
   cursor: pointer !important;
 }
-/* Icon giỏ hàng */
+/* icon giỏ hàng */
 .the_san_pham .nut_bam.nut_day i {
   font-size: 11px !important;
   line-height: 16px !important;
   margin: 0 !important;
 }
-/* Hover */
+/* hover */
 .the_san_pham .nut_bam.nut_day:hover {
   background: var(--mau_phu) !important;
   color: #fff !important;
@@ -822,14 +819,12 @@ button {
   transform: translateY(-1px);
 }
 
-/* Khi đã thêm vào giỏ */
+/* khi đã thêm vào giỏ */
 .the_san_pham .nut_bam.nut_day.nut_da_them {
   background: #28a745 !important;
 }
 
-/*                    
-   "MUA KÈM GIÁ ƯU ĐÃI"
-   KẾT HỢP VỚI LƯỚI SẢN PHẨM */
+/* "mua kèm giá ưu đãi" kết hợp với lưới sản phẩm */
 .the_san_pham:hover {
   z-index: 100;
 }
@@ -953,14 +948,14 @@ button {
   margin-bottom: 8px;
 }
 
-/* Nội dung ưu đãi */
+/* nội dung ưu đãi */
 .km_text {
   color: #333;
   font-size: 13px;
   line-height: 1.4;
 }
 
-/* GIỎ HÀNG SIDEBAR */
+/* giỏ hàng sidebar */
 
 .lop_phu_gio_hang {
   position: fixed;
@@ -969,7 +964,7 @@ button {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 9999980 !important; /* Tăng độ ưu tiên lớp phủ */
+  z-index: 9999980 !important; /* tăng độ ưu tiên lớp phủ */
   display: none;
 }
 
@@ -980,7 +975,7 @@ button {
   width: 450px;
   height: 100%;
   background: #fff;
-  z-index: 9999999 !important; /* Đặt cao hơn header để đè lên trên cùng */
+  z-index: 9999999 !important; /* đặt cao hơn header để đè lên trên cùng */
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
   transition: right 0.3s ease;
   display: flex;
@@ -1118,7 +1113,7 @@ button {
   font-size: 18px;
 }
 
-/*   FOOTER  */
+/* footer */
 
 .phan_cuoi {
   margin-top: 40px;
@@ -1130,7 +1125,7 @@ button {
   font-size: 14px;
 }
 
-/*  MOBILE*/
+/* mobile */
 
 @media (max-width: 1100px) {
   .bo_cuc_magazine {
@@ -1200,7 +1195,7 @@ button {
     right: -100%;
   }
 }
-/* BANNER GIỮA TRANG */
+/* banner giữa trang */
 
 .khung_banner_giua {
   display: block;
@@ -1230,13 +1225,13 @@ button {
   transform: scale(1.02);
 }
 
-/* Responsive cho điện thoại */
+/* responsive cho điện thoại */
 @media (max-width: 768px) {
   .anh_banner_giua {
     height: 120px;
   }
 }
-/*   CHATBOT HỖ TRỢ KHÁCH HÀNG */
+/* chatbot hỗ trợ khách hàng */
 .nut_bat_chatbot {
   position: fixed;
   bottom: 30px;
@@ -1453,7 +1448,7 @@ button {
   transform: translateY(-3px);
 }
 
-/* footer  */
+/* footer */
 .ban_quyen {
   background: #07090e;
   padding: 20px 0;
@@ -1463,7 +1458,7 @@ button {
   color: #6b7280;
 }
 
-/* tương thích thiết bị di động*/
+/* tương thích thiết bị di động */
 @media (max-width: 950px) {
   .noi_dung_footer {
     grid-template-columns: repeat(2, 1fr);
@@ -1475,5 +1470,279 @@ button {
   .noi_dung_footer {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+}
+
+/* đăng nhập dùng chung trên các trang cửa hàng */
+.tx-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000001;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.tx-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 32px;
+  border: 1px solid rgba(255, 42, 77, 0.3);
+  border-radius: 16px;
+  background: #121214;
+  box-shadow: 0 0 40px rgba(255, 42, 77, 0.15);
+  color: #fff;
+}
+
+.tx-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: #1e1e24;
+  color: #9ca3af;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.tx-close-btn:hover {
+  background: #2a2a32;
+  color: #fff;
+}
+
+.tx-logo-area {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tx-logo-text {
+  display: block;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.tx-red,
+.tx-forgot-link,
+.tx-red-link {
+  color: #ff2a4d;
+}
+
+.tx-sub-logo {
+  display: block;
+  margin-top: 2px;
+  color: #ff2a4d;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+}
+
+.tx-title {
+  margin: 16px 0 4px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tx-desc {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 12px;
+}
+
+#loginErrorMsg {
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 42, 77, 0.4);
+  border-radius: 10px;
+  background: rgba(255, 42, 77, 0.1);
+  color: #ff2a4d;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.tx-input-group {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.tx-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+.tx-input {
+  width: 100%;
+  padding: 12px 16px 12px 44px;
+  border: 1px solid #2a2a30;
+  border-radius: 12px;
+  outline: none;
+  background: #18181c;
+  color: #fff;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.tx-input:focus {
+  border-color: #ff2a4d;
+}
+
+.tx-eye-btn {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  border: 0;
+  background: none;
+  color: #9ca3af;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tx-eye-btn:hover {
+  color: #fff;
+}
+
+.tx-remember-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 12px;
+}
+
+.tx-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d1d5db;
+  cursor: pointer;
+}
+
+.tx-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #ff2a4d;
+}
+
+.tx-forgot-link,
+.tx-red-link {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tx-forgot-link:hover,
+.tx-red-link:hover {
+  text-decoration: underline;
+}
+
+.tx-submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  background: #ff2a4d;
+  box-shadow: 0 4px 20px rgba(255, 42, 77, 0.3);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.tx-submit-btn:hover {
+  background: #e02443;
+}
+
+.tx-divider {
+  position: relative;
+  margin: 24px 0;
+  border-top: 1px solid #2a2a30;
+  text-align: center;
+}
+
+.tx-divider span {
+  position: relative;
+  top: -10px;
+  padding: 0 12px;
+  background: #121214;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.tx-social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tx-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid #2a2a30;
+  border-radius: 12px;
+  background: #18181c;
+  color: #d1d5db;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.tx-social-btn:hover {
+  background: #202026;
+  color: #fff;
+}
+
+.tx-social-btn .fa-facebook {
+  color: #1877f2;
+}
+
+.tx-social-btn .fa-google {
+  color: #ea4335;
+}
+
+.tx-footer-text {
+  color: #9ca3af;
+  font-size: 12px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .tx-modal-overlay {
+    padding: 12px;
+  }
+
+  .tx-modal-box {
+    max-height: calc(100vh - 24px);
+    padding: 28px 20px;
   }
 }
