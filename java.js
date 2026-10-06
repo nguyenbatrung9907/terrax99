@@ -1,6 +1,6 @@
 var danhSachGioHang = [];
 document.addEventListener("DOMContentLoaded", function () {
-  /*KHỞI TẠO GIỎ HÀNG*/
+  /* khởi tạo giỏ hàng */
   var thanhGioHang = document.getElementById("thanh_ben_gio_hang_id");
 
   if (thanhGioHang && !thanhGioHang.querySelector(".chan_gio_hang")) {
@@ -20,9 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     thanhGioHang.appendChild(khungThanhToan);
   }
 
-  /* 
-     ĐỌC GIỎ HÀNG TỪ LOCAL STORAGE
-   */
+  /* đọc giỏ hàng từ local storage */
 
   var duLieuLuu = localStorage.getItem("gioHangTerrax");
 
@@ -40,18 +38,19 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  /* CẬP NHẬT GIỎ HÀNG */
+  /* cập nhật giỏ hàng */
 
   capNhatGiaoDienGioHang();
 
-  /*  KHỞI TẠO TÌM KIẾM */
+  /* khởi tạo tìm kiếm */
 
   khoiTaoTimKiem();
+  khoiTaoDangNhap();
 });
 
-/* GIỎ HÀNG*/
+/* giỏ hàng */
 
-/* + SẢN PHẨM VÀO GIỎ*/
+/* + sản phẩm vào giỏ */
 
 function themVaoGioHang(nutBam) {
   var theSanPham = nutBam.closest(".the_san_pham");
@@ -118,9 +117,7 @@ function themVaoGioHang(nutBam) {
   }, 1200);
 }
 
-/* 
-   THAY ĐỔI SỐ LƯỢNG
-*/
+/* thay đổi số lượng */
 
 function thayDoiSoLuong(index, delta) {
   if (!danhSachGioHang[index]) {
@@ -136,9 +133,7 @@ function thayDoiSoLuong(index, delta) {
   luuVaCapNhatGioHang();
 }
 
-/* 
-   XÓA SẢN PHẨM
- */
+/* xóa sản phẩm */
 
 function xoaSanPham(index) {
   if (!danhSachGioHang[index]) {
@@ -150,9 +145,7 @@ function xoaSanPham(index) {
   luuVaCapNhatGioHang();
 }
 
-/* 
-   CHỌN / BỎ CHỌN SẢN PHẨM
- */
+/* chọn / bỏ chọn sản phẩm */
 
 function toggleChonSanPham(index) {
   if (!danhSachGioHang[index]) {
@@ -164,9 +157,7 @@ function toggleChonSanPham(index) {
   luuVaCapNhatGioHang();
 }
 
-/* 
-   LƯU GIỎ HÀNG
- */
+/* lưu giỏ hàng */
 
 function luuVaCapNhatGioHang() {
   localStorage.setItem("gioHangTerrax", JSON.stringify(danhSachGioHang));
@@ -274,9 +265,7 @@ function capNhatGiaoDienGioHang() {
   }
 }
 
-/* 
-   MỞ GIỎ HÀNG
- */
+/* mở giỏ hàng */
 
 function moGioHang() {
   var thanhGioHang = document.getElementById("thanh_ben_gio_hang_id");
@@ -292,9 +281,7 @@ function moGioHang() {
   }
 }
 
-/* 
-   ĐÓNG GIỎ HÀNG
- */
+/* đóng giỏ hàng */
 
 function dongGioHang() {
   var thanhGioHang = document.getElementById("thanh_ben_gio_hang_id");
@@ -310,7 +297,7 @@ function dongGioHang() {
   }
 }
 
-/*THANH TOÁN */
+/* thanh toán */
 
 function thanhToanDonHang() {
   var oTongTien = document.getElementById("tong_tien_thanh_toan_id");
@@ -326,14 +313,14 @@ function thanhToanDonHang() {
     return;
   }
 
-  // Hiển thị thông báo chức năng đang phát triển
+  // hiển thị thông báo chức năng đang phát triển
   alert("Chức năng thanh toán sẽ sớm phát triển!");
 }
 
-/* DANH SÁCH SẢN PHẨM TÌM KIẾM */
+/* danh sách sản phẩm tìm kiếm */
 
 var danhSachSanPham = [
-  // LAPTOP
+  // laptop
   {
     ten: 'Laptop gaming Acer Aspire 7 A715-59G-59RD (Core 5-210H/ RTX 3050 4GB/ 16GB/ 512GB/ 15.6" FHD/ Win 11)',
     trang: "laptop.html",
@@ -400,7 +387,7 @@ var danhSachSanPham = [
     gia: 13990000,
   },
 
-  // ================= PC GAMING =================
+  // pc gaming
   {
     ten: "PC GVN Intel i5-12400F/ VGA RX 6500XT (H610)",
     trang: "pc.html",
@@ -492,7 +479,7 @@ var danhSachSanPham = [
     gia: 12490000,
   },
 
-  // ================= BO MẠCH CHỦ =================
+  // bo mạch chủ
   {
     ten: "Bo mạch chủ ASUS H610M-F WIFI DDR4",
     trang: "bo-mach-chu.html",
@@ -569,7 +556,7 @@ var danhSachSanPham = [
     gia: 12900000,
   },
 
-  // ================= MÀN HÌNH =================
+  // màn hình
   {
     ten: "Màn hình LG 27U711B-B 27\\ IPS 4K HDR10",
     trang: "man-hinh.html",
@@ -626,7 +613,7 @@ var danhSachSanPham = [
     gia: 2890000,
   },
 
-  // ================= BÀN PHÍM =================
+  // bàn phím
   {
     ten: "Bàn phím cơ ASUS ROG Falchion Ace 75 HE V2X White",
     trang: "ban-phim.html",
@@ -708,7 +695,7 @@ var danhSachSanPham = [
     gia: 950000,
   },
 
-  // ================= CHUỘT =================
+  // chuột
   {
     ten: "Chuột Gaming Predator Cestus 3",
     trang: "chuot.html",
@@ -790,7 +777,7 @@ var danhSachSanPham = [
     gia: 4290000,
   },
 
-  // ================= TAI NGHE =================
+  // tai nghe
   {
     ten: "Tai nghe Razer Hammerhead V3 X",
     trang: "tai-nghe.html",
@@ -893,7 +880,7 @@ function xemChiTietPC(maPC) {
   window.location.href = "pc-chi-tiet.html?id=" + encodeURIComponent(pc.id);
 }
 
-/* KHỞI TẠO TÌM KIẾM */
+/* khởi tạo tìm kiếm */
 
 function khoiTaoTimKiem() {
   var oTimKiem = document.getElementById("o_tim_kiem");
@@ -918,7 +905,7 @@ function khoiTaoTimKiem() {
     });
   }
 
-  /* Enter*/
+  /* enter */
   oTimKiem.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -927,13 +914,10 @@ function khoiTaoTimKiem() {
     }
   });
 
-  /* CLICK RA NGOÀI ĐÓNG KẾT QUẢ*/
+  /* click ra ngoài đóng kết quả */
 
   document.addEventListener("click", function (event) {
-    /*
-        Nếu click bên trong ô tìm kiếm
-        thì không đóng.
-      */
+    /* nếu click bên trong ô tìm kiếm thì không đóng. */
 
     if (event.target.closest(".hop_tim_kiem_lon")) {
       return;
@@ -949,7 +933,7 @@ function khoiTaoTimKiem() {
   );
 }
 
-/* BỎ DẤU TIẾNG VIỆT*/
+/* bỏ dấu tiếng việt */
 
 function boDauTiengViet(text) {
   if (!text) {
@@ -966,20 +950,18 @@ function boDauTiengViet(text) {
     .trim();
 }
 
-/* 
-   HIỂN THỊ KẾT QUẢ TÌM KIẾM
- */
+/* hiển thị kết quả tìm kiếm */
 
 function hienThiKetQuaTimKiem(oTimKiem, ketQuaTimKiem) {
   if (!oTimKiem || !ketQuaTimKiem) {
     return;
   }
 
-  /* LẤY TỪ KHÓA */
+  /* lấy từ khóa */
 
   var tuKhoaGoc = oTimKiem.value.trim();
 
-  /*  KHÔNG NHẬP GÌ */
+  /* không nhập gì */
 
   if (tuKhoaGoc === "") {
     ketQuaTimKiem.innerHTML = "";
@@ -989,11 +971,11 @@ function hienThiKetQuaTimKiem(oTimKiem, ketQuaTimKiem) {
     return;
   }
 
-  /*  BỎ DẤU*/
+  /* bỏ dấu */
 
   var tuKhoa = boDauTiengViet(tuKhoaGoc);
 
-  /* TÌM SẢN PHẨM */
+  /* tìm sản phẩm */
 
   var ketQua = danhSachSanPham.filter(function (sanPham) {
     var tenSanPham = boDauTiengViet(sanPham.ten);
@@ -1001,11 +983,11 @@ function hienThiKetQuaTimKiem(oTimKiem, ketQuaTimKiem) {
     return tenSanPham.includes(tuKhoa);
   });
 
-  /*  XÓA KẾT QUẢ CŨ */
+  /* xóa kết quả cũ */
 
   ketQuaTimKiem.innerHTML = "";
 
-  /*   KHÔNG TÌM THẤY */
+  /* không tìm thấy */
 
   if (ketQua.length === 0) {
     var divKhongCo = document.createElement("div");
@@ -1024,26 +1006,20 @@ function hienThiKetQuaTimKiem(oTimKiem, ketQuaTimKiem) {
     return;
   }
 
-  /* 
-     HIỂN THỊ KẾT QUẢ
-   */
+  /* hiển thị kết quả */
 
   ketQua.forEach(function (sanPham) {
     var item = document.createElement("div");
 
     item.className = "item_ket_qua_tim_kiem";
 
-    /* 
-         ICON
-       */
+    /* icon */
 
     var icon = document.createElement("i");
 
     icon.className = "fas fa-search";
 
-    /* 
-         TÊN SẢN PHẨM
-       */
+    /* tên sản phẩm */
 
     var span = document.createElement("span");
 
@@ -1053,9 +1029,7 @@ function hienThiKetQuaTimKiem(oTimKiem, ketQuaTimKiem) {
 
     item.appendChild(span);
 
-    /* 
-         CLICK VÀO KẾT QUẢ
-       */
+    /* click vào kết quả */
 
     item.addEventListener("click", function () {
       window.location.href = sanPham.trang;
@@ -1066,7 +1040,7 @@ function hienThiKetQuaTimKiem(oTimKiem, ketQuaTimKiem) {
   ketQuaTimKiem.style.display = "block";
 }
 
-/* CHATBOT AI MÔ PHỎNG (RULE-BASED) - HOÀN CHỈNH */
+/* chatbot ai mô phỏng (rule-based) - hoàn chỉnh */
 
 var soLanHoiNgoaiLe = 0; // Biến đếm số lần hỏi ngoài lề
 
@@ -1092,17 +1066,17 @@ function guiTinNhan() {
   var noiDung = oNhap.value.trim();
   if (noiDung === "") return;
 
-  // 1. Hiển thị tin nhắn của khách hàng
+  // 1. hiển thị tin nhắn của khách hàng
   var tinNhanNguoi = document.createElement("div");
   tinNhanNguoi.className = "tin_nhan_chat nguoi";
   tinNhanNguoi.innerText = noiDung;
   thanChat.appendChild(tinNhanNguoi);
 
-  // 2. Xóa ô nhập và cuộn xuống cuối
+  // 2. xóa ô nhập và cuộn xuống cuối
   oNhap.value = "";
   thanChat.scrollTop = thanChat.scrollHeight;
 
-  // 3. Bot phản hồi sau 0.6 giây
+  // 3. bot phản hồi sau 0.6 giây
   setTimeout(function () {
     var phanHoi = taoPhanHoiTuDong(noiDung);
 
@@ -1115,13 +1089,13 @@ function guiTinNhan() {
   }, 600);
 }
 
-// Logic Rule-based: Nhận diện từ khóa và trả lời
+// logic rule-based: nhận diện từ khóa và trả lời
 var soLanHoiNgoaiLe = 0;
 
 function taoPhanHoiTuDong(tinNhan) {
   var tuKhoa = boDauTiengViet(tinNhan);
 
-  // 1. NHẬN DIỆN YÊU CẦU TÌM THEO NGÂN SÁCH (VD: "16 triệu", "20tr")
+  // 1. nhận diện yêu cầu tìm theo ngân sách (vd: "16 triệu", "20tr")
   var batGia = tuKhoa.match(/(\d+)\s*(trieu|tr|cu)/);
 
   if (batGia) {
@@ -1157,13 +1131,13 @@ function taoPhanHoiTuDong(tinNhan) {
       for (var i = 0; i < soLuongHienThi; i++) {
         var sp = ketQuaTimKiem[i];
 
-        // Cắt ngắn tên: Chỉ lấy phần chữ trước dấu "(" để khung chat gọn gàng
+        // cắt ngắn tên: chỉ lấy phần chữ trước dấu "(" để khung chat gọn gàng
         var tenNganGon = sp.ten.split("(")[0].trim();
 
-        // Định dạng giá tiền (vd: 16.000.000đ)
+        // định dạng giá tiền (vd: 16.000.000đ)
         var giaHienThi = sp.gia.toLocaleString("vi-VN") + "đ";
 
-        // Tạo giao diện Card mini siêu đẹp cho từng sản phẩm
+        // tạo giao diện card mini siêu đẹp cho từng sản phẩm
         cauTraLoi +=
           "<div style='margin-bottom: 10px; padding: 10px; background: #fff; border-radius: 8px; border: 1px solid #ffcdd2; box-shadow: 0 2px 4px rgba(0,0,0,0.05);'>" +
           "<a href='" +
@@ -1189,7 +1163,7 @@ function taoPhanHoiTuDong(tinNhan) {
     }
   }
 
-  // 2. CÁC CÂU HỎI THÔNG THƯỜNG
+  // 2. các câu hỏi thông thường
   if (
     tuKhoa.includes("xin chao") ||
     tuKhoa.includes("hello") ||
@@ -1241,7 +1215,7 @@ function taoPhanHoiTuDong(tinNhan) {
     return "Bạn chỉ cần bấm <b>THÊM VÀO GIỎ</b>, sau đó mở giỏ hàng ở góc phải màn hình, chọn sản phẩm và bấm <b>TIẾN HÀNH THANH TOÁN</b>. Rất đơn giản!";
   }
 
-  // 3. XỬ LÝ KHÁCH HỎI NGOÀI LỀ
+  // 3. xử lý khách hỏi ngoài lề
   soLanHoiNgoaiLe++;
   if (soLanHoiNgoaiLe === 1) {
     return "Xin lỗi bạn, trợ lý ảo TERRAX chỉ hỗ trợ giải đáp các thông tin về sản phẩm công nghệ trên website. Mình không hỗ trợ trả lời các câu hỏi ngoài lề ạ!";
@@ -1250,30 +1224,99 @@ function taoPhanHoiTuDong(tinNhan) {
   }
 }
 
+function khoiTaoDangNhap() {
+  if (!document.getElementById("terraXLoginModal")) {
+    var modal = document.createElement("div");
+    modal.id = "terraXLoginModal";
+    modal.className = "tx-modal-overlay";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-labelledby", "txLoginTitle");
+    modal.innerHTML =
+      '<div class="tx-modal-box">' +
+      '<button type="button" class="tx-close-btn" onclick="closeTerraXModal()" aria-label="Đóng">&times;</button>' +
+      '<div class="tx-logo-area">' +
+      '<span class="tx-logo-text">terra<span class="tx-red">X</span></span>' +
+      '<span class="tx-sub-logo">TECHNOLOGY STORE</span>' +
+      '<h2 class="tx-title" id="txLoginTitle">Đăng nhập</h2>' +
+      '<p class="tx-desc">Chào mừng trở lại! Đăng nhập để tiếp tục trải nghiệm TerraX.</p>' +
+      "</div>" +
+      '<div id="loginErrorMsg" role="alert" style="display:none"></div>' +
+      '<form onsubmit="handleLoginSubmit(event)">' +
+      '<div class="tx-input-group"><i class="far fa-envelope tx-input-icon"></i>' +
+      '<input type="text" id="loginEmail" placeholder="Email hoặc tên đăng nhập" class="tx-input" autocomplete="username"></div>' +
+      '<div class="tx-input-group"><i class="far fa-lock tx-input-icon"></i>' +
+      '<input type="password" id="loginPassword" placeholder="Mật khẩu" class="tx-input" autocomplete="current-password">' +
+      '<button type="button" class="tx-eye-btn" onclick="togglePassword()" aria-label="Hiện hoặc ẩn mật khẩu"><i id="togglePassIcon" class="far fa-eye-slash"></i></button></div>' +
+      '<div class="tx-remember-row"><label class="tx-checkbox-label">' +
+      '<input type="checkbox" class="tx-checkbox" id="txRememberLogin"><span>Ghi nhớ đăng nhập</span></label>' +
+      '<a href="#" onclick="showInlineError(\'Tính năng quên mật khẩu đang phát triển\'); return false;" class="tx-forgot-link">Quên mật khẩu?</a></div>' +
+      '<button type="submit" class="tx-submit-btn">Đăng nhập &rarr;</button></form>' +
+      '<div class="tx-divider"><span>HOẶC ĐĂNG NHẬP VỚI</span></div>' +
+      '<div class="tx-social-grid">' +
+      '<button type="button" onclick="showInlineError(\'Đăng nhập Facebook đang phát triển\')" class="tx-social-btn"><i class="fab fa-facebook" aria-hidden="true"></i> Facebook</button>' +
+      '<button type="button" onclick="showInlineError(\'Đăng nhập Google đang phát triển\')" class="tx-social-btn"><i class="fab fa-google" aria-hidden="true"></i> Google</button></div>' +
+      '<div class="tx-footer-text">Chưa có tài khoản? <a href="#" onclick="showInlineError(\'Chức năng đăng ký đang phát triển\'); return false;" class="tx-red-link">Đăng ký ngay</a></div>' +
+      "</div>";
+    document.body.appendChild(modal);
+  }
+
+  var emailInput = document.getElementById("loginEmail");
+  var rememberCheckbox = document.getElementById("txRememberLogin");
+  var savedEmail = localStorage.getItem("terraXRememberedEmail");
+
+  if (emailInput && savedEmail) {
+    emailInput.value = savedEmail;
+    if (rememberCheckbox) {
+      rememberCheckbox.checked = true;
+    }
+  }
+}
+
 function openTerraXModal() {
-  document.getElementById("terraXLoginModal").style.display = "flex";
-  hideInlineError(); // Xóa lỗi cũ khi mở modal
+  var modal = document.getElementById("terraXLoginModal");
+  if (!modal) {
+    khoiTaoDangNhap();
+    modal = document.getElementById("terraXLoginModal");
+  }
+  modal.style.display = "flex";
+  hideInlineError();
+  var emailInput = document.getElementById("loginEmail");
+  if (emailInput) {
+    emailInput.focus();
+  }
 }
 
 function closeTerraXModal() {
-  document.getElementById("terraXLoginModal").style.display = "none";
+  var modal = document.getElementById("terraXLoginModal");
+  if (modal) {
+    modal.style.display = "none";
+  }
 }
 
 function showInlineError(message) {
   const errorBox = document.getElementById("loginErrorMsg");
+  if (!errorBox) {
+    return;
+  }
   errorBox.innerText = message;
   errorBox.style.display = "block";
 }
 
 function hideInlineError() {
   const errorBox = document.getElementById("loginErrorMsg");
-  errorBox.style.display = "none";
-  errorBox.innerText = "";
+  if (errorBox) {
+    errorBox.style.display = "none";
+    errorBox.innerText = "";
+  }
 }
 
 function togglePassword() {
   const passwordInput = document.getElementById("loginPassword");
   const icon = document.getElementById("togglePassIcon");
+  if (!passwordInput || !icon) {
+    return;
+  }
   if (passwordInput.type === "password") {
     passwordInput.type = "text";
     icon.classList.remove("fa-eye-slash");
@@ -1285,19 +1328,27 @@ function togglePassword() {
   }
 }
 
-// Hàm validate sử dụng thông báo trực tiếp thay vì alert()
+// hàm validate sử dụng thông báo trực tiếp thay vì alert()
 function validateLogin() {
-  const email = document.getElementById("loginEmail").value.trim();
-  const password = document.getElementById("loginPassword").value.trim();
+  const emailInput = document.getElementById("loginEmail");
+  const passwordInput = document.getElementById("loginPassword");
+  if (!emailInput || !passwordInput) {
+    return false;
+  }
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
   if (email === "") {
-    showInlineError("Vui lòng nhập email.");
+    showInlineError("Vui lòng nhập email hoặc tên đăng nhập.");
     return false;
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    showInlineError("Email không đúng định dạng.");
+  if (
+    (email.includes("@") && !emailRegex.test(email)) ||
+    (!email.includes("@") && !/^\S{3,}$/.test(email))
+  ) {
+    showInlineError("Email hoặc tên đăng nhập không hợp lệ.");
     return false;
   }
 
@@ -1313,15 +1364,26 @@ function validateLogin() {
 function handleLoginSubmit(event) {
   event.preventDefault();
   if (validateLogin()) {
+    const emailInput = document.getElementById("loginEmail");
+    const rememberCheckbox = document.getElementById("txRememberLogin");
+    if (rememberCheckbox && rememberCheckbox.checked) {
+      localStorage.setItem("terraXRememberedEmail", emailInput.value.trim());
+    } else {
+      localStorage.removeItem("terraXRememberedEmail");
+    }
     alert("Đăng nhập thành công (mô phỏng)!");
     closeTerraXModal();
   }
 }
 
-// Click ra ngoài vùng đen để đóng modal
-window.addEventListener("click", function (event) {
-  const modal = document.getElementById("terraXLoginModal");
-  if (event.target === modal) {
+document.addEventListener("click", function (event) {
+  if (event.target && event.target.id === "terraXLoginModal") {
+    closeTerraXModal();
+  }
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
     closeTerraXModal();
   }
 });
