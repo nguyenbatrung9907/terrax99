@@ -11,7 +11,7 @@
     />
 
     <style>
-      /* = THANH LỌC THƯƠNG HIỆU VÀ KÍCH THƯỚC = */
+      /* thanh lọc thương hiệu và kích thước */
       .thanh_dieu_huong_nhanh {
         box-sizing: border-box;
         width: 100%;
@@ -23,7 +23,7 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
 
-      /* Tiêu đề lọc */
+      /* tiêu đề lọc */
       .thanh_dieu_huong_nhanh .tieu_de_loc_nhanh {
         display: flex;
         align-items: center;
@@ -34,7 +34,7 @@
         font-weight: 700;
       }
 
-      /* Từng dòng lọc */
+      /* từng dòng lọc */
       .thanh_dieu_huong_nhanh .dong_loc {
         display: flex;
         align-items: flex-start;
@@ -46,7 +46,7 @@
         margin-bottom: 0;
       }
 
-      /* Nhãn thương hiệu, kích thước */
+      /* nhãn thương hiệu, kích thước */
       .thanh_dieu_huong_nhanh .nhan_loc {
         flex: 0 0 155px;
         padding-top: 7px;
@@ -55,7 +55,7 @@
         font-weight: 600;
       }
 
-      /* Nhóm nút */
+      /* nhóm nút */
       .thanh_dieu_huong_nhanh .nhom_nut_loc {
         display: flex;
         flex: 1;
@@ -63,7 +63,7 @@
         gap: 8px;
       }
 
-      /* Nút thương hiệu và kích thước */
+      /* nút thương hiệu và kích thước */
       .thanh_dieu_huong_nhanh .nut_teleport {
         display: inline-flex;
         align-items: center;
@@ -81,14 +81,14 @@
         transition: all 0.2s ease;
       }
 
-      /* Hiệu ứng khi rê chuột */
+      /* hiệu ứng khi rê chuột */
       .thanh_dieu_huong_nhanh .nut_teleport:hover {
         border-color: #0284c7;
         background: #f0f9ff;
         color: #0284c7;
       }
 
-      /* Điện thoại và màn hình nhỏ */
+      /* điện thoại và màn hình nhỏ */
       @media (max-width: 600px) {
         .thanh_dieu_huong_nhanh {
           padding: 14px;
@@ -118,12 +118,12 @@
     <link rel="icon" href="images/svg_logo.svg" type="image/png">
   </head>
 
-<!--      HEADER      -->
+<!-- header -->
     <div class="dau_trang_co_dinh">
       <header class="phan_dau_chinh">
         <div class="khung_chua khung_phan_dau">
           <a href="index.html" class="logo_chinh">
-            <img src="images/logo.png" alt="Logo TERRAX" />
+            <img src="Images/logo.png" alt="Logo TERRAX" />
           </a>
 
           <div class="hop_tim_kiem_lon">
@@ -142,7 +142,7 @@
           <div class="hanh_dong_phai">
             <div
               class="muc_hanh_dong"
-              onclick="alert('Chức năng đăng nhập/tài khoản đang phát triển!')"
+              onclick="openTerraXModal()"
             >
               <i class="far fa-user"></i>
               <span>Tài khoản</span>
@@ -155,7 +155,7 @@
           </div>
         </div>
       </header>
-      <!--THANH ĐIỀU HƯỚNG-->
+      <!-- thanh điều hướng -->
 <nav class="thanh_dieu_huong">
   <div class="khung_chua khung_dieu_huong">
     
@@ -185,12 +185,12 @@
   </div>
 </nav> </div>
 
-    <!-- Banner trang -->
+    <!-- banner trang -->
     <section
       class="bang_chuyen_anh"
       style="background-image: url(images/banner-chuot.png)"
     ></section>
-    <!-- THANH LỌC VÀ ĐIỀU HƯỚNG NHANH -->
+    <!-- thanh lọc và điều hướng nhanh -->
     <section class="khung_chua thanh_dieu_huong_nhanh">
       <div class="dong_loc">
         <span class="nhan_loc">Thương hiệu:</span>
@@ -204,15 +204,16 @@
       </div>
     </section>
 
-    <!-- SẢN PHẨM NỔI BẬT (ĐẦY ĐỦ 16 SẢN PHẨM) -->
+    <!-- sản phẩm nổi bật (đầy đủ 16 sản phẩm) -->
     <section
       class="san_pham khung_chua"
       id="san_pham_noi_bat"
       style="margin-top: 40px"
     >
       <h2 class="tieu_de_phan">SẢN PHẨM NỔI BẬT</h2>
+      <div class="khung_trang">
       <div class="luoi_san_pham">
-        <!-- SẢN PHẨM 1 -->
+        <!-- sản phẩm 1 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_21_Chu_t_Gaming_Predator_Cestus_3.jpg"
@@ -260,7 +261,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 2 -->
+        <!-- sản phẩm 2 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_22_Chu_t_AKKO_AG_ONE_8K_Joy_of_Li.png"
@@ -307,7 +308,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 3 -->
+        <!-- sản phẩm 3 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_23_Chu_t_gaming_kh_ng_d_y_Logitec.jpg"
@@ -356,7 +357,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 4 -->
+        <!-- sản phẩm 4 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_24_Chu_t_Razer_Basilisk_V3_Pro_35.jpg"
@@ -406,7 +407,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 5 -->
+        <!-- sản phẩm 5 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_25_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -450,7 +451,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 6 -->
+        <!-- sản phẩm 6 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_26_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -494,7 +495,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 7 -->
+        <!-- sản phẩm 7 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_27_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -543,7 +544,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 8 -->
+        <!-- sản phẩm 8 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_28_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -592,7 +593,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 9 -->
+        <!-- sản phẩm 9 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_29_Chu_t_kh_ng_d_y_HyperWork_Macr.jpg"
@@ -639,7 +640,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 10 -->
+        <!-- sản phẩm 10 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_30_Chu_t_MSI_VERSA_WIRELESS_MLG_E.png"
@@ -682,7 +683,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 11 -->
+        <!-- sản phẩm 11 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_31_Chu_t_kh_ng_d_y_Logitech_Signa.jpg"
@@ -732,7 +733,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 12 -->
+        <!-- sản phẩm 12 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_32_Chu_t_kh_ng_d_y_AKKO_Nest_Blac.jpg"
@@ -781,7 +782,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 13 -->
+        <!-- sản phẩm 13 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_33_Chu_t_kh_ng_d_y_AKKO_Nest_Whit.jpg"
@@ -830,7 +831,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 14 -->
+        <!-- sản phẩm 14 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_34_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
@@ -878,7 +879,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 15 -->
+        <!-- sản phẩm 15 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_35_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
@@ -925,7 +926,7 @@
           </button>
         </div>
 
-        <!-- SẢN PHẨM 16 -->
+        <!-- sản phẩm 16 -->
         <div class="the_san_pham">
           <img
             src="Images_san_pham/SP_39_Chu_t_Razer_DeathAdder_V4_Pro_.png"
@@ -975,17 +976,19 @@
           </button>
         </div>
       </div>
+      </div>
     </section>
 
-    <!-- MỤC CỤM LỚN: CÁC HÃNG CHUỘT GAMING -->
+    <!-- mục cụm lớn: các hãng chuột gaming -->
     <div class="khung_chua cum_phan_loai_lon">
       <h1 class="tieu_de_nhom_to">CÁC HÃNG CHUỘT GAMING</h1>
 
-      <!-- HÃNG RAZER -->
+      <!-- hãng razer -->
       <section class="san_pham" id="hang_razer">
         <h2 class="tieu_de_phan">RAZER</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
-          <!-- SP 4 -->
+          <!-- sp 4 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_24_Chu_t_Razer_Basilisk_V3_Pro_35.jpg"
@@ -1037,7 +1040,7 @@
             </button>
           </div>
 
-          <!-- SP 16 -->
+          <!-- sp 16 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_39_Chu_t_Razer_DeathAdder_V4_Pro_.png"
@@ -1088,13 +1091,15 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG AKKO -->
+      <!-- hãng akko -->
       <section class="san_pham" id="hang_akko" style="margin-top: 30px">
         <h2 class="tieu_de_phan">AKKO</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
-          <!-- SP 2 -->
+          <!-- sp 2 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_22_Chu_t_AKKO_AG_ONE_8K_Joy_of_Li.png"
@@ -1142,7 +1147,7 @@
             </button>
           </div>
 
-          <!-- SP 12 -->
+          <!-- sp 12 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_32_Chu_t_kh_ng_d_y_AKKO_Nest_Blac.jpg"
@@ -1191,7 +1196,7 @@
             </button>
           </div>
 
-          <!-- SP 13 -->
+          <!-- sp 13 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_33_Chu_t_kh_ng_d_y_AKKO_Nest_Whit.jpg"
@@ -1240,7 +1245,7 @@
             </button>
           </div>
 
-          <!-- SP 14 -->
+          <!-- sp 14 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_34_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
@@ -1288,7 +1293,7 @@
             </button>
           </div>
 
-          <!-- SP 15 -->
+          <!-- sp 15 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_35_Chu_t_kh_ng_d_y_AKKO_Dash_V9_M.jpg"
@@ -1336,13 +1341,15 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG LOGITECH -->
+      <!-- hãng logitech -->
       <section class="san_pham" id="hang_logitech" style="margin-top: 30px">
         <h2 class="tieu_de_phan">LOGITECH</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
-          <!-- SP 3 -->
+          <!-- sp 3 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_23_Chu_t_gaming_kh_ng_d_y_Logitec.jpg"
@@ -1392,7 +1399,7 @@
             </button>
           </div>
 
-          <!-- SP 11 -->
+          <!-- sp 11 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_31_Chu_t_kh_ng_d_y_Logitech_Signa.jpg"
@@ -1444,13 +1451,15 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG HYPERWORK -->
+      <!-- hãng hyperwork -->
       <section class="san_pham" id="hang_hyperwork" style="margin-top: 30px">
         <h2 class="tieu_de_phan">HYPERWORK</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
-          <!-- SP 5 -->
+          <!-- sp 5 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_25_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -1494,7 +1503,7 @@
             </button>
           </div>
 
-          <!-- SP 6 -->
+          <!-- sp 6 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_26_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -1538,7 +1547,7 @@
             </button>
           </div>
 
-          <!-- SP 7 -->
+          <!-- sp 7 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_27_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -1588,7 +1597,7 @@
             </button>
           </div>
 
-          <!-- SP 8 -->
+          <!-- sp 8 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_28_Chu_t_kh_ng_d_y_HyperWork_Sile.jpg"
@@ -1638,7 +1647,7 @@
             </button>
           </div>
 
-          <!-- SP 9 -->
+          <!-- sp 9 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_29_Chu_t_kh_ng_d_y_HyperWork_Macr.jpg"
@@ -1687,13 +1696,15 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
 
-      <!-- HÃNG KHÁC -->
+      <!-- hãng khác -->
       <section class="san_pham" id="hang_khac" style="margin-top: 30px">
         <h2 class="tieu_de_phan">CÁC HÃNG KHÁC (PREDATOR, MSI...)</h2>
+        <div class="khung_trang">
         <div class="luoi_san_pham">
-          <!-- SP 1 -->
+          <!-- sp 1 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_21_Chu_t_Gaming_Predator_Cestus_3.jpg"
@@ -1742,7 +1753,7 @@
             </button>
           </div>
 
-          <!-- SP 10 -->
+          <!-- sp 10 -->
           <div class="the_san_pham">
             <img
               src="Images_san_pham/SP_30_Chu_t_MSI_VERSA_WIRELESS_MLG_E.png"
@@ -1785,10 +1796,11 @@
             </button>
           </div>
         </div>
+        </div>
       </section>
     </div>
 
-    <!-- Giỏ hàng Sidebar -->
+    <!-- giỏ hàng sidebar -->
     <div
       class="lop_phu_gio_hang"
       id="lop_phu_gio_hang_id"
@@ -1878,7 +1890,7 @@
       </div>
     </footer>
     <script src="java.js"></script>
-    <!-- CHATBOT HỖ TRỢ -->
+    <!-- chatbot hỗ trợ -->
     <button class="nut_bat_chatbot" onclick="batTatChatbot()">
       <i class="fas fa-comment-dots"></i>
     </button>
